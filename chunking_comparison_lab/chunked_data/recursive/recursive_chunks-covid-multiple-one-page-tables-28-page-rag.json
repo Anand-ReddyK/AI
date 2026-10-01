@@ -1,0 +1,1256 @@
+[
+    {
+        "chunk_id": 0,
+        "page_number": 1,
+        "char_count": 439,
+        "text": "SYSTEMATIC REVIEW\n   COVID-19 vaccinations and their side effects: a scoping \nsystematic review\n[version 2; peer review: 2 approved]\nHind Monadhel\n , Ayad Abbas\n , Athraa Mohammed\nComputer Science, University of Technology-Iraq, Baghdad, 10053, Iraq \nFirst published: 05 Jun 2023, 12:604  \nhttps://doi.org/10.12688/f1000research.134171.1\nLatest published: 26 Sep 2024, 12:604  \nhttps://doi.org/10.12688/f1000research.134171.2\nv2\n \nAbstract"
+    },
+    {
+        "chunk_id": 1,
+        "page_number": 1,
+        "char_count": 470,
+        "text": "https://doi.org/10.12688/f1000research.134171.2\nv2\n \nAbstract \nIntroduction: The COVID-19 virus has impacted people worldwide, \ncausing significant changes in their lifestyles. Since the emergence of \nthe epidemic, attempts have begun to prepare a vaccine that can \neliminate the virus and restore balance to life in the entire world. Over \nthe past two years, countries and specialized companies have \ncompeted to obtain a license from the World Health Organization for"
+    },
+    {
+        "chunk_id": 2,
+        "page_number": 1,
+        "char_count": 492,
+        "text": "competed to obtain a license from the World Health Organization for \nthe vaccines that were discovered. After the appearance of vaccines in \nthe health community, comparisons and fears of their side effects \nbegan, but people don’t get an answer to the question of which is the \nbest vaccine.\nMethods: IEEE Xplore, ScienceDirect, the New England Journal of \nMedicine, Google Scholar, and PubMed databases were searched for \nliterature on the COVID-19 vaccine and its side effects. we surveyed"
+    },
+    {
+        "chunk_id": 3,
+        "page_number": 1,
+        "char_count": 467,
+        "text": "literature on the COVID-19 vaccine and its side effects. we surveyed \nthe literature on the COVID-19 vaccine’s side effects and the sorts of \nside effects observed after vaccination. Depending on data from the \nliterature, we compared these vaccines in terms of side effects, then \nwe analyzed the gaps and obstacles of previous studies and made \nproposals to process these gaps in future studies.\nResults: Overall, 17 studies were included in this scoping systematic"
+    },
+    {
+        "chunk_id": 4,
+        "page_number": 1,
+        "char_count": 486,
+        "text": "Results: Overall, 17 studies were included in this scoping systematic \nreview as they fulfilled the criteria specified, the majority of which \nwere cross-sectional and retrospective cross-sectional studies. Most of \nthe side effects were mild, self-limiting, and common. Thus, they \nusually resolve within 1–3 days after vaccination. Factors associated \nwith higher side effects included advanced age, allergic conditions, \nthose taking other medications (particularly immunosuppressive"
+    },
+    {
+        "chunk_id": 5,
+        "page_number": 1,
+        "char_count": 489,
+        "text": "those taking other medications (particularly immunosuppressive \nones), those with a history of type II diabetes, heart disease, \nhypertension, COVID-19 infection, and female sex. Our meta‐analyses \nalso found that mRNA vaccines looked to be more effective, while \nOpen Peer Review\nApproval Status  \n  \n1 2\nversion 2\n(revision)\n26 Sep 2024\nview\nversion 1\n05 Jun 2023\n view\n view\nYongbin Wang, The First Affiliated Hospital, \nXinxiang Medical University, Xinxiang, China\n1. \nBekir Kocazeybek"
+    },
+    {
+        "chunk_id": 6,
+        "page_number": 1,
+        "char_count": 285,
+        "text": "Xinxiang Medical University, Xinxiang, China\n1. \nBekir Kocazeybek\n , Istanbul \nUniversity—Cerrahpasa, Istanbul, Turkey\n2. \nAny reports and responses or comments on the \narticle can be found at the end of the article.\n \n Page 1 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 7,
+        "page_number": 2,
+        "char_count": 493,
+        "text": "Corresponding author: Hind Monadhel (cs.20.38@grad.uotechnology.edu.iq)\nAuthor roles: Monadhel H: Formal Analysis, Investigation, Methodology, Resources, Visualization, Writing – Original Draft Preparation, \nWriting – Review & Editing; Abbas A: Supervision, Writing – Review & Editing; Mohammed A: Supervision, Writing – Review & Editing\nCompeting interests: No competing interests were disclosed.\nGrant information: The author(s) declared that no grants were involved in supporting this work."
+    },
+    {
+        "chunk_id": 8,
+        "page_number": 2,
+        "char_count": 478,
+        "text": "Grant information: The author(s) declared that no grants were involved in supporting this work.\nCopyright: © 2024 Monadhel H et al. This is an open access article distributed under the terms of the Creative Commons Attribution \nLicense, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.\nHow to cite this article: Monadhel H, Abbas A and Mohammed A. COVID-19 vaccinations and their side effects: a scoping"
+    },
+    {
+        "chunk_id": 9,
+        "page_number": 2,
+        "char_count": 448,
+        "text": "systematic review [version 2; peer review: 2 approved] F1000Research 2024, 12:604 https://doi.org/10.12688/f1000research.134171.2\nFirst published: 05 Jun 2023, 12:604 https://doi.org/10.12688/f1000research.134171.1 \ninactivated vaccinations had fewer side effects.\nConclusion: This review shows that the COVID-19 vaccine is safe to \nadminister and induces protection.\nKeywords \nCOVID-19 Vaccine, Machine learning, side effects, Statistical methods,"
+    },
+    {
+        "chunk_id": 10,
+        "page_number": 2,
+        "char_count": 287,
+        "text": "Keywords \nCOVID-19 Vaccine, Machine learning, side effects, Statistical methods, \nAdverse reactions, Data Processing and Analysis, Data Mining.\n \nThis article is included in the Emerging Diseases \nand Outbreaks gateway.\n  Page 2 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 11,
+        "page_number": 3,
+        "char_count": 399,
+        "text": "Abbreviations\nCDC: Centers for Disease Control and Prevention\nCOVID-19: Coronavirus Disease 2019\nD-dimer: Fibrin degradation product\nFDA: Food and Drug Administration\nmRNA: messenger ribonucleic acid\nVAERS: Vaccine Adverse Event Reporting System\nWHO: World Health Organization\nIntroduction\nCOVID-19 is an infectious disease caused by the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2),"
+    },
+    {
+        "chunk_id": 12,
+        "page_number": 3,
+        "char_count": 466,
+        "text": "which was initially detected in Wuhan, China, in December 2019. As of 18 August 2024, there have been 776 million\nconfirmed cases worldwide, with 3.0 million deaths (WHO 2024). It belongs to the same group of ribonucleic acid (RNA)\nviruses that cause Middle East respiratory syndrome (MERS) and severe acute respiratory syndrome (SARS) (Mahendra\n2020). Corona-viruses are a large family of viruses that infect many different species, including humans. In humans, the"
+    },
+    {
+        "chunk_id": 13,
+        "page_number": 3,
+        "char_count": 382,
+        "text": "coronavirus can cause a variety of diseases, from minor respiratory tract infections like the common cold to fatal\ninfections (Weiss & Navas-Martin 2005 ).\nThe virus might be transferred by close touch or simply droplets, between people, when the mucosal membranes of\nhealthy individuals are exposed to secretions generated by the carriers ( Sharma 2020). Symptoms of COVID-19 might"
+    },
+    {
+        "chunk_id": 14,
+        "page_number": 3,
+        "char_count": 461,
+        "text": "vary from person to person. Some of them may exhibit no signs or symptoms of infection, such as breathing difficulties, or\nthey may succumb to the sickness ( Sahin 2020).\nEven though several therapeutic compounds and medications have been proposed and reused in the battle against\nCOVID-19, they have remained supportive therapy choices; however, vaccines remain the most efficient and effective\nway to protect people from this disease ( Tavilani et al. 2021 )."
+    },
+    {
+        "chunk_id": 15,
+        "page_number": 3,
+        "char_count": 427,
+        "text": "way to protect people from this disease ( Tavilani et al. 2021 ).\nThe development of vaccinations has made significant advances; the first mass vaccination program started in early\nDecember 2020 in Europe, with priority given to individuals who are at high risk of severe COVID-19 infection, such as\nthe elderly, and those who are at high risk of viral exposure and transmission, such as front-line medical staff (Paules et al."
+    },
+    {
+        "chunk_id": 16,
+        "page_number": 3,
+        "char_count": 457,
+        "text": "2020). 7,952,750,402 vaccine doses have been provided globally through December 6, 2021 ( WHO 2021c).\nHowever, no vaccine is entirely free from complications or adverse reactions. Any vaccination can have early adverse\nreactions, including local ones like pain, swelling, and redness, as well as systemic ones like headache, chills, nausea,\nfatigue, myalgia, and fever ( Al Khames et al. 2021 ). Following the SARS-CoV-2 vaccination, there have been several"
+    },
+    {
+        "chunk_id": 17,
+        "page_number": 3,
+        "char_count": 491,
+        "text": "recorded occurrences of side effects; in addition, there have been a small number of deaths ( Varsavsky 2021). This has\nREVISED Amendments from Version 1\nIn this revised version, we made the following changes:\n1. Abstract: We included a summary of the adverse reactions to the vaccine, focusing on the most frequently reported side\neffects for a more comprehensive overview.\n2. Introduction: Updated data on the number of COVID-19 cases and deaths has been added to emphasize the severity of"
+    },
+    {
+        "chunk_id": 18,
+        "page_number": 3,
+        "char_count": 485,
+        "text": "the pandemic and the critical role of vaccination.\n3. Figures: We added Figure 8 to present factors associated with the side effects of COVID-19 vaccines, offering a visual\nanalysis of these factors.\n4. Discussion Section: An assessment of precision (or reliability) has been incorporated to address the consistency and\naccuracy of the findings.\n5. Review Process: We added the number of reviewers who screened each record and clarified whether the reports were\nindependently assessed."
+    },
+    {
+        "chunk_id": 19,
+        "page_number": 3,
+        "char_count": 337,
+        "text": "independently assessed.\nFor your reference, I have attached a Word document containing the updated text and a summary of the revisions. Please let\nme know if any further changes are required.\nAny further responses from the reviewers can be found at the end of the article\nPage 3 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 20,
+        "page_number": 4,
+        "char_count": 440,
+        "text": "been recorded with COVID-19 vaccinations, and it has been observed in people with pre-existing health conditions like\ndiabetes and high blood pressure, as well as people who have had allergic reactions to the vaccine. The extent to which\nthey are linked to vaccines, however, is unknown and under investigation ( Hussien 2019).\nIn this systematic review, we aim to make reference to the wide range of possible reactions that can occur after"
+    },
+    {
+        "chunk_id": 21,
+        "page_number": 4,
+        "char_count": 468,
+        "text": "vaccinations, so that healthcare providers can better understand these patients. The purpose of this scoping systematic\nreview is to summarize and integrate the results of studies on the side effects of the COVID-19 vaccination and then\ndetermine the gaps in these studies. This paper is organized in the following manner: Section 1 is an introduction to\nCOVID-19 viruses and vaccination, Section 2 is Background, section 3 is the methods, Section 4 is a review of the"
+    },
+    {
+        "chunk_id": 22,
+        "page_number": 4,
+        "char_count": 489,
+        "text": "Conducted Studies, Section 5 the results, section 6 discusses the results & gaps in the literature studies, section 7\nconcludes the most important points of this paper and section 8 represent study strengths and limitations.\nReview question\nWhat are the rates of side effects of COVID-19 vaccines, and which symptoms are the most common?\nBackground\nA brief overview of the vaccine\nA vaccine is a biologics that provides Active-Adaptive immunity against a particular disease. In vaccination"
+    },
+    {
+        "chunk_id": 23,
+        "page_number": 4,
+        "char_count": 476,
+        "text": "development, the micro-organisms that cause the disease are utilized in either attenuated or killed form or involve using\ntheir toxins or surface proteins. in order to activate the immunological system against foreign bodies, Vaccines are\nadministered nasally, orally, or by injection (intramuscularly, subcutaneously, or intradermally) ( Dai et al. 2019 ). To\ndevelop immunity, the body produces antibodies (immunoglobulins) against microorganisms, thus generating the body’s"
+    },
+    {
+        "chunk_id": 24,
+        "page_number": 4,
+        "char_count": 441,
+        "text": "defense mechanism. The antibodies produced by the immune system in response to re-exposure to the same microor-\nganism prevent or lower disease severity ( WHO 2020; Dai et al. 2019 ).\nCause of side effects\nAny unwanted and unintended or harmful reactions following the administration of a medicine, vaccine, or combination\nof vaccinations are known as adverse reactions. It may be a known adverse event or previously unrecognized ( Salisbury"
+    },
+    {
+        "chunk_id": 25,
+        "page_number": 4,
+        "char_count": 475,
+        "text": "et al. 2006 ). The COVID-19 vaccinations contain genetic blueprints for producing spike (S) proteins that sit on the\ncoronavirus’s surface and allow it to enter human cells. Upon receiving these instructions, human cells produce copies of\nthe spike (S) protein. In fact, since cells only produce a portion of the virus and not the whole pathogen, we are not\ninfected. While foreign spikes cannot cause disease, they can activate the immune system exactly as it is supposed to"
+    },
+    {
+        "chunk_id": 26,
+        "page_number": 4,
+        "char_count": 468,
+        "text": "do. As a result of the strong immune response triggered by vaccines, a wide range of symptoms can be triggered,\nincluding fever, fatigue, chills, inflammation, and reactions at the injection site. The innate immune system response to\nthe COVID-19 vaccine causes the reactions ( Marsa 2021).\nCOVID-19 Vaccines: Types and mechanism of action\nMessenger RNA\nThese vaccines involve using synthetically manufactured Messenger RNA (mRNA), that infects host cells and produces"
+    },
+    {
+        "chunk_id": 27,
+        "page_number": 4,
+        "char_count": 461,
+        "text": "a component of the spike protein. After the body degrades it, the protein triggers the production of antibodies. These\nimmunoglobulins (antibodies) prepare the body to deal with any infection in the future with a minimal risk of side effects.\nThis mechanism is used by the Pfizer and Moderna vaccines ( CDC 2021a ). The BNT162b2 developed by Pfizer/\nBioNTech produces an immunological response by eliciting IgG, IgA, CD8+ cells, or CD4+ cells, whereas mRNA-1273"
+    },
+    {
+        "chunk_id": 28,
+        "page_number": 4,
+        "char_count": 451,
+        "text": "developed by Moderna stimulates CD8 T cells ( Goyal et al. 2021 ).\nViral vector-based vaccines\nThey are altered versions of a virus belonging to a different genus that is utilized as a vector. Through its interaction\nwith immune cells, it helps them recognize and outwit pathogenic viruses. The immune cells of the body recognize the\npresence of foreign antigens as soon as they are injected into the body, and activate an immune response by releasing"
+    },
+    {
+        "chunk_id": 29,
+        "page_number": 4,
+        "char_count": 483,
+        "text": "antibody-producing B cells and T cells that search down infected cells and destroy them. T cells function by examining\nthe storage of proteins that are expressed on the cell ’s surfaces. When they encounter a foreign protein, they trigger an\nimmune response against the cell storing it because they are able to identify the body ’s own proteins as “self” (WHO\n2021a). This mechanism is used by Janssen/Johnson & Johnson, Sputnik V, and AstraZeneca vaccines ( CDC 2021b).\nPage 4 of 28"
+    },
+    {
+        "chunk_id": 30,
+        "page_number": 4,
+        "char_count": 65,
+        "text": "Page 4 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 31,
+        "page_number": 5,
+        "char_count": 443,
+        "text": "Table 1. A comparison of the COVID-19 vaccines ( Vaccine Characteristics, 2023 ; COVID-19 vaccine, 2023 ; Covaxin COVID-19 vaccine: What to know about side effects,\n2023; Tavilani et al. 2021 ).\nModerna Pfizer-BioNTech AstraZeneca Sinopharm Bharat Biotech\nType of vaccine messenger ribonucleic\nacids (mRNA) vaccine\nmessenger ribonucleic\nacids (mRNA) vaccine\nAdenovirus Viral vector vaccine Inactivated Virus Vaccines Inactivated Virus Vaccines"
+    },
+    {
+        "chunk_id": 32,
+        "page_number": 5,
+        "char_count": 486,
+        "text": "Adenovirus Viral vector vaccine Inactivated Virus Vaccines Inactivated Virus Vaccines\nOther names mRNA-1273 BNT162b2, Comirnaty AZD1222 (ChAdOx1) BBIP-CorV Covaxin (BBV152)\nManufactured in Spain Germany Sweden China India\nApproval World Health\nOrganization (WHO), Food\nand Drug Administration\n(FDA), European\nMedicines Agency (EMA).\nWorld Health\nOrganization (WHO), Food\nand Drug Administration\n(FDA), European\nMedicines Agency (EMA).\nWorld Health Organization\n(WHO), European Medicines"
+    },
+    {
+        "chunk_id": 33,
+        "page_number": 5,
+        "char_count": 491,
+        "text": "(FDA), European\nMedicines Agency (EMA).\nWorld Health Organization\n(WHO), European Medicines\nAgency (EMA).\nWorld Health\nOrganization (WHO), Food\nand Drug Administration\n(FDA), European\nMedicines Agency (EMA).\nWorld Health\nOrganization (WHO),\nAge groups Adults (FDA), 6 Years and\nup (EMA)\n5 Years and up 18 Years and up 18 Years and up 18 Years and up\nStorage stored for 30 days\nbetween 2°C and 8°C.\nstored for 6 months\nat − 70 °C. Undiluted vials\ncan be stored at room\ntemperature for no more"
+    },
+    {
+        "chunk_id": 34,
+        "page_number": 5,
+        "char_count": 495,
+        "text": "stored for 6 months\nat − 70 °C. Undiluted vials\ncan be stored at room\ntemperature for no more\nthan 2 h.\nStore in a refrigerator (2 – 8 °C).\nDo not freeze. Preserve the\nvials from light.\nStore in a refrigerator\nbetween 2 °C and 8 °C.\nStored between 2°C and\n8°C for up to 6 hours.\nNumber of\ndoses\n2 shots, given 28 days\napart.\n2 shots, given 21 days\napart.\n2 shots, given 28 days apart 2 shots, given 21 days\napart\n2 shots, given 28 days\napart\nEffectiveness 94.5% in preventing\nCOVID-19 infection."
+    },
+    {
+        "chunk_id": 35,
+        "page_number": 5,
+        "char_count": 491,
+        "text": "apart\n2 shots, given 28 days\napart\nEffectiveness 94.5% in preventing\nCOVID-19 infection.\n95% in preventing\nCOVID-19 infection.\n72% in preventing COVID-19\ninfection.\n79% in preventing\nCOVID-19 infection.\n78% in preventing\nCOVID-19 infection.\nWhen you\nshouldn’t get the\nvaccine\n1. Have a severe allergic\nreaction after a\nprevious dose of the\nvaccine.\n2. Individuals who\ndeveloped\nmyocarditis or\npericarditis following\nthe first dose of\nvaccine.\n3. Have a severe allergic\nreaction to any of the"
+    },
+    {
+        "chunk_id": 36,
+        "page_number": 5,
+        "char_count": 481,
+        "text": "pericarditis following\nthe first dose of\nvaccine.\n3. Have a severe allergic\nreaction to any of the\ningredients.\n1. Have a severe allergic\nreaction to any of the\ningredients.\n2. Anyone with a fever\n(body temperature\nover 38.5°C).\n1. Have a severe allergic\nreaction to any of the\ningredients.\n2. Individuals who have\nhad Thrombosis with\nthrombocytopenia (TTS)\nafter the first dose.\n1. Have anaphylaxis to\nany of the\ningredients.\n2. Anyone with a fever\n(body temperature\nover 38.5°C)."
+    },
+    {
+        "chunk_id": 37,
+        "page_number": 5,
+        "char_count": 326,
+        "text": "any of the\ningredients.\n2. Anyone with a fever\n(body temperature\nover 38.5°C).\n1. Have anaphylaxis to\nany of the\ningredients.\n2. Cases with acute PCR-\nconfirmed COVID-19.\n3. Anyone with a fever\n(body temperature\nover 38.5°C).\n4. People with bleeding\ndisorders.\nPage 5 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 38,
+        "page_number": 6,
+        "char_count": 490,
+        "text": "Table 1. Continued\nModerna Pfizer-BioNTech AstraZeneca Sinopharm Bharat Biotech\nCommon side\neffects\n1. Chills\n2. Tiredness\n3. Headache\n4. Pain (at the injection\nsite)\n5. Swelling\n6. Readiness (at the\ninjection site).\nOther side effects listed in\nWHO: are muscle and joint\npain, vomiting, fever, and a\nremote chance of severe\nallergic reactions.\n1. Chills\n2. Tiredness\n3. Headache\n4. Pain (at the injection\nsite)\n5. Swelling\n6. Readiness (at the\ninjection site).\nOther side effects listed in"
+    },
+    {
+        "chunk_id": 39,
+        "page_number": 6,
+        "char_count": 492,
+        "text": "site)\n5. Swelling\n6. Readiness (at the\ninjection site).\nOther side effects listed in\nWHO: are muscle and joint\npain, feeling unwell,\nswollen lymph nodes, non-\nsevere allergic reactions,\nand severe allergic\nreactions.\n1. Tiredness\n2. Headache\n3. Nausea\n4. Pain, Readiness, Bruising,\nor Warmth at the injection\nsite\n5. Vomiting\n6. Chills\nOther side effects listed by WHO:\nare joint pain, fever, diarrhea,\nmuscle ache, and a remote\nchance of Guillain-Barre\nsyndrome (GBS).\n1. Pain, Swelling, and"
+    },
+    {
+        "chunk_id": 40,
+        "page_number": 6,
+        "char_count": 491,
+        "text": "muscle ache, and a remote\nchance of Guillain-Barre\nsyndrome (GBS).\n1. Pain, Swelling, and\nReadiness at the\ninjection site.\n2. Fatigue\n3. Headache\n4. Fever or Chills\n1. Pain, Swelling, or both\nat the injection site.\n2. Fever\n3. Irritability\n4. Headache\nOther side effects listed in\nWHO: a remote chance of\nsevere allergic reactions.\nCan this vaccine\nbe ‘Mixed and\nmatched ‘with\nother\nVaccinations\nMixing COVID-19 vaccines\nis only allowed for booster\nshots.\n1. Based on the\navailability of the"
+    },
+    {
+        "chunk_id": 41,
+        "page_number": 6,
+        "char_count": 481,
+        "text": "Mixing COVID-19 vaccines\nis only allowed for booster\nshots.\n1. Based on the\navailability of the\nproduct, either of the\nWHO EUL COVID-19\nvectored vaccinations\n(Janssen or\nAstraZeneca\nVaxzervria/\nCOVISHIELD) may be\nused as a second dose\nafter a first dose of\nthe Moderna vaccine.\n2. A second dose of the\nModerna vaccination\nmay be given\nfollowing any of the\nWHO COVID-19\ninactivated\nvaccinations\n(Sinopharm, Sinovac,\nBharat) or vectored\nvaccinations (Janssen\nVaxzervria/\nCOVISHIELD)."
+    },
+    {
+        "chunk_id": 42,
+        "page_number": 6,
+        "char_count": 496,
+        "text": "(Sinopharm, Sinovac,\nBharat) or vectored\nvaccinations (Janssen\nVaxzervria/\nCOVISHIELD).\n3. A booster dose of\nModerna can be given\nafter any other\nCOVID-19 vaccine.\nMixing COVID-19 vaccines\nis only allowed for booster\nshots.\n1. Based on the\navailability of the\nproduct, either of the\nWHO EUL COVID-19\nvectored vaccinations\n(Janssen or\nAstraZeneca\nVaxzervria/\nCOVISHIELD) may be\nused as a second dose\nafter a first dose of\nthe Pfizer vaccine.\n2. A second dose of the\nPfizer vaccination\nmay be given"
+    },
+    {
+        "chunk_id": 43,
+        "page_number": 6,
+        "char_count": 488,
+        "text": "after a first dose of\nthe Pfizer vaccine.\n2. A second dose of the\nPfizer vaccination\nmay be given\nfollowing any of the\nWHO COVID-19\ninactivated\nvaccinations\n(Sinopharm, Sinovac,\nBharat) or vectored\nvaccinations (Janssen\nVaxzervria/\nCOVISHIELD).\n3. A booster dose of\nPfizer can be given\nafter any other\nCOVID-19 vaccine.\nMixing COVID-19 vaccines is\nonly allowed for booster shots.\n1. Based on the availability of\nthe product, either of the\nmRNA COVID-19 vaccines\n(Pfizer or Moderna) may be"
+    },
+    {
+        "chunk_id": 44,
+        "page_number": 6,
+        "char_count": 491,
+        "text": "the product, either of the\nmRNA COVID-19 vaccines\n(Pfizer or Moderna) may be\nused as a second dose after\na first dose of the\nAstraZeneca vaccine.\n2. A second dose of the Astra-\nZeneca vaccination may be\ngiven following any of the\nWHO COVID-19-inactivated\nvaccinations (Sinopharm,\nSinovac, or Bharat).\nMixing COVID-19 vaccines\nis only allowed for booster\nshots.\n1. Based on the\navailability of the\nproduct, Either of the\nWHO EUL COVID-19\nmRNA vaccines (Pfizer\nor Moderna) or\nvectored vaccines"
+    },
+    {
+        "chunk_id": 45,
+        "page_number": 6,
+        "char_count": 490,
+        "text": "product, Either of the\nWHO EUL COVID-19\nmRNA vaccines (Pfizer\nor Moderna) or\nvectored vaccines\n(AstraZeneca\nVaxzervria/\nCOVISHIELD or\nJanssen) may be used\nas a second dose after\na first dose of the\nSinopharm vaccine.\nMixing COVID-19 vaccines\nis only allowed for booster\nshots.\n1. Based on the\navailability of the\nproduct, Either of the\nWHO EUL COVID-19\nmRNA vaccines (Pfizer\nor Moderna) or\nvectored vaccines\n(AstraZeneca\nVaxzervria/\nCOVISHIELD or\nJanssen) may be used\nas a second dose after"
+    },
+    {
+        "chunk_id": 46,
+        "page_number": 6,
+        "char_count": 184,
+        "text": "(AstraZeneca\nVaxzervria/\nCOVISHIELD or\nJanssen) may be used\nas a second dose after\na first dose of the\nBharat vaccine.\nPage 6 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 47,
+        "page_number": 7,
+        "char_count": 392,
+        "text": "Whole virus or inactivated virus vaccines\nAn age-old and common vaccine, there are currently two types: live-attenuated and inactivated. Chemicals, heat, and\nradiation are used to destroy the virus ’s genetic material in order to prepare inactivated vaccinations. Because these\nvaccines are versions of weak natural pathogens, the immune system activates a wide range of defense mechanisms in"
+    },
+    {
+        "chunk_id": 48,
+        "page_number": 7,
+        "char_count": 471,
+        "text": "response, including killer T cells that destroy the infected cells, helper T cells that help produce antibodies, and\nantibodies-producing B cells that attack pathogens ( WHO 2021b). When they are introduced into the body, they induce\nantibody-mediated responses that are weak and relatively short-lived. Therefore, they are administered along with an\nadjuvant, and often booster doses are required. The live attenuated vaccines, in contrast, use a weakened version of the"
+    },
+    {
+        "chunk_id": 49,
+        "page_number": 7,
+        "char_count": 453,
+        "text": "virus inside the body. These viruses can grow and reproduce once they are inside the body, yet they do not cause\nsymptomatic disease in the host ( NIAID 2021). This inactivated mechanism is used by Sinopharm, Covaxin, Sinovac,\nand Corovac vaccines. The live attenuated mechanism is used in the Covivac vaccine ( Shahzamani et al. 2021 ).\nTable 1 depicts a comparison of the COVID-19 vaccines that were included in the research studies; moreover.\nMethods"
+    },
+    {
+        "chunk_id": 50,
+        "page_number": 7,
+        "char_count": 450,
+        "text": "Methods\nThe PRISMA guidelines for systematic reviews and meta-analyses were followed in this research ( Moher et al. &\nPRISMA Group*. 2009 ). A structured and transparent approach was implemented to identify, select, and synthesize\nrelevant studies on the side effects of COVID-19 vaccines.\nEligibility criteria\nInclusion criteria\nStudies were included in the review if they specifically examined COVID-19 vaccines and reported on any side effects or"
+    },
+    {
+        "chunk_id": 51,
+        "page_number": 7,
+        "char_count": 491,
+        "text": "adverse reactions following vaccination. Only peer-reviewed articles that provided comprehensive data on the safety and\nefficacy of vaccines were considered.\nExclusion criteria\nThe following types of studies were excluded from the review:\n Abstracts, preprints, and grey literature, as these often lack the peer-review process and comprehensive data\nrequired for rigorous analysis.\n Book chapters, non-English studies, case reports, and studies unrelated to the topic were also excluded to"
+    },
+    {
+        "chunk_id": 52,
+        "page_number": 7,
+        "char_count": 462,
+        "text": "maintain focus on peer-reviewed, original research directly relevant to the review ’s objectives.\nScreening process\nRecords were meticulously screened by reviewers to ensure studies met inclusion criteria, with titles and abstracts\nassessed initially. Discrepancies were resolved collaboratively, and full-text articles were retrieved for potentially eligible\nstudies. Ayad Abbas and Athraa Mohammed supervised and reviewed, while Hind Monadhel handled analysis,"
+    },
+    {
+        "chunk_id": 53,
+        "page_number": 7,
+        "char_count": 423,
+        "text": "resources, visualization, draft preparation, and editing.\nInformation sources\nWe searched through the databases of IEEE Xplore, ScienceDirect, the New England Journal of Medicine, Google\nScholar, and PubMed to find studies about COVID-19 and the side effects of COVID-19 vaccinations. from 2019 to 2022\nto select eligible research publications. The searches were performed without time filters, and backward snowballing was"
+    },
+    {
+        "chunk_id": 54,
+        "page_number": 7,
+        "char_count": 453,
+        "text": "used to find articles that weren ’t found in the initial search by screening relevant studies and their references ( Figure 4).\nThese databases had been selected based on several collected journals & conferences about emerging topics, including\nthe Coronavirus disease (COVID-19) and the side effects related to the COVID-19 vaccine.\nSearch strategy\nOur keyword search will be based on the following combination of Medical Subject Headings: (COVID-19 OR"
+    },
+    {
+        "chunk_id": 55,
+        "page_number": 7,
+        "char_count": 492,
+        "text": "SARS-CoV-2 OR 2019-nCoV OR coronavirus OR MERS-CoV OR SARS-CoV) AND (Vaccines OR Vaccination\nOR COVID-19 vaccine OR SARS-CoV-2 vaccine OR MERS-CoV vaccine OR mRNA vaccine OR Moderna vaccine\nOR Pfizer-BioNTech COVID-19 vaccine OR mRNA-1273 vaccine OR ChAdOx1covid-19 vaccine OR AZ1222\ncovid-19 vaccine OR Johnson & Johnson covid-19 vaccination OR Ad26 covid-19 vaccine OR BIBP-CorV vaccine\nOR BIBP vaccine OR CDC-approved COVID-19 vaccines OR Sinopharm vaccine OR AstraZeneca-Oxford vaccine OR"
+    },
+    {
+        "chunk_id": 56,
+        "page_number": 7,
+        "char_count": 65,
+        "text": "Page 7 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 57,
+        "page_number": 8,
+        "char_count": 411,
+        "text": "BNT162b2 COVID-19 Vaccine) AND (Toxicity OR harmful impact OR side effects OR adverse events OR negative\nreactions) as shown in Table 2.\nClassification of research articles\nThis section classifies articles according to criteria such as the year of publication and publishing house or journal.\nFigure 1 below shows the trend of article publications in various databases (i.e., IEEE Xplore, ScienceDirect, the New"
+    },
+    {
+        "chunk_id": 58,
+        "page_number": 8,
+        "char_count": 411,
+        "text": "England Journal of Medicine, Google Scholar, and PubMed) from 2019 to 2022. Annual increases in publication rates are\nobserved. Therefore, COVID-19 vaccines have in recent years gained increasing interest among researchers. Thus,\nfurther studies are expected to be conducted in the future.\nFigure 2 illustrates how research articles are distributed based on their orientation: survey or review papers, learning-"
+    },
+    {
+        "chunk_id": 59,
+        "page_number": 8,
+        "char_count": 491,
+        "text": "based studies, and statistical and analytical studies. It is noticeable that a large portion of the papers is statistical since\nour paper attempts to investigate the side effects of vaccines. In the systematic literature review, there are three categories\nof research studies: survey and review studies, studies that apply machine learning, and studies that use statistics and\nanalytical methods. The New England Journal of Medicine has published 14 articles in the statistics and analytical"
+    },
+    {
+        "chunk_id": 60,
+        "page_number": 8,
+        "char_count": 492,
+        "text": "Table 2. Search strategy.\nSearch items The term\n1 COVID-19\n2 SARS-CoV-2\n3 2019-nCoV\n4 coronavirus\n5 MERS-CoV\n6 SARS-CoV\n7 Vaccines\n8 Vaccination\n9 COVID-19 vaccine\n10 SARS-CoV-2 vaccine\n11 MERS-CoV vaccine\n12 mRNA vaccine\n13 Moderna vaccine\n14 Pfizer-BioNTech COVID-19 vaccine\n15 mRNA-1273 vaccine\n16 ChAdOx1covid-19 vaccine\n17 AZ1222 covid-19 vaccine\n18 Johnson & Johnson covid-19 vaccination\n19 Ad26 covid-19 vaccine\n20 BIBP-CorV vaccine\n21 BIBP vaccine\n22 OR CDC-approved COVID-19 vaccines"
+    },
+    {
+        "chunk_id": 61,
+        "page_number": 8,
+        "char_count": 330,
+        "text": "19 Ad26 covid-19 vaccine\n20 BIBP-CorV vaccine\n21 BIBP vaccine\n22 OR CDC-approved COVID-19 vaccines\n23 Sinopharm vaccine\n24 AstraZeneca-Oxford vaccine\n25 BNT162b2 COVID-19 Vaccine\n26 Toxicity\n27 Harmful impact\n28 Side effects\n29 Adverse events\n30 Negative reactions\nPage 8 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 62,
+        "page_number": 9,
+        "char_count": 494,
+        "text": "methods category. IEEE has published 12 articles. Two of them are survey and review studies, and the other 10 are about\nstatistics and analytical methods. In ScienceDirect 11 articles have been published as follows: survey and review studies\n(3), statistics & analytical studies (8). In Google Scholar and PubMed, 19 articles have been published as follows: survey\nand review studies (3), machine learning studies (4), and statistics and analytical studies (12).\nReview of the conducted studies"
+    },
+    {
+        "chunk_id": 63,
+        "page_number": 9,
+        "char_count": 447,
+        "text": "Review of the conducted studies\nTo gain a better understanding of COVID-19 vaccines and predict and analyze their side effects, several studies were\nconducted between 2020 and 2021. We highlight a few of these studies in this section, which presents the categories of\nrelevant research papers based on their classification (see Figure 4).\nPrediction of the COVID-19 vaccine that is associated with a higher percentage of side effects using machine"
+    },
+    {
+        "chunk_id": 64,
+        "page_number": 9,
+        "char_count": 480,
+        "text": "learning methods In (Abdulrahman et al. 2021 ) demonstrate how the clustering techniques utilized in the instance of\nCOVID-19 vaccine side effects datasets help to give accuracy for clustering the COVID-19 vaccine side effects datasets.\nUsing the WEKA tool, this paper compared four clustering techniques. It also describes the datasets in terms of multiple-\nprecision factors, cluster case, number of iterations, and time, the findings of these algorithms, the clustering methods"
+    },
+    {
+        "chunk_id": 65,
+        "page_number": 9,
+        "char_count": 406,
+        "text": "employed, and their accuracy. The clustering algorithm k-means was discovered to be frequently used in several types of\nCOVID-19 vaccine side effects datasets with great accuracy.\nPrediction of side effects associated with the COVID-19 vaccines and their severity using machine learning\nmethods In (Ahamad 2020) the authors aim to categorize and define patients at risk of such responses using patient data"
+    },
+    {
+        "chunk_id": 66,
+        "page_number": 9,
+        "char_count": 498,
+        "text": "and discover probable common reasons for such side effects to find treatments that lower patient risk. They examined\npatient medical records and data on the impacts and consequences of immunization. The data was analyzed using a\n0\n5\n10\n15\n20\n25\n30\n2202120202029102\nNew England Journal of Medicine IEEE Direct Science Others\nFigure 1. Trends in publication among the five databases.\n0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\nNew England Journal of\nMedicine\nIEEE Direct Science Others\n0\n2\n33\n000\n4\n14\n10\n8\n12\n14\n12"
+    },
+    {
+        "chunk_id": 67,
+        "page_number": 9,
+        "char_count": 326,
+        "text": "16\n18\n20\nNew England Journal of\nMedicine\nIEEE Direct Science Others\n0\n2\n33\n000\n4\n14\n10\n8\n12\n14\n12\n11\n19\nSurvey and review papers Learning based studies Statistic and analytical studies Total\nFigure 2. Articles in the different categories of published journals.\nPage 9 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 68,
+        "page_number": 10,
+        "char_count": 470,
+        "text": "COVID-19 Side \nEffects Analysis \nMethods\nMachine \nLearning\nMethods\nSupervised\nClassification\nAlgorithms\nDT, RF, K-star, SVM, \nGBM. XGM, MLP, \nand LGBM\nRegressio\nn\nEnsemble \nMethods\nXGBoost\nClustring\nAlgorithm\ns\nK-means, \nHierarchical, \nExpection, \nMaximization, \nDensity-Based \nUnsupervised \nStatstical Methods\nInferential \nStatistics\nT-test, Anova, Chi-\nsquare test, Mann\nWhitney U-test, \nPearson's correlation\nDescriptive \nStatistics\nMean, \nMedian, \nStandrad\nDeviation"
+    },
+    {
+        "chunk_id": 69,
+        "page_number": 10,
+        "char_count": 361,
+        "text": "Whitney U-test, \nPearson's correlation\nDescriptive \nStatistics\nMean, \nMedian, \nStandrad\nDeviation\nFigure 4. Methods of determining the side effects of COVID-19 Vaccines.\nFigure 3. Flow diagram of the search for eligible studies on the side effects, safety, and toxicity of the\nCOVID-19 vaccine.\nPage 10 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 70,
+        "page_number": 11,
+        "char_count": 476,
+        "text": "collection of machine learning (ML) classification methods. In most cases, similar traits were shown to be closely\nconnected to negative patient reactions. They included prior infections, hospitalizations, and SARS-CoV-2 reinfection.\nMedical history-based ML classifiers also could determine which patients were most likely to receive a vaccination with\nno side effects reliably. In ( Hatmal et al. 2021 ) the authors evaluated the side effects and perceptions of the COVID-19"
+    },
+    {
+        "chunk_id": 71,
+        "page_number": 11,
+        "char_count": 482,
+        "text": "vaccines in Jordan. An online poll was distributed to Jordanians who had received any COVID-19 vaccines as part of a\ncross-sectional investigation. Data were statistically examined, and machine learning (ML) algorithms were utilized to\npredict the severity of side effects. Despite significant differences in the presence and severity of side effects among these\nvaccines, statistical analysis revealed that they provide comparable protection against COVID-19 infection. The current"
+    },
+    {
+        "chunk_id": 72,
+        "page_number": 11,
+        "char_count": 485,
+        "text": "paper confirmed that the CDC-approved COVID-19 vaccines are safe and that vaccination makes people feel safer.\nHowever, severe cases may necessitate additional medical care or perhaps hospitalization.\nTable 3 compares the results of studies based on machine learning techniques about the COVID-19 side effects.\nEvaluation of Machine Learning Models Eq. (1) was used to evaluate ML models by calculating their accuracies\n(Grandini et al. 2020 ).\nAccuracy ¼ TP þ TN\nTP þ TN þ FB þ FN (1)"
+    },
+    {
+        "chunk_id": 73,
+        "page_number": 11,
+        "char_count": 416,
+        "text": "(Grandini et al. 2020 ).\nAccuracy ¼ TP þ TN\nTP þ TN þ FB þ FN (1)\nA variety of statistical methods have been used to assess the side effects after vaccinations (Jayadevan 2021) aim to\nevaluate the initial reaction to the COVID-19 vaccine ’s first dosage and to investigate the range of post-vaccination\nsymptom profiles for different vaccinations. A cross-sectional online survey was conducted in India that included"
+    },
+    {
+        "chunk_id": 74,
+        "page_number": 11,
+        "char_count": 469,
+        "text": "questions about the immediate post-vaccination experience. Over a week, from January 29 to February 4, 5396 persons\nreplied to the poll. Overall, 65.9% of respondents said they had had one post-vaccination symptom. 79% of those who\nreported symptoms did so within the first 12 hours. 472 people reported COVID-19 out of 5396 (or 8.7%). Their symptom\nprofile was similar to those who had no prior experience. In ( El-Shitany 2021) the authors obtained their data using a"
+    },
+    {
+        "chunk_id": 75,
+        "page_number": 11,
+        "char_count": 467,
+        "text": "Google Form questionnaire (online survey). The results were based on the responses of 455 people, all of whom live in\nSaudi Arabia. After the first and second doses, the vaccine’s side effects were documented. The most common complaints\nwere injection site pain, headaches, flu-like symptoms, fever, and tiredness. Fast heartbeat, generalized aches, difficulty\nbreathing, joint discomfort, cold, and exhaustion whereas some of the less common side effects. Lymph node"
+    },
+    {
+        "chunk_id": 76,
+        "page_number": 11,
+        "char_count": 446,
+        "text": "enlargement and pain, as well as Bell ’s palsy, are uncommon side effects. Recipients who had previously been infected\nreported more difficulty breathing than those who had never been infected with the coronavirus.\nZahid (2021) looked into the most common side effects associated with these four vaccines ’ first and second doses.\n311 people who had two doses of one of these four vaccinations completed an online questionnaire, which was used to"
+    },
+    {
+        "chunk_id": 77,
+        "page_number": 11,
+        "char_count": 494,
+        "text": "collect data. The findings of this paper demonstrated that the second dose of the vaccine caused higher side effects,\nindependent of the vaccine ’s identification. Overall, vaccination recipients (Sinopharm) experienced the fewest side\neffects among the four vaccines examined. The most important conclusion of the paper is that the post-vaccination side\neffects of the first and second doses were modest and predictable, with no hospitalizations; this information can help\nreduce vaccine fear."
+    },
+    {
+        "chunk_id": 78,
+        "page_number": 11,
+        "char_count": 495,
+        "text": "reduce vaccine fear.\nAs for comparing the side effects of the COVID-19 vaccines (Andrzejczak-Grządko et al. 2021 ) compared the\nAstraZeneca and Pfizer vaccines’ side effects. The survey results suggest that side effects from the AstraZeneca vaccine’s\nfirst dose are more common than those from the Pfizer vaccine’s first and second doses. In this survey, most respondents\nreported at least one side effect after receiving the AstraZeneca and Pfizer vaccines, but these reactions were less common"
+    },
+    {
+        "chunk_id": 79,
+        "page_number": 11,
+        "char_count": 478,
+        "text": "after receiving the Pfizer vaccine. A survey was made available on the internet. It was done on patients who had been\nimmunized with Pfizer or AstraZeneca vaccines. The respondents were asked about the side effects of the vaccines after\nthe first and second doses. In (Almufty et al. 2021) the authors highlighted probable side effects from covid19 vaccines, a\ncomparison of the three COVID-19 vaccines now available in Iraq, and risk factors for severe side effects (Sinopharm,"
+    },
+    {
+        "chunk_id": 80,
+        "page_number": 11,
+        "char_count": 483,
+        "text": "AstraZeneca-Oxford, and Pfizer- BioNTech). A standardized questionnaire platform was used to collect information\nTable 3. Comparison of COVID-19 vaccines side effects based on ML.\nRef. No. Population Vaccine name Accuracy\nAbdulrahman et al. (2021) 3685 Pfizer-BioNTech 67%\nAhamad (2020) 2405 Pfizer, BioNTech, and the mRNA 89%\nHatmal et al. (2021) 2213 Sinopharm, AstraZeneca,\nPfizer-BioNTech, and other vaccines\n80%\nPage 11 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 81,
+        "page_number": 12,
+        "char_count": 395,
+        "text": "about the Iraqi people. The majority of the symptoms ranged from mild to moderate in severity. With P values less than\n0.0001, both residencies in Iraq’s Kurdistan Region and the AstraZeneca vaccine were statistically significant risk factors\nfor experiencing severe symptoms.\nIn regards to young age groups and side effects Alamer et al. (2021) looked into the early side effects of the Pfizer-"
+    },
+    {
+        "chunk_id": 82,
+        "page_number": 12,
+        "char_count": 405,
+        "text": "BioNTech (BNT162b2) mRNA vaccine in Saudi Arabian youngsters aged 12 to 18. A cross-sectional study using a self-\nadministered online survey was done to examine the side effects in children in this age range after receiving one or two\ndoses of the Pfizer-BioNTech (BNT162b2) mRNA vaccine. After vaccination, general and demographic information\nwas acquired, and vaccine-related side effects were examined."
+    },
+    {
+        "chunk_id": 83,
+        "page_number": 12,
+        "char_count": 425,
+        "text": "was acquired, and vaccine-related side effects were examined.\nAs the safety assessment of the COVID-19 vaccines is necessary, in Dziedzic et al. (2021). The goal was to see if the\nChAdOx1 n-COV-19 vaccine was safe in terms of systemic and local side effects on patients 48 hours after injection. This\npaper report has three (3) particular aims. First, the paper report assesses and analyzes the safety of the first and second"
+    },
+    {
+        "chunk_id": 84,
+        "page_number": 12,
+        "char_count": 453,
+        "text": "doses of the ChAdOx1 n-COV-19 vaccinations 48 hours after administration. Second, the paper examines the side effects\nof the ChAdOx1 n-COV-19 vaccination among people younger than 40 years and people older than 40 years following\ndelivery over a two-day (48-hour) period to evaluate and compare the vaccine ’s safety by age and sex.\nTo analyze the side effects from different aspects in Azimi et al. (2021), the authors aimed to determine the frequency,"
+    },
+    {
+        "chunk_id": 85,
+        "page_number": 12,
+        "char_count": 457,
+        "text": "intensity, and degree of side effects linked with the COVID-19 vaccination (ChAdOx1 nCoV-19 vaccine or AstraZeneca)\namong Kabul University of Medical Sciences employees. A retrospective observational, interview-based study was\nundertaken among the Kabul University of Medical Science ’s faculty and instructors in Kabul, Afghanistan, from April\n4 to April 20, 2021, to examine the COVID-19 vaccine ’s side responses (ChAdOx1 nCoV-19 vaccine or AstraZeneca)."
+    },
+    {
+        "chunk_id": 86,
+        "page_number": 12,
+        "char_count": 465,
+        "text": "Participants were questioned after the first AstraZeneca vaccination dosage was given out. They were instructed to\nreport any negative reactions to the vaccination within 8 – 10 days of getting it. Klugar et al. (2021) aimed to assess\nthe post-vaccination side effects of the various vaccines approved in Germany. An online questionnaire that has been\nvalidated and evaluated for a priori dependability was used in a cross-sectional survey. Demographic information,"
+    },
+    {
+        "chunk_id": 87,
+        "page_number": 12,
+        "char_count": 470,
+        "text": "medical and COVID-19-related anamneses, and local, systemic, oral, and skin-related side effects following COVID-19\nimmunization were all asked about in the survey. Additionally, ( Riad et al. 2021 ) conducted a cross-sectional survey-\nbased study in the Czech Republic to gather data on the COVID-19 vaccine’s side effects among healthcare workers. The\nresearchers used a validated questionnaire containing twenty-eight multiple-choice items about demographics, medical"
+    },
+    {
+        "chunk_id": 88,
+        "page_number": 12,
+        "char_count": 416,
+        "text": "anamneses, COVID-19-related, and general, oral, and skin-related side effects. The most often used drugs with side\neffects were antihistamines, demanding a greater investigation. Overall, people who took two doses experienced more\nside effects. The manufacturer ’s figures matched the distribution of side effects among Czech healthcare personnel,\nespecially their link with younger age groups and the second dosage."
+    },
+    {
+        "chunk_id": 89,
+        "page_number": 12,
+        "char_count": 457,
+        "text": "especially their link with younger age groups and the second dosage.\nAlso, Kitagawa et al. (2022) conducted an online survey of people who had self-reported side effects after receiving two\ndoses of BNT162b2 or mRNA-1273 immunization. The incidence of adverse effects was investigated after each dose of\nvaccination. The incidence of side effects following the second dose of the BNT162b2 and mRNA-1273 vaccines was\ncompared using propensity score matching."
+    },
+    {
+        "chunk_id": 90,
+        "page_number": 12,
+        "char_count": 388,
+        "text": "compared using propensity score matching.\nTo examine the duration of side effects ’ appearances, a study conducted by Alhazmi et al. (2021) aimed to see how\nlong it took for post-vaccination adverse effects to appear. An online questionnaire was used to perform cross-sectional,\nretrospective research among COVID-19 immunization participants in Saudi Arabia. General and demographic data"
+    },
+    {
+        "chunk_id": 91,
+        "page_number": 12,
+        "char_count": 435,
+        "text": "were collected after at least one immunization dose, and vaccine-related side effects were examined. The side effects\ndescribed by their paper participants after receiving the Oxford-AstraZeneca and Pfizer-BioNTech vaccines are similar to\nthose reported in clinical trials, showing that both vaccines have safe profiles.\nIn terms of reducing vaccine hesitancy Saeed et al. (2021) aimed to gather data on Sinopharm ’s COVID-19 vaccine’s"
+    },
+    {
+        "chunk_id": 92,
+        "page_number": 12,
+        "char_count": 464,
+        "text": "side effects. Between January and April 2021, a cross-sectional survey paper was done to gather data on the effects of the\nCOVID-19 vaccine among UAE residents. The response of persons who refused to take the COVID-19 vaccine was\nreported, as demographic data, vaccination, and the reasons people did not want to take the COVID-19 vaccine. The post-\nvaccination side effects of the first and second doses were modest and predictable, with no hospitalizations; this"
+    },
+    {
+        "chunk_id": 93,
+        "page_number": 12,
+        "char_count": 493,
+        "text": "knowledge can assist in reducing vaccine fear. Moreover, Kadali et al. (2021) looked at the side effects of the mRNA\n1273 vaccine by going over all of the organ systems in depth an impartial online survey tool was used in a randomized,\ncross-sectional investigation to collect responses from HCWs. The bulk of the symptoms did not appear to be life-\nthreatening. This vaccination appears to have a better level of acceptability, despite the wide variety of self-reported\neffects.\nPage 12 of 28"
+    },
+    {
+        "chunk_id": 94,
+        "page_number": 12,
+        "char_count": 75,
+        "text": "effects.\nPage 12 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 95,
+        "page_number": 13,
+        "char_count": 484,
+        "text": "A\nRandomized, \nCross-\nSec/g415onal\n12%\nSurvey-based\nstudy\n18%\nA Retrospec/g415ve \nCross-Sec/g415onal Study\n29%\nA Cross-\nSec/g415onal\nStudy\n29%\nResearch \nAr/g415cle\n12%\nTYPES OF STUDIES\n0\n10\n20\n30\n40\n50\n60\n70\n80\n90\n[28] [29] [31] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44]\n20-30 30-40 40-50 50-60 60-70 70-80 80-90\n0\n10\n20\n30\n40\n50\n60\n70\n80\n90\n100\n[28] [29] [31] [33] [34] [35] [36] [37 ] [38] [39] [40] [41] [42] [43] [44]\nMale Female\n0\n10\n20\n30\n40\n50\n60\n70\n80\n90\n100"
+    },
+    {
+        "chunk_id": 96,
+        "page_number": 13,
+        "char_count": 435,
+        "text": "Male Female\n0\n10\n20\n30\n40\n50\n60\n70\n80\n90\n100\n[28] [29] [31] [33] [34] [35] [36] [37 ][ 3 8 ][ 3 9 ][ 4 0 ][ 4 1 ][ 4 2 ][ 4 3 ][ 4 4 ]\nTiredness Myalgia Fever Headache Injection site pain Joint pain Nausea Diarrhea\n(A)\n(B)\n(C)\n(D)\nFigure 5. A: The types of research studies that were evaluated. B: The incidence and severity of post-\nvaccination symptoms with age. C: Post-vaccination symptoms among males vs. females. D: Comparison of"
+    },
+    {
+        "chunk_id": 97,
+        "page_number": 13,
+        "char_count": 182,
+        "text": "the side effects and it can be seen that injection site pain ranked highest in side effects, followed by tiredness.\nPage 13 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 98,
+        "page_number": 14,
+        "char_count": 500,
+        "text": "Table 4. Post-vaccination symptoms percentage of COVID-19 vaccine based on a statistical approach.\nRef. No. Tiredness Myalgia Fever Headache Injection\nsite\npain\nJoint pain Nausea Diarrhea\nJayadevan (2021) 45% 44% 34% 28% 27% 12% 8% 3%\nZahid (2021) - - - 32% 43% - - -\nAndrzejczak-Grządko et al. (2021) 60.9% - 55.6% 56.4% 52.6% 50.5 % 14/2.7% -\nAlmufty et al. (2021) 58.1% 46.2% 57.8% 40.4% 58% - - -\nAlamer et al. (2021) 65% - 49% 55% - - - -\nDziedzic et al. (2021) 45.8% 61.5% 56.3% 86% - - 51.5% -"
+    },
+    {
+        "chunk_id": 99,
+        "page_number": 14,
+        "char_count": 478,
+        "text": "Alamer et al. (2021) 65% - 49% 55% - - - -\nDziedzic et al. (2021) 45.8% 61.5% 56.3% 86% - - 51.5% -\nAzimi et al. (2021) 65.5% - 65% 45.5% - 46% 12.5% -\nKlugar et al. (2021) 53.6% - - 53.6% 75.6% 21.2% - -\nRiad et al. (2021) 62.2% - - 45.6% 89.8% - - -\nKitagawa et al. (2022) 38.5% - 38.5% 39% - 56% 7% 3.9\nAlhazmi et al. (2021) 83.5% - 57.5% 62% 85% - 29.5% -\nSaeed et al. (2021) 12.2% - - 9.6% 42.2% - - -\nHatmal et al. (2021) 58.20% 42.34% 37.37% 46.99% 53.45% - 18.79% 10.16%"
+    },
+    {
+        "chunk_id": 100,
+        "page_number": 14,
+        "char_count": 200,
+        "text": "Hatmal et al. (2021) 58.20% 42.34% 37.37% 46.99% 53.45% - 18.79% 10.16%\nKadali et al. (2021) 65.74% - 35.65% 59.26% - 24.77% 26.62% -\nPage 14 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 101,
+        "page_number": 15,
+        "char_count": 487,
+        "text": "Results\nAccording to the search strategy, 391 papers were identified. A total of 170 papers were screened for eligibility by full-\ntext review after titles and abstracts were screened. Following a thorough full-text screening, 114 papers were deemed\nunacceptable for the reasons listed in ( Figure 3 ). The remaining 17 papers ( Table 5 ) were included in this scoping\nsystematic review as they fulfilled the criteria specified. The majority of studies were designed as randomized cross-"
+    },
+    {
+        "chunk_id": 102,
+        "page_number": 15,
+        "char_count": 429,
+        "text": "sectional studies (n = 2), survey-based studies (n = 3), retrospective cross-sectional studies (n = 5), cross-sectional studies\n(n = 5), and research article studies (n = 2) ( Figure 5A).\nThe final analysis of the studies, included 38680 individuals who experienced at least 1 or more side effects were involved\nfrom twelve countries representing three regions of the world, representing as North America (n = 1), South & Western"
+    },
+    {
+        "chunk_id": 103,
+        "page_number": 15,
+        "char_count": 482,
+        "text": "Asia (n = 9), and Central Eastern European region (n=2). A detailed description of the studies ( Abdulrahman et al. 2021;\nAhamad, 2020; Ma’mon, 2021; Grandini et al. 2020 ; Jayadevan, 2021 ; El-Shitany, 2021; Zahid, 2021 ; Andrzejczak-\nGrządko et al. 2021; Almufty et al. 2021; Alamer et al. 2021; Dziedzic et al. 2021; Azimi et al. 2021; Klugar et al. 2021;\nRiad et al. 2021; Kitagawa et al. 2022; Alhazmi et al. 2021; Saeed et al. 2021; Kadali et al. 2021) is provided in Table 5."
+    },
+    {
+        "chunk_id": 104,
+        "page_number": 15,
+        "char_count": 457,
+        "text": "Among the Vaccine platforms included in the systematic review were DNA (2), inactivated (2), and mRNA (2). There\nwere seven (7) studies in which healthcare workers were the study population, while twelve (12) studies featured a\nmajority of female participants. Among the cases reported, most side effects were reported in women and age groups\nbetween 20 and 30 (Figure 5B & C). The max number of participants in Kitagawa’s study was around 12109 and the min"
+    },
+    {
+        "chunk_id": 105,
+        "page_number": 15,
+        "char_count": 389,
+        "text": "number of participants in Dziedzic ’s study was only 247 participants. Participants in the studies were all adults and\nadolescents aged 18 or older. Except for Alamer ’s study, participants were between 12 and 18 years old ( Table 5).\nLocal and systemic side effects\nLocal side effects were more prevalent than systemic side effects, and the reported side effects were significantly higher"
+    },
+    {
+        "chunk_id": 106,
+        "page_number": 15,
+        "char_count": 486,
+        "text": "among females than males. Most of participants, however, experienced mild and short-term side effects. Severe reactions\nor anaphylactic reactions may occur in rare cases. The most reported local and systemic side effects for the vaccines were\npain at the site of the injection and tiredness, respectively (Figure 5D). Adenovirus Viral vector COVID-19 vaccines had a\nhigher incidence of side effects than other COVID-19 vaccines in most of the studies. Max side effects of injection site"
+    },
+    {
+        "chunk_id": 107,
+        "page_number": 15,
+        "char_count": 463,
+        "text": "pain reported in Riad ’s study around 89.8%. Max side effects of Tiredness reported in Alhazmi ’s study was around\n83.5% (Table 4). It was reported in half of the studies that side effects lasted between 1-3 days.\nOral and skin side effects\nA total of 533 cases of oral and skin side effects have been reported in three studies following vaccination with\nCOVID-19. The most common oral side effects were vesicles (6.3%), bleeding gingiva (4.3%), oral paraesthesia"
+    },
+    {
+        "chunk_id": 108,
+        "page_number": 15,
+        "char_count": 499,
+        "text": "(2.2%), dysgeusia (2.4%), blisters (36%), and halitosis (25.4%) ( Figure 6). While rash and urticaria (other than at the\n0\n5\n10\n15\n20\n25\n30\n35\n40\n45\nVesicles\nbleeding gingiva\nhalitosis\noral paranesthesia\nswollen mucosa\nulcers\nTaste Disturbance\nWhite/Red Plaque\nXerostomia\nAngular Cheilitis\nBlisters\nOral Paraesthesia\nDysgeusia\nOral Ulcers\nXerostomia\nblisters\nHalitosis\nUlcers\nBleeding gingiva\nWhite/red plaque\nBurning gingiva\nAngular cheilitis\nTongue tingling\nTaste disturbance\nVesicles\nSwollen lips"
+    },
+    {
+        "chunk_id": 109,
+        "page_number": 15,
+        "char_count": 240,
+        "text": "Burning gingiva\nAngular cheilitis\nTongue tingling\nTaste disturbance\nVesicles\nSwollen lips\nXerostomia\n [39]  [37] [40]\nFigure 6. The most commonly reported oral side effects.\nPage 15 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 110,
+        "page_number": 16,
+        "char_count": 481,
+        "text": "site of the injection) were the most reported skin-related side effects ( Figure 7). Three-fourths (75.1%) of the oral side\neffects appeared within the first week following vaccination. The most affected sites for skin-related side effects were the\nupper limb, face, chest (trunk), lower limb, and back.\nFactors associated with side effects of COVID-19 vaccines\nThe association between patients’ medical histories and side effects was only looked at in some studies ( Ahamad 2020)."
+    },
+    {
+        "chunk_id": 111,
+        "page_number": 16,
+        "char_count": 481,
+        "text": "According to the results, patient medical histories are strongly correlated with the incidence of side effects, some of which\ncan be severe and even fatal. Patients with advanced age (71.47 years for deceased patients and 62.49 years for\nhospitalized patients), allergic conditions (19.53%), and those taking other medications (46.76%) are most likely to\nexperience side effects after vaccination, as well as those with a history of type II diabetes (3.75%), heart disease (2.08%),"
+    },
+    {
+        "chunk_id": 112,
+        "page_number": 16,
+        "char_count": 420,
+        "text": "hypertension (4.59%), or COVID-19 infection. Also, the study found that severe reactions are mostly associated with\nsymptoms such as hospitalization duration, headache, dyspnea (shortness of breath), fever/pyrexia, chills, fatigue/\ntiredness, dizziness, different kinds of pain, rash, and physical disability.\nIn addition, females were associated with higher D-dimer levels (4.4%, p-value = 0.05). In which six women who"
+    },
+    {
+        "chunk_id": 113,
+        "page_number": 16,
+        "char_count": 447,
+        "text": "received AstraZeneca vaccines, one of whom was over 50 years old, had elevated D-dimer levels, and three developed\npetechiae and hematomas. one of whom was hospitalized for thromboembolism treatment (Almufty et al. 2021). Figure 8\nillustrates the various factors associated with the side effects of COVID-19 vaccines.\n17\n4\n4\n6\n3\n28\n10\n9\n0 5 10 15 20 25 30\nRash\nUr/g415caria\nAngioedema\nRash\nSkin Erup/g415ons\nRash\nUr/g415caria\nOther\n [39] [37] [40]"
+    },
+    {
+        "chunk_id": 114,
+        "page_number": 16,
+        "char_count": 433,
+        "text": "Rash\nUr/g415caria\nAngioedema\nRash\nSkin Erup/g415ons\nRash\nUr/g415caria\nOther\n [39] [37] [40]\nFigure 7. The most commonly reported skin-related side effects.\n0 1 02 03 04 05 0\nAllergic Conditions\nOther Medications\nType II Diabetes\nHeart Disease\nHypertension\nD-dimer Levels (Female)\nPercentage\nFactor\nFigure 8. Factors associated with side effects of COVID-19 vaccines.\nPage 16 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 115,
+        "page_number": 17,
+        "char_count": 487,
+        "text": "Discussion\nVaccines play a vital role in reducing global rates of infections and diseases ( Lombard et al. 2007 ). The original\nassumption of vaccinations, dating back to the 11th century, was to expose a human to a small amount of disease to foster\nprotection and immunity against exposure to a larger amount of the same pathogen. This method was 1st recorded in\nChinese literature that ingesting a small amount of poison could prevent death from a larger dose of poison (Plotkin 2005)."
+    },
+    {
+        "chunk_id": 116,
+        "page_number": 17,
+        "char_count": 471,
+        "text": "Vaccines induce a strong immune-response that triggers a wide range of reactions, including fever, chills, fatigue,\ninflammation, and swelling at the site of injection ( Marsa 2023). An “adverse event following immunization” (AEFI) is\ndefined by the World Health Organization (WHO) as any unintended medical event that occurs after the vaccination, and\nwhich does not necessarily indicate a causal relationship with the vaccine. Symptoms, abnormal laboratory findings, or"
+    },
+    {
+        "chunk_id": 117,
+        "page_number": 17,
+        "char_count": 425,
+        "text": "diseases that are not desirable or unintended are called adverse events ( WHO 2023).\nA systematic evaluation of existing vaccination candidates was required to investigate their safety, effectiveness,\nimmunogenicity, undesired events, and limitations. The review was conducted by scanning online resources, and\n17 studies were ultimately chosen. Several types of vaccine candidates with different methods against the COVID-19"
+    },
+    {
+        "chunk_id": 118,
+        "page_number": 17,
+        "char_count": 439,
+        "text": "virus, including inactivated, mRNA-based, recombinant, and nanoparticle-based vaccines, are being developed and\nmarketed, according to our findings. Depending on data from the literature, we compared these vaccines in terms of side\neffects. We discovered that mRNA vaccines looked to be more effective, Adenovirus Viral vector COVID-19 vaccines\nhad a higher incidence of side effects, while inactivated vaccinations had fewer side effects."
+    },
+    {
+        "chunk_id": 119,
+        "page_number": 17,
+        "char_count": 437,
+        "text": "had a higher incidence of side effects, while inactivated vaccinations had fewer side effects.\nPain at the injection site was the most commonly reported side effect (59.1%; CI: 25.7% to 92.1%) , which conformed\nwith the Fact sheets for post-vaccine trials (Pfizer-BioNTech COVID-19 vaccine side effects, 2023; Moderna COVID-19\nvaccine side effects, 2023 ; Sinopharm COVID-19 vaccine side effects, 2023 ; AstraZeneca COVID-19 vaccine side"
+    },
+    {
+        "chunk_id": 120,
+        "page_number": 17,
+        "char_count": 474,
+        "text": "effects, 2023 ; Bharat Biotech COVID-19 vaccine side effects, 2023 ); localized pain has been the most common side\neffect in numerous other injectable vaccine trials conducted previously (Nichol et al. 1996). In addition, tiredness (57.5%;\nCI: 37.7% to 86.9%), headaches (39.7%; CI: 17.8% to 90.3%), and fever (54.4%; CI: 32.6% to 69.7%) were the most\ncommonly reported systemic side effects by the participants. In contrast, the other effects weren ’t much-repeated, but it"
+    },
+    {
+        "chunk_id": 121,
+        "page_number": 17,
+        "char_count": 389,
+        "text": "was individual states ( Figure 6D).\nAlthough there were no serious side effects reported in most of the studies, facial paralysis and Bell ’s palsy were also\nobserved in a few cases, which resulted in life-threatening adverse reactions ( El-Shitany 2021 ; Ahamad 2020 ).\nAdditionally, tachycardia, lymphadenopathy, and anaphylaxis were reported in a few patients (Riad et al. 2021; Almufty"
+    },
+    {
+        "chunk_id": 122,
+        "page_number": 17,
+        "char_count": 486,
+        "text": "et al. 2021 ; Dziedzic et al. 2021 ). Anaphylaxis (an acute allergic reaction) following vaccinations can occur due to\nvaccination antigens, preservatives, and stabilizers in the vaccine formulation, or residual nonhuman proteins (Kim et al.\n2021).\nAmong the included studies, three studies reported the incidence of oral and skin-related side effects. The most common\noral side effects were vesicles (6.3%), bleeding gingiva (4.3%), oral paraesthesia (2.2%), dysgeusia (2.4%), blisters"
+    },
+    {
+        "chunk_id": 123,
+        "page_number": 17,
+        "char_count": 466,
+        "text": "(36%), and halitosis (25.4%). While rash and urticaria (other than at the site of the injection) were the most reported skin-\nrelated side effects. There was a higher incidence of oral reactions in those who received only one vaccine dose (mRNA or\nviral vector-Based) and young age participants. While the prevalence was similar among males & females.\nSkin-related side effects were more prevalent among females (22.6%), those who received two vaccine doses (mRNA or"
+    },
+    {
+        "chunk_id": 124,
+        "page_number": 17,
+        "char_count": 491,
+        "text": "viral vector-Based), and participants aged ≤ 43 > 43 years. In general, the viral vector-Based vaccines were associated\nwith the highest risk of oral and skin-related side effects, while an mRNA vaccine is associated with the lowest. Three-\nfourths (75.1%) of the oral side effects appeared within the first week following vaccination. The most affected sites for\nskin-related side effects were the upper limb, face, chest (trunk), lower limb, and back. As for oral-related side effects, the"
+    },
+    {
+        "chunk_id": 125,
+        "page_number": 17,
+        "char_count": 453,
+        "text": "most commonly affected areas were the lips, labial, tongue, palate, and gingiva.\nMost studies didn’t report delayed side effects, but Alhazmi’s study showed that delayed side effects were reported in 1%\nof the participants, with onset occurring at ≥ three days after vaccination ( Alhazmi et al. 2021) . It was observed that, in\ngeneral, these reactions began on the first day after getting a vaccination, regardless of the dosage and most of these side"
+    },
+    {
+        "chunk_id": 126,
+        "page_number": 17,
+        "char_count": 462,
+        "text": "effects resolve within one-three days. Fewer than 1% of studies participants required hospitalization. We discovered that\nmRNA vaccines looked to be more effective, while inactivated vaccinations had fewer side effects. The vaccine ’s\neffectiveness far surpasses any concerns regarding side effects.\nGaps and risk of bias in included studies\nFor studies that are based on the machine learning approach: Because there was no input data to train from and the model"
+    },
+    {
+        "chunk_id": 127,
+        "page_number": 17,
+        "char_count": 183,
+        "text": "was learning from raw data without any prior knowledge, utilizing unsupervised learning in Abdulrahman et al. (2021)\nPage 17 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 128,
+        "page_number": 18,
+        "char_count": 481,
+        "text": "Table 5. The comparison among literature review.\nRef. No. Author(s)\n&Year\nCountry Study\nPopulation\nSample\nsize\nSex Female &\nMale\nAge\n(Year)\nVaccine Type Methods Dataset Limitations\n(Abdulrahman\net al. 2021 )\nAbdulrahman.\n[May 17, 2020]\nIraq General\ninhabitants\n5471 N/A N/A Pfizer-\nBioNTech,\nModerna\nvaccines\nclustering\nalgorithms (K-\nmeans, expectation-\nmaximization,\nheretical, and\ndensity-based) were\nused with the WEKA\ntool.\nCOVID-19 World\nVaccine Adverse\nReactions\ndataset\nN/A"
+    },
+    {
+        "chunk_id": 129,
+        "page_number": 18,
+        "char_count": 495,
+        "text": "density-based) were\nused with the WEKA\ntool.\nCOVID-19 World\nVaccine Adverse\nReactions\ndataset\nN/A\n(Ahamad 2020) Ahmad\n[April 18, 2021]\nBangladesh General\ninhabitants\n5209 Male = 31.3%\nFemale = 63.1 %\nN/A mRNA-based\nvaccines\nMachine-learning\nclassification\nalgorithms\nCOVID-19 World\nVaccine Adverse\nReactions\ndataset\nSmall dataset, focus on a certain\nplace and on mRNA vaccine only.\n(Hatmal et al.\n2021)\nHatmal [2021] Jordan General\ninhabitants\n2213 Male = 39.2%\nFemale = 60.8%\n<20\n>60\nSinopharm,"
+    },
+    {
+        "chunk_id": 130,
+        "page_number": 18,
+        "char_count": 487,
+        "text": "2021)\nHatmal [2021] Jordan General\ninhabitants\n2213 Male = 39.2%\nFemale = 60.8%\n<20\n>60\nSinopharm,\nAstraZeneca,\nPfizer-BioNTech\nMultilayer\nperceptron,\nextreme gradient\nboosting, random\nforest, and K-\nThe dataset was\ncollected by an\nonline survey\nThe sample’s gender and profession\nwere not evenly distributed, and\nmisclassification of results, and a\nself-reported online survey.\n(Jayadevan\n2021)\nJayadevan\n[February 12,\n2021]\nIndia Healthcare\nWorkers\n5396 Male = 56%\nFemale = 44%\n≥20\n≤90"
+    },
+    {
+        "chunk_id": 131,
+        "page_number": 18,
+        "char_count": 490,
+        "text": "2021)\nJayadevan\n[February 12,\n2021]\nIndia Healthcare\nWorkers\n5396 Male = 56%\nFemale = 44%\n≥20\n≤90\nCovaxin, Pfizer\nBioNTech, and\nSinopharm\nvaccine\nDescriptive\nStatistics, Inferential\nStatistics. all analysis\nwas done using\nSPSS software.\nThe dataset was\ncollected\nthrough A cross-\nsectional online\nsurvey\nThe survey was designed in one\nlanguage which may be difficult to\nunderstand for individuals with LEP,\nthe response rate varies, making\ncomparisons difficult.\n(El-Shitany\n2021)\nElShitany"
+    },
+    {
+        "chunk_id": 132,
+        "page_number": 18,
+        "char_count": 493,
+        "text": "the response rate varies, making\ncomparisons difficult.\n(El-Shitany\n2021)\nElShitany\n[April 19, 2021]\nSaudi\nArabia\nGeneral\ninhabitants\n455 Male = 35.8%\nFemale = 64.2%\n<60\n≥60\nPfizer-BioNTech\nvaccine\nChi-square test and\nfor data analysis\nPrism was used\nThe dataset was\ncollected\nthrough an\nonline survey\nSmall sample size, only Arab were\nincluded in the study, focusing only\non the vaccine ’s short-term side\neffects.\n(Zahid 2021) Zahid [Nov22,\n2021]\nBahrain General\ninhabitants\n311 Male = 56.3%"
+    },
+    {
+        "chunk_id": 133,
+        "page_number": 18,
+        "char_count": 495,
+        "text": "effects.\n(Zahid 2021) Zahid [Nov22,\n2021]\nBahrain General\ninhabitants\n311 Male = 56.3%\nFemale = 43.7%\n≥18\n≥45\nPfizer BioNTech,\nSinopharm,\nAstraZeneca,\nand Sputnik\nUnivariate models,\nthe Shapiro– Wilk\ntest, and Pearson ’s\ncorrelation\nThe dataset was\ncollected by A\nself-\nadministered\nonline survey\nIn the self-reported survey,\nmisclassification of post-vaccination\nside effects resulted in information\nbias, sample's gender and\nprofession were not evenly\ndistributed.\n(Andrzejczak-\nGrządko et al."
+    },
+    {
+        "chunk_id": 134,
+        "page_number": 18,
+        "char_count": 499,
+        "text": "bias, sample's gender and\nprofession were not evenly\ndistributed.\n(Andrzejczak-\nGrządko et al.\n2021)\nAndrzejczak\nGrządko\n[2021]\nPoland General\ninhabitants\n705 Male = 15%\nFemale = 85%\n20-84 PfizerBioNTech,\nAstraZeneca\nN/A The dataset was\ncollected\nthrough an\nonline survey\ndue to women outnumbering men\namong those who have been\nvaccinated, the association between\nside effects and age, comparing\nfemales and men results can't be\nestablished\n(Almufty et al.\n2021)\nAlmufty\n[July 12, 2021]\nIraq General"
+    },
+    {
+        "chunk_id": 135,
+        "page_number": 18,
+        "char_count": 481,
+        "text": "established\n(Almufty et al.\n2021)\nAlmufty\n[July 12, 2021]\nIraq General\ninhabitants\n1012 Male = 60.2%\nFemale = 39.8%\n≥18\n≥70\nSinopharm,\nAstraZeneca,\nPfizer BioNTech\nDescriptive\nStatistics, Inferential\nStatistics. all analysis\nwas done using\nSPSS software\nThe dataset was\ncollected by A\nstandardized\nquestionnaire\nplatform\nN/A\n(Alamer et al.\n2021)\nAlamer [Nov 9,\n2021]\nSaudi\nArabia\nGeneral\ninhabitants\n965 Male = 48%\nFemale = 52%\n12– 18 Pfizer- BioNTech\nvaccine\nt-test and chi square"
+    },
+    {
+        "chunk_id": 136,
+        "page_number": 18,
+        "char_count": 438,
+        "text": "inhabitants\n965 Male = 48%\nFemale = 52%\n12– 18 Pfizer- BioNTech\nvaccine\nt-test and chi square\ntest. all analysis was\ndone using SPSS\nv.23 (IBM Corp.,\nArmonk, NY, USA)\nThe dataset was\ncollected by a\nself-\nadministered\nonline survey\nfocus only on vaccine short-term side\neffects, the survey was distributed\naccording to the author ’s networks,\na self-reported online survey\nPage 18 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 137,
+        "page_number": 19,
+        "char_count": 495,
+        "text": "Table 5. Continued\nRef. No. Author(s)\n&Year\nCountry Study\nPopulation\nSample\nsize\nSex Female &\nMale\nAge\n(Year)\nVaccine Type Methods Dataset Limitations\n(Dziedzic et al.\n2021)\nDziedzic\n[Nov16, 2021]\nPoland Healthcare\nWorkers and\nmedical\nstudent\n247 Male = 20.2%\nFemale = 79.8%\n≤29\n>29\nPfizer-\nBioNTech,\nModerna,\nAstraZeneca\nDescriptive\nStatistics, Inferential\nStatistics. all analysis\nwas done using\nSPSS v.27.0 software\nThe dataset was\ncollected by an\ninternet-based\nsurvey platform\ncalled Survey"
+    },
+    {
+        "chunk_id": 138,
+        "page_number": 19,
+        "char_count": 488,
+        "text": "SPSS v.27.0 software\nThe dataset was\ncollected by an\ninternet-based\nsurvey platform\ncalled Survey\nMonkey.\nThe self-reported survey had, a\nmoderate sample size that impacted\nthe results; the sample and its\ndemographic characteristics were\nneither evenly distributed nor\nequivalent to the population profile,\npartial-non-response bias.\n(Azimi et al.\n2021)\nAzimi [Oct 2,\n2021]\nAfghanistan Healthcare\nWorkers\n400 Male = 81.3%\nFemale = 18.8%\n≤40\n>40\nAstraZeneca Descriptive\nStatistics and chi-"
+    },
+    {
+        "chunk_id": 139,
+        "page_number": 19,
+        "char_count": 495,
+        "text": "Workers\n400 Male = 81.3%\nFemale = 18.8%\n≤40\n>40\nAstraZeneca Descriptive\nStatistics and chi-\nsquare test. All\nanalysis was done\nusing IBM SPSS v.25\nsoftware\nThe dataset was\ncollected\nthrough an\nonline survey\nLimited information about second\ndose side effects intensity, the small\nsample size that affects the result\ngeneralization\n(Klugar et al.\n2021)\nKlugar [Aug 5,\n2021]\nCzech\nRepublic\nHealthcare\nWorkers\n599 Male = 27.2%\nFemale = 72.3%\n≤39\n≥39\nPfizer BioNTech,\nModerna,\nAstraZeneca\nDescriptive"
+    },
+    {
+        "chunk_id": 140,
+        "page_number": 19,
+        "char_count": 480,
+        "text": "Workers\n599 Male = 27.2%\nFemale = 72.3%\n≤39\n≥39\nPfizer BioNTech,\nModerna,\nAstraZeneca\nDescriptive\nStatistics, Inferential\nStatistics. all analysis\nwas done using\nSPSS v.27.0 software\nThe dataset was\ncollected by self-\nadministered\nquestionnaire\nby KoBoToolbox\nfor data\ncollection\nthe response rate varies, making\ncomparisons between doses\ndifficult; it wasn't determined after\nwhich of the doses the side effects\noccurred; using KoBo Toolbox\nsoftware made it difficult to know the"
+    },
+    {
+        "chunk_id": 141,
+        "page_number": 19,
+        "char_count": 499,
+        "text": "occurred; using KoBo Toolbox\nsoftware made it difficult to know the\nresponse rate, and =the sample size\nwas not optimal due to the limited\nnumber of HCWs who receive\nModerna, AstraZeneca vaccines.\n(Riad et al.\n2021)\nRiad [April 1,\n2021]\nCzech\nrepublic\nHealthcare\nWorkers\n877 Male =11.4%\nFemale = 88.5%\n≤43\n≥43\nPfizer-BioNTech Descriptive\nStatistics, Inferential\nStatistics. all analysis\nwas done using\nSPSS v.27.0 software\nThe dataset was\ncollected by self-\nadministered\nquestionnaire\nby KoBoToolbox"
+    },
+    {
+        "chunk_id": 142,
+        "page_number": 19,
+        "char_count": 483,
+        "text": "SPSS v.27.0 software\nThe dataset was\ncollected by self-\nadministered\nquestionnaire\nby KoBoToolbox\nfor data\ncollection\nDue to the self-reported online\nsurvey, self-selection bias could\noccur, the sample's gender and\nprofession were not evenly\ndistributed, and it wasn't determined\nwhich of the doses caused side\neffects.\n(Kitagawa\net al., 2022 )\nKitagawa\n[11Jan,2022]\nJapan Healthcare\nWorkers\n12214 Male = 38.2%\nFemale = 61.8%\n<20\n≤79\nPfizer-\nBioNTech,\nModerna\nInferential Statistics."
+    },
+    {
+        "chunk_id": 143,
+        "page_number": 19,
+        "char_count": 477,
+        "text": "Workers\n12214 Male = 38.2%\nFemale = 61.8%\n<20\n≤79\nPfizer-\nBioNTech,\nModerna\nInferential Statistics.\nall analysis was\ndone using JMP Pro\n16.0 software\nThe dataset was\ncollected by self-\nreported online\nsurvey\nthe number of side effects reported\nwas exaggerated or\nunderestimated, only short-term\nside effects were investigated, and\ntheir intensity and duration were not\nanalyzed, due to an unidentified\nvaccination date, recall bias exists,\nparticipants' medical history was not"
+    },
+    {
+        "chunk_id": 144,
+        "page_number": 19,
+        "char_count": 488,
+        "text": "vaccination date, recall bias exists,\nparticipants' medical history was not\ninvestigated, no distinction was\nmade between HCWs and non-\nHCWs, anaphylaxis or myocarditis\nsymptoms were not included\n(Alhazmi et al.\n2021)\nAlhazmi\n[June 18, 2021]\nSaudi Arabia General\ninhabitants\n515 Male = 43%\nFemale = 57%\n18 – 70 Pfizer BioNTech,\nAstraZeneca\nvaccines\nDescriptive\nStatistics, Inferential\nStatistics, and\nmultivariate logistic\nregression models.\nAll analysis was\ndone using SPSS\nv.23 software"
+    },
+    {
+        "chunk_id": 145,
+        "page_number": 19,
+        "char_count": 492,
+        "text": "multivariate logistic\nregression models.\nAll analysis was\ndone using SPSS\nv.23 software\nThe dataset was\ncollected\nthrough an\nonline survey\nThe majority of the participants were\nyoung, the self-reported survey may\nresult in reporting bias, and the\nsurvey was distributed according to\nthe author’s networks.\n(Saeed et al.\n2021)\nSaeed\n[August 9,\n2021]\nUAE General\ninhabitants\n1080 Male = 29.6%\nFemale = 70.4%\n≥18\n≤80\nSinopharm\nvaccine\nDescriptive\nStatistics, Inferential\nStatistics. all analysis"
+    },
+    {
+        "chunk_id": 146,
+        "page_number": 19,
+        "char_count": 493,
+        "text": "≥18\n≤80\nSinopharm\nvaccine\nDescriptive\nStatistics, Inferential\nStatistics. all analysis\nwas done using\nSPSS v.22.0 software\nThe dataset was\ncollected by self-\nreported online\nsurvey\nN/A\n(Kadali et al.\n2021)\nKadali [April\n15, 2021]\nUSA Healthcare\nWorkers\n1116 Male =10.42%\nFemale = 89%\n≥18\n≤80\nModerna\nvaccine\nN/A The dataset was\ncollected by an\nonline survey\nthrough an\ninternet-based\nsurvey platform\ncalled Survey\nMonkey.\nSince it was a web-based survey, the\nvaccine receiving and the reported"
+    },
+    {
+        "chunk_id": 147,
+        "page_number": 19,
+        "char_count": 349,
+        "text": "called Survey\nMonkey.\nSince it was a web-based survey, the\nvaccine receiving and the reported\nside effects were not verified., The\ntime of occurrence and duration of\npost-vaccination side effects were\nnot specified and 89.35% of females\nin their study so there may be a risk\nof bias\nPage 19 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 148,
+        "page_number": 20,
+        "char_count": 474,
+        "text": "resulted in a less accurate outcome. This is time-consuming because the algorithm ’s learning phase, which analyzes and\ncalculates all options, might take a long. Although supervised learning is used in studies ( Ahamad 2020; Hatmal et al.\n2021) and obtains higher accuracy, it is not really considered high accuracy because they work on small datasets.\nAs for studies based on a statistical approach: There were many problems that were observed, the most important of which"
+    },
+    {
+        "chunk_id": 149,
+        "page_number": 20,
+        "char_count": 494,
+        "text": "is the small sample size, as in the studies ( Jayadevan 2021; Azimi et al. 2021 ). The most apparent problem in studies\nrelated to the side effects of vaccines is that the number of vaccinators of one sex exceeds the other in the sample of studies\n(Riad et al. 2021; Zahid 2021; Andrzejczak-Grządko et al. 2021; Kadali et al. 2021; Dziedzic et al. 2021), and this makes\nthe results inaccurate. As is the case for the paper (Alhazmi et al. 2021), which was limited to a certain age group, namely"
+    },
+    {
+        "chunk_id": 150,
+        "page_number": 20,
+        "char_count": 453,
+        "text": "young people, and ignored the rest of the age groups that constitute a large part of the community. Among the other gaps\nthat were noted is not specifying which dose led to the emergence of the offending effects, as in the paper ( Klugar et al.\n2021), or relying on short-term effects in analyzing the side effects, as in the papers ( Alamer et al. 2021; Kitagawa et al.\n2022). “Table 5” below explains these studies in detail.\nStrengths and limitations"
+    },
+    {
+        "chunk_id": 151,
+        "page_number": 20,
+        "char_count": 414,
+        "text": "2022). “Table 5” below explains these studies in detail.\nStrengths and limitations\nAs far as the authors are aware, this is the first study to analyze various kinds of side effects of COVID-19 vaccines.\nFurthermore, this study pointed out possible factors that might contribute to these effects.\nThis study has some limitations. Despite not restricting language in the search process, we used only English-language"
+    },
+    {
+        "chunk_id": 152,
+        "page_number": 20,
+        "char_count": 491,
+        "text": "databases, so publications in other languages have been missed, leading to publication bias. Studies did not provide\ninformation about certain groups, such as pregnant women. Furthermore, some of the participants in the analyzed studies\nmay have reported side effects in a biased way. This could be related to the disparity in their educational levels. Therefore,\nthe reliability of reported side effects may be affected by reporting bias in the included studies.\nConclusion and future works"
+    },
+    {
+        "chunk_id": 153,
+        "page_number": 20,
+        "char_count": 489,
+        "text": "Conclusion and future works\nIn conclusion, this scoping systematic review investigated the side effects associated with COVID-19 approved\nvaccines including Pfizer BioNTech (Comirnaty), Moderna (mRNA-1273), Sinopharm (BBIP CorV), and AstraZeneca\n(ChAdOx1), as well as Bharat Biotech (Covaxin). Most of the side effects were mild, self-limiting, and common. Thus,\nthey usually resolve within 1– 3 days after vaccination. Currently, all types of vaccines that are approved still outweigh the"
+    },
+    {
+        "chunk_id": 154,
+        "page_number": 20,
+        "char_count": 463,
+        "text": "possible risks of these vaccines, and the vaccinations are strongly recommended when it is available.\nIn future works, it is necessary to study the side effects more accurately, and that is done through the correct selection of\nthe study community, which begins with the selection of the study population. The study sample must ensure appropriate\nrepresentation of men and women, as gender bias was a major loophole in the studies we adopted and had a significant"
+    },
+    {
+        "chunk_id": 155,
+        "page_number": 20,
+        "char_count": 476,
+        "text": "impact on the real results obtained.\nReporting guidelines\nFigshare: PRISMA-P checklist for ‘COVID-19 vaccinations and their side effects: A scoping systematic review’. https://\ndoi.org/10.6084/m9.figshare.22722592.\nData are available under the terms of the Creative Commons Attribution 4.0 International license (CC-BY 4.0).\nData availability statement\nAll data supporting the results are available as part of the article and no additional source data are required.\nReferences"
+    },
+    {
+        "chunk_id": 156,
+        "page_number": 20,
+        "char_count": 482,
+        "text": "References\nAbdulrahman L, Abdulazeez M, Hasan D: COVID-19 World Vaccine\nAdverse Reactions Based on Machine Learning Clustering Algorithm.\nQubahan Academic J. 2021; 1(2): 134– 140.\nPublisher Full Text\nAhamad M: Adverse effects of COVID-19 vaccination:\nmachine learning and statistical approach to identify and\nclassify incidences of morbidity and post-vaccination reactogenicity.\nmedRxiv. 2020.\nPublisher Full Text\nAl Khames Aga QA, Alkhaffaf WH, Hatem TH, et al.: Safety of COVID-19"
+    },
+    {
+        "chunk_id": 157,
+        "page_number": 20,
+        "char_count": 486,
+        "text": "Publisher Full Text\nAl Khames Aga QA, Alkhaffaf WH, Hatem TH, et al.: Safety of COVID-19\nvaccines. J. Med. Virol. 2021; 93(12): 6588– 6594.\nPubMed Abstract |Publisher Full Text |Free Full Text\nAlamer E, Alhaffar A, Alrashed H, et al.: Side Effects of COVID-19 Pfizer-\nBioNTech mRNA Vaccine in Children Aged 12–18 Years in Saudi Arabia.\nVaccines. 2021; 9(11): 1297.\nPubMed Abstract |Publisher Full Text |Free Full Text\nAlhazmi A, Alharbi O, Aljohani N, et al.: Evaluation of Side Effects"
+    },
+    {
+        "chunk_id": 158,
+        "page_number": 20,
+        "char_count": 452,
+        "text": "Alhazmi A, Alharbi O, Aljohani N, et al.: Evaluation of Side Effects\nAssociated with COVID-19 Vaccines in Saudi Arabia.Vaccines. 2021; 9(6):\n674.\nPubMed Abstract |Publisher Full Text |Free Full Text\nAlmufty H, Jasim HM, Al-Hadithi TS: Potential adverse effects of\nCOVID19 vaccines among Iraqi population; a comparison\nbetween the three available vaccines in Iraq; a retrospective\ncross-sectional study. Diabetes Metab. Syndr. 2021; 15(5):\nPage 20 of 28"
+    },
+    {
+        "chunk_id": 159,
+        "page_number": 20,
+        "char_count": 125,
+        "text": "cross-sectional study. Diabetes Metab. Syndr. 2021; 15(5):\nPage 20 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 160,
+        "page_number": 21,
+        "char_count": 441,
+        "text": "102207.\nPubMed Abstract |Publisher Full Text |Free Full Text\nAndrzejczak-Grządko S, Czudy Z, Donderska M: Side effects after\nCOVID-19 vaccinations among residents of Poland. Eur. Rev. Med.\nPharmacol. Sci. 2021; 25: 4418– 4421.\nPubMed Abstract |Publisher Full Text\nAstraZeneca COVID-19 vaccine side effects:European Medicines Agency.\n[cited 2023 Jan 21].\nReference Source\nAzimi M, Ahmadi A, Jamshidi N, et al.: Adverse Effects of the COVID-19"
+    },
+    {
+        "chunk_id": 161,
+        "page_number": 21,
+        "char_count": 491,
+        "text": "Reference Source\nAzimi M, Ahmadi A, Jamshidi N, et al.: Adverse Effects of the COVID-19\nVaccine Reported by Lecturers and Staff of Kabul University of\nMedical Sciences, Kabul, Afghanistan. Infect. Drug Resist. 2021\nOct 4 [cited 2022 Apr 15]; 14: 4077– 4083.\nPubMed Abstract |Publisher Full Text |Free Full Text |Reference\nSource\nBharat Biotech COVID-19 vaccine side effects: Bharat Biotech. [cited 2023\nJan 21].\nReference Source\nCenters for Disease Control and Prevention: Understanding mRNA"
+    },
+    {
+        "chunk_id": 162,
+        "page_number": 21,
+        "char_count": 485,
+        "text": "Jan 21].\nReference Source\nCenters for Disease Control and Prevention: Understanding mRNA\nCOVID-19 vaccines. 2021a [cited 2023 Jan 20].\nReference Source\nCenters for Disease Control and Prevention: Understanding viral vector\nCOVID-19 vaccines. 2021b [cited 2023 Jan 22].\nReference Source\nCovaxin COVID-19 vaccine: What to know about side effects: Medical\nNews Today. [cited 2023 Jan 23].\nReference Source\nCOVID-19 vaccine: World Health Organization. [cited 2023 Jan 22].\nReference Source"
+    },
+    {
+        "chunk_id": 163,
+        "page_number": 21,
+        "char_count": 461,
+        "text": "Reference Source\nCOVID-19 vaccine: World Health Organization. [cited 2023 Jan 22].\nReference Source\nDai X, Xiong Y, Li N, et al.: Vaccine types. Vaccines-the History and Future.\nIntechOpen; 2019.\nDziedzic A, Bozek A, Jaroszynski A, et al.: Self-Reported Adverse\nEvents of COVID-19 Vaccines in Polish Healthcare Workers and\nMedical Students. Cross-Sectional Study and Pooled Analysis of\nCoVaST Project Results in Central Europe. J. Clin. Med. 2021; 10(22):\n5338."
+    },
+    {
+        "chunk_id": 164,
+        "page_number": 21,
+        "char_count": 495,
+        "text": "CoVaST Project Results in Central Europe. J. Clin. Med. 2021; 10(22):\n5338.\nPubMed Abstract |Publisher Full Text |Free Full Text\nEl-Shitany N: Minor to Moderate Side Effects of Pfizer-BioNTech\nCOVID-19 Vaccine Among Saudi Residents: A Retrospective Cross-\nSectional Study. Int. J. Gen. Med. 2021; 14: 1389– 1401.\nPubMed Abstract |Publisher Full Text |Free Full Text\nGoyal K, Goel H, Baranwal P, et al.: Immunological mechanisms of\nvaccine-induced protection against SARS-CoV-2 in humans. Immuno."
+    },
+    {
+        "chunk_id": 165,
+        "page_number": 21,
+        "char_count": 490,
+        "text": "vaccine-induced protection against SARS-CoV-2 in humans. Immuno.\n2021; 1(4): 442– 456.\nPublisher Full Text\nGrandini M, Bagli E, Visani G: Metrics for Multi-Class Classification:\nAn Overview. arXiv:2008.05756v1 [stat.ML]. August 13, 2020.\nHatmal MM, Al-Hatamleh MAI, Olaimat AN, et al.: Side Effects and\nPerceptions Following COVID-19 Vaccination in Jordan: A\nRandomized, Cross-Sectional Study Implementing Machine\nLearning for Predicting Severity of Side Effects. Vaccines. 2021; 9(6):\n556."
+    },
+    {
+        "chunk_id": 166,
+        "page_number": 21,
+        "char_count": 490,
+        "text": "Learning for Predicting Severity of Side Effects. Vaccines. 2021; 9(6):\n556.\nPubMed Abstract |Publisher Full Text |Free Full Text\nHussien M: A systematic review for enabling of develop a blockchain\ntechnology in healthcare application: Taxonomy, substantially\nanalysis, motivations, challenges, recommendations and future\ndirection. J. Med. Syst. 2019; 43(10): 320.\nPubMed Abstract |Publisher Full Text\nJayadevan R: Survey of symptoms following COVID-19 vaccination in\nIndia. medRxiv. 2021."
+    },
+    {
+        "chunk_id": 167,
+        "page_number": 21,
+        "char_count": 458,
+        "text": "Jayadevan R: Survey of symptoms following COVID-19 vaccination in\nIndia. medRxiv. 2021.\nPublisher Full Text\nKadali R, Janagama R, Peruru S: Non-life-threatening adverse effects\nwith COVID-19 mRNA-1273 vaccine: A randomized, cross-sectional\nstudy on healthcare workers with detailed self-reported symptoms.\nJ. Med. Virol. 2021; 93(7): 4420– 4429.\nPubMed Abstract |Publisher Full Text |Free Full Text\nKim MA, Lee YW, Kim SR, et al.: COVID-19 vaccine-associated"
+    },
+    {
+        "chunk_id": 168,
+        "page_number": 21,
+        "char_count": 494,
+        "text": "Kim MA, Lee YW, Kim SR, et al.: COVID-19 vaccine-associated\nanaphylaxis and allergic reactions: consensus statements of the\nKAAACI Urticaria/Angioedema/Anaphylaxis Working Group. Allergy\nAsthma Immunol. Res. 2021; 13(4): 526– 544.\nPubMed Abstract |Publisher Full Text |Free Full Text\nKitagawa H, Kato H, Miyakawa K: Adverse reactions to the BNT162b2\nand mRNA-1273 mRNA COVID-19 vaccines in Japan. J. Infect. Chemother.\n2022; 28(4): 576– 581.\nPubMed Abstract |Publisher Full Text |Free Full Text"
+    },
+    {
+        "chunk_id": 169,
+        "page_number": 21,
+        "char_count": 475,
+        "text": "2022; 28(4): 576– 581.\nPubMed Abstract |Publisher Full Text |Free Full Text\nKlugar M, Riad A, Karch A: Side Effects of mRNA- Based and Viral Vector-\nBased COVID-19 Vaccines among German Healthcare Workers.\nBiology. 2021; 10(8): 752.\nPubMed Abstract |Publisher Full Text |Free Full Text\nLombard M, Pastoret PP, Moulin AM: A brief history of vaccines and\nvaccination. Revue Scientifique et Technique-Office International des\nEpizooties. 2007; 26(1): 29– 48.\nPublisher Full Text"
+    },
+    {
+        "chunk_id": 170,
+        "page_number": 21,
+        "char_count": 487,
+        "text": "Epizooties. 2007; 26(1): 29– 48.\nPublisher Full Text\nMahendra P: Severe Acute Respiratory Syndrome Coronavirus-2 (SARS-\nCoV-2): An Update. Cureus. 2020; 12(3): e7423.\nPubMed Abstract |Publisher Full Text |Free Full Text\nMarsa L: Why vaccine side effects really happen, and when you should worry.\nNational Geographic; 2021 May 13 [cited 2022 Nov 11].\nReference Source\nMarsa L: Why do vaccine side effects really happen, and when you should\nworry. National Geographic; [cited 2023 Jan 22]."
+    },
+    {
+        "chunk_id": 171,
+        "page_number": 21,
+        "char_count": 487,
+        "text": "worry. National Geographic; [cited 2023 Jan 22].\nReference Source\nModerna COVID-19 vaccine side effects: US Food and Drug\nAdministration. [cited 2023 Jan 22].\nReference Source\nMoher D, Liberati A, Tetzlaff J, et al.: Preferred reporting items for\nsystematic reviews and meta-analyses: the PRISMA statement.\nPLoS Med. 2009; 6(7): e1000097.\nPubMed Abstract |Publisher Full Text |Free Full Text\nNational Institute of Allergy and Infectious Diseases: Vaccine types. 2021\n[cited 2023 Jan 22]."
+    },
+    {
+        "chunk_id": 172,
+        "page_number": 21,
+        "char_count": 491,
+        "text": "National Institute of Allergy and Infectious Diseases: Vaccine types. 2021\n[cited 2023 Jan 22].\nReference Source\nNichol KL, Margolis KL, Lind A, et al.: Side effects associated\nwith influenza vaccination in healthy working adults:\na randomized, placebo-controlled trial. Arch. Intern. Med. 1996;\n156(14): 1546– 1550.\nPublisher Full Text\nPaules CI, Marston HD, Fauci AS: Coronavirus infections-more than just\nthe common cold. JAMA. 2020; 323(8): 707– 708.\nPubMed Abstract |Publisher Full Text"
+    },
+    {
+        "chunk_id": 173,
+        "page_number": 21,
+        "char_count": 483,
+        "text": "the common cold. JAMA. 2020; 323(8): 707– 708.\nPubMed Abstract |Publisher Full Text\nPfizer-BioNTech COVID-19 vaccine side effects: US Food and Drug\nAdministration. [cited 2023 Jan 22].\nReference Source\nPlotkin SA: Vaccines: past, present and future. Nat. Med. 2005;\n11(Suppl 4): S5 – S11.\nPubMed Abstract |Publisher Full Text |Free Full Text\nRiad A, Pokorná A, Attia S, et al.: Prevalence of COVID-19 Vaccine Side\nEffects among Healthcare Workers in the Czech Republic. J. Clin. Med."
+    },
+    {
+        "chunk_id": 174,
+        "page_number": 21,
+        "char_count": 496,
+        "text": "Effects among Healthcare Workers in the Czech Republic. J. Clin. Med.\n2021; 10(7): 1428.\nPubMed Abstract |Publisher Full Text |Free Full Text\nSaeed BQ, Al-Shahrabi R, Alhaj SS, et al.: Side effects and perceptions\nfollowing Sinopharm COVID-19 vaccination. Int. J. Infect. Dis. 2021; 111:\n219– 226.\nPubMed Abstract |Publisher Full Text |Free Full Text\nSahin A: 2019 novel coronaviruses (COVID-19) outbreak: a review of the\ncurrent literature. Eur. J. Med. Oncol. 2020; 4:1 – 7.\nPublisher Full Text"
+    },
+    {
+        "chunk_id": 175,
+        "page_number": 21,
+        "char_count": 459,
+        "text": "current literature. Eur. J. Med. Oncol. 2020; 4:1 – 7.\nPublisher Full Text\nSalisbury D, Ramsay M, Noakes K: Immunisation Against Infectious Diseases.\nThe Stationery Office; 2006.\nSerious AEFI - World Health Organization (WHO): World Health\nOrganization. [cited 2023 Jan 22].\nReference Source\nShahzamani K, Mahmoudian F, Ahangarzadeh S, et al.: Vaccine design\nand delivery approaches for COVID-19. Int. Immunopharmacol. 2021 Jul;\n100: 108086. Epub 2021 Apr 20."
+    },
+    {
+        "chunk_id": 176,
+        "page_number": 21,
+        "char_count": 494,
+        "text": "100: 108086. Epub 2021 Apr 20.\nPubMed Abstract |Publisher Full Text |Free Full Text\nSharma A: severe acute respiratory syndrome coronavirus-2 (SARS-\nCoV-2): a global pandemic and treatment strategies. Int. J. Antimicrob.\nAgents. 2020; 56: 106054.\nPubMed Abstract |Publisher Full Text |Free Full Text\nSinopharm COVID-19 vaccine side effects: Food and Drug\nAdministration Philippines. [cited 2023 Jan 22].\nReference Source\nTavilani A, Abbasi E, Ara FK, et al.: COVID-19 vaccines: Current evidence"
+    },
+    {
+        "chunk_id": 177,
+        "page_number": 21,
+        "char_count": 472,
+        "text": "Reference Source\nTavilani A, Abbasi E, Ara FK, et al.: COVID-19 vaccines: Current evidence\nand considerations. Metab Open. 2021; 12: 100124.\nPubMed Abstract |Publisher Full Text |Free Full Text\nVaccine Characteristics: VIEW-HUB. [cited 2023 Jan 23].\nReference Source\nVarsavsky T: Detecting COVID-19 infection hotspots in England using\nlarge-scale self-reported data from a mobile application: a\nprospective, observational study. Lancet Public Health. 2021; 6(1):\ne21– e29."
+    },
+    {
+        "chunk_id": 178,
+        "page_number": 21,
+        "char_count": 489,
+        "text": "prospective, observational study. Lancet Public Health. 2021; 6(1):\ne21– e29.\nPubMed Abstract |Publisher Full Text |Free Full Text\nWeiss SR, Navas-Martin S: Coronavirus pathogenesis and the emerging\npathogen severe acute respiratory syndrome coronavirus. Microbiol.\nMol. Biol. Rev. 2005; 69(4): 635– 664.\nPubMed Abstract |Publisher Full Text |Free Full Text\nWHO Collaborating Centre for Vaccine Safety: How do vector vaccines\nwork? 2021a [cited 2023 Jan 20].\nReference Source\nPage 21 of 28"
+    },
+    {
+        "chunk_id": 179,
+        "page_number": 21,
+        "char_count": 116,
+        "text": "work? 2021a [cited 2023 Jan 20].\nReference Source\nPage 21 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 180,
+        "page_number": 22,
+        "char_count": 470,
+        "text": "World Health Organization: How do vaccines work? Body ’s response to\nvaccines— 29 December 2020. World Health Organization.\nReference Source\nWHO Collaborating Centre for Vaccine Safety: How do inactivated vaccines\nwork [Internet]. 2021b [cited 2023 Jan 22].\nReference Source\nWorld Health Organization: COVID-19 vaccines [Internet]. 2021c.\nReference Source\nWorld Health Organization: WHO COVID-19 dashboard - WHO data.\n(Accessed September 5, 2024); 2024.\nReference Source"
+    },
+    {
+        "chunk_id": 181,
+        "page_number": 22,
+        "char_count": 335,
+        "text": "(Accessed September 5, 2024); 2024.\nReference Source\nZahid M: Unfolding the Mild to Moderate Short-Term Side Effects of\nFour COVID-19 Vaccines Used in Bahrain: A Cross-Sectional Study.\nVaccines (Basel). 2021; 9(11).\nPubMed Abstract |Publisher Full Text |Free Full Text\nPage 22 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 182,
+        "page_number": 23,
+        "char_count": 478,
+        "text": "Open Peer Review\nCurrent Peer Review Status:  \n  \nVersion 2\nReviewer Report 06 November 2024\nhttps://doi.org/10.5256/f1000research.172135.r327102\n© 2024 Kocazeybek B. This is an open access peer review report distributed under the terms of the Creative \nCommons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, \nprovided the original work is properly cited.\nBekir Kocazeybek \n   \nIstanbul University—Cerrahpasa, Istanbul, Turkey"
+    },
+    {
+        "chunk_id": 183,
+        "page_number": 23,
+        "char_count": 462,
+        "text": "Bekir Kocazeybek \n   \nIstanbul University—Cerrahpasa, Istanbul, Turkey \nRevisions are satisfactory.\n \nCompeting Interests: No competing interests were disclosed.\nReviewer Expertise: Microbiology, immunology\nI confirm that I have read this submission and believe that I have an appropriate level of \nexpertise to confirm that it is of an acceptable scientific standard.\nVersion 1\nReviewer Report 23 August 2024\nhttps://doi.org/10.5256/f1000research.147203.r309618"
+    },
+    {
+        "chunk_id": 184,
+        "page_number": 23,
+        "char_count": 480,
+        "text": "Version 1\nReviewer Report 23 August 2024\nhttps://doi.org/10.5256/f1000research.147203.r309618\n© 2024 Kocazeybek B. This is an open access peer review report distributed under the terms of the Creative \nCommons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, \nprovided the original work is properly cited.\nBekir Kocazeybek \n   \n1 Istanbul University—Cerrahpasa, Istanbul, Turkey \n2 Istanbul University—Cerrahpasa, Istanbul, Turkey"
+    },
+    {
+        "chunk_id": 185,
+        "page_number": 23,
+        "char_count": 324,
+        "text": "2 Istanbul University—Cerrahpasa, Istanbul, Turkey \nCOVID-19 VACCINATIONS AND THEIR SIDE EFFECTS: A SCOPING SYSTEMATIC REVIEW \nIt was evaluated according to the PRISMA 2020 Checklist. The article needs major revision before \nindexing. My recommendations: \n  Page 23 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 186,
+        "page_number": 24,
+        "char_count": 402,
+        "text": "Is the Grandini et al.2020 study included in the 17 selected studies? If so, it is not included in Table \n5, where all studies are shown. \nIt is mentioned as if Hatmal et al.2021 was included in the study. Although it has an explanation \nand evaluation, its name is not in Table 5 and the list of studies. \nIt is recommended that notifications be made in accordance with PRISMA 8- “Indicate the methods"
+    },
+    {
+        "chunk_id": 187,
+        "page_number": 24,
+        "char_count": 450,
+        "text": "It is recommended that notifications be made in accordance with PRISMA 8- “Indicate the methods \nused to decide whether a study meets the criteria for inclusion in the review, including how many \nreviewers screened each record and whether each report was worked on independently and, if \nappropriate, details of the automation tools used in the process.” \nIt is recommended to make notifications in accordance with PRISMA 9- “Specify the methods used"
+    },
+    {
+        "chunk_id": 188,
+        "page_number": 24,
+        "char_count": 441,
+        "text": "It is recommended to make notifications in accordance with PRISMA 9- “Specify the methods used \nto collect data from reports, how many reviewers collected data from each report, whether they \nworked independently, the process for obtaining or approving data from study investigators, and \ndetails of automation tools used in the process, if any.” \nIt is recommended to add a study in accordance with PRISMA 16-b “Cite studies that may appear"
+    },
+    {
+        "chunk_id": 189,
+        "page_number": 24,
+        "char_count": 470,
+        "text": "It is recommended to add a study in accordance with PRISMA 16-b “Cite studies that may appear \nto meet the inclusion criteria but were excluded and explain why they were excluded.” \nPRISMA 17- “Cite each included study and provide its characteristics.” Ma’mon,2021 is mentioned \nin the study but its description is not included in the Review of the conducted studies section. \nIt is recommended to make notifications in accordance with PRISMA 18- “Provide assessments of"
+    },
+    {
+        "chunk_id": 190,
+        "page_number": 24,
+        "char_count": 484,
+        "text": "It is recommended to make notifications in accordance with PRISMA 18- “Provide assessments of \nrisk of bias for each included study.” \nIt is recommended to make notifications in accordance with PRISMA 22- “Provide assessments of \nprecision (or reliability) as evidence for each outcome assessed.”\n \nAre the rationale for, and objectives of, the Systematic Review clearly stated?\nPartly\nAre sufficient details of the methods and analysis provided to allow replication by others?\nPartly"
+    },
+    {
+        "chunk_id": 191,
+        "page_number": 24,
+        "char_count": 488,
+        "text": "Are sufficient details of the methods and analysis provided to allow replication by others?\nPartly\nIs the statistical analysis and its interpretation appropriate?\nYes\nAre the conclusions drawn adequately supported by the results presented in the review?\nYes\nIf this is a Living Systematic Review, is the ‘living’ method appropriate and is the search \nschedule clearly defined and justified? (‘Living Systematic Review’ or a variation of this term \nshould be included in the title.)\nPartly"
+    },
+    {
+        "chunk_id": 192,
+        "page_number": 24,
+        "char_count": 424,
+        "text": "should be included in the title.)\nPartly\nCompeting Interests: No competing interests were disclosed.\nReviewer Expertise: Microbiology, immunology\nI confirm that I have read this submission and believe that I have an appropriate level of \nexpertise to state that I do not consider it to be of an acceptable scientific standard, for \nreasons outlined above.\n  Page 24 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 193,
+        "page_number": 25,
+        "char_count": 433,
+        "text": "Author Response 18 Sep 2024\nHind Monadhel \nDear Dr. Bekir Kocazeybek, \n \nThank you for your thoughtful and detailed comments. I appreciate the opportunity to \nclarify and address the points you raised. \n \nRegarding Grandini et al. (2020): \nI would like to clarify that Grandini et al. (2020) is cited as a reference for the equation used \nin the analysis but is not included among the 17 studies reviewed. Therefore, it is not listed"
+    },
+    {
+        "chunk_id": 194,
+        "page_number": 25,
+        "char_count": 488,
+        "text": "in the analysis but is not included among the 17 studies reviewed. Therefore, it is not listed \nin Table 5. I appreciate your attention to this detail, and I hope this resolves any confusion. \n \nRegarding Hatmal et al. (2021): \nYou are correct that Hatmal et al. (2021) is mentioned in the manuscript. This study is \nincluded among the 17 studies in Table 5, but it was mistakenly cited under the name M. \nMa'mon et al. I have now corrected this citation discrepancy to ensure consistency"
+    },
+    {
+        "chunk_id": 195,
+        "page_number": 25,
+        "char_count": 474,
+        "text": "Ma'mon et al. I have now corrected this citation discrepancy to ensure consistency \nthroughout the document. I hope this resolves the concern. \n \nPRISMA 18 - Risk of Bias: \nThe recommendation to assess the risk of bias for each included study has already been \naddressed in the \"Gaps in Conducted Studies\" section, where I discuss limitations in study \ndesign, sample size, and methodological weaknesses that indicate potential bias. \n \nPRISMA 22 - Assessments of Precision:"
+    },
+    {
+        "chunk_id": 196,
+        "page_number": 25,
+        "char_count": 489,
+        "text": "PRISMA 22 - Assessments of Precision: \nIn line with PRISMA 22, I have now included assessments of precision (or reliability) for \nsome outcome, which can be found in the discussion section of the manuscript. \n \nOnce again, I sincerely appreciate your valuable feedback and your effort to ensure the \nrigor of the manuscript. I hope these revisions address your concerns, and I look forward to \nany further comments  you may have.  \nCompeting Interests: Non\nReviewer Report 24 November 2023"
+    },
+    {
+        "chunk_id": 197,
+        "page_number": 25,
+        "char_count": 417,
+        "text": "any further comments  you may have.  \nCompeting Interests: Non\nReviewer Report 24 November 2023\nhttps://doi.org/10.5256/f1000research.147203.r218626\n© 2023 Wang Y. This is an open access peer review report distributed under the terms of the Creative Commons \nAttribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the \noriginal work is properly cited.\nYongbin Wang"
+    },
+    {
+        "chunk_id": 198,
+        "page_number": 25,
+        "char_count": 213,
+        "text": "original work is properly cited.\nYongbin Wang  \n1 The First Affiliated Hospital, Xinxiang Medical University, Xinxiang, Henan Province, China \n2\n  Page 25 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 199,
+        "page_number": 26,
+        "char_count": 441,
+        "text": "The First Affiliated Hospital, Xinxiang Medical University, Xinxiang, Henan Province, China \nThis manuscript performs a scoping systematic review to explore the COVID-19 vaccinations and \ntheir side effects, this topic is very interesting and has important guiding significance for \nevaluating the effectiveness of vaccines. Although this paper did a good job, the current version \nneeds to be further improved by a minor revision. \n \nTitle:"
+    },
+    {
+        "chunk_id": 200,
+        "page_number": 26,
+        "char_count": 443,
+        "text": "needs to be further improved by a minor revision. \n \nTitle: \nThe title is concise and summarizes the content of the article. \n \n \nAbstract: \nThe abstract is concise and effectively outlines the research's objectives, which include evaluating \nthe COVID-19 vaccinations and their side effects. However, several minor points need to be \nrevised:\nResults need to provide figures to support the findings instead of something like a \nconclusion.\n1."
+    },
+    {
+        "chunk_id": 201,
+        "page_number": 26,
+        "char_count": 498,
+        "text": "conclusion.\n1. \nConclusion should give a summary of adverse reactions of the vaccine.2. \n \nIntroduction: \nThe introduction provides adequate context for understanding the research problem and the \nprimary hypotheses. Also, some minor points need to be revised:\nParagraph 1 should summarize the severity of the impact of COVID-19, including the \nnumber of cases and deaths.\n1. \nParagraph 4 should provide the recent figures regarding the vaccine doses, this data is \navailable on the WHO website.\n2."
+    },
+    {
+        "chunk_id": 202,
+        "page_number": 26,
+        "char_count": 496,
+        "text": "available on the WHO website.\n2. \nIt should be highlighted that the duration of application of COVID-19 vaccines is short, and \nadverse effects are inconsistent due to different types of vaccines.\n3. \n \nBackground: \nThis part is well-written, particularly the method used in this study, giving an adequate \ndescription. Here just needs a very minor revision:\n“A brief overview of the vaccine” should be removed.1. \nCheck \"from 2019 to 2022 to select eligible research publications.\"2. \n \nResults:"
+    },
+    {
+        "chunk_id": 203,
+        "page_number": 26,
+        "char_count": 467,
+        "text": "Check \"from 2019 to 2022 to select eligible research publications.\"2. \n \nResults: \nThe results are also adequate. Factors associated with side effects of COVID-19 vaccines can \nprovide a summary in Table or Figure. \n \n \nDiscussion: \nThe discussion also gives a full comparison with other studies. But some minor points should be \naddressed:\nIn the discussion, can the authors explain the causes of adverse reactions of different \nvaccines from the mechanism level?\n1."
+    },
+    {
+        "chunk_id": 204,
+        "page_number": 26,
+        "char_count": 232,
+        "text": "vaccines from the mechanism level?\n1. \nSome new research results have been published recently, and the discussion needs to be \nsupplemented and fully compared.\n2. \n  Page 26 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 205,
+        "page_number": 27,
+        "char_count": 430,
+        "text": "Are the rationale for, and objectives of, the Systematic Review clearly stated?\nYes\nAre sufficient details of the methods and analysis provided to allow replication by others?\nYes\nIs the statistical analysis and its interpretation appropriate?\nYes\nAre the conclusions drawn adequately supported by the results presented in the review?\nYes\nIf this is a Living Systematic Review, is the ‘living’ method appropriate and is the search"
+    },
+    {
+        "chunk_id": 206,
+        "page_number": 27,
+        "char_count": 495,
+        "text": "Yes\nIf this is a Living Systematic Review, is the ‘living’ method appropriate and is the search \nschedule clearly defined and justified? (‘Living Systematic Review’ or a variation of this term \nshould be included in the title.)\nYes\nCompeting Interests: No competing interests were disclosed.\nI confirm that I have read this submission and believe that I have an appropriate level of \nexpertise to confirm that it is of an acceptable scientific standard.\nAuthor Response 18 Sep 2024\nHind Monadhel"
+    },
+    {
+        "chunk_id": 207,
+        "page_number": 27,
+        "char_count": 454,
+        "text": "Author Response 18 Sep 2024\nHind Monadhel \nDear Dr. Wang, \n \nThank you for your thoughtful and constructive feedback on our manuscript. We have \ncarefully considered your comments and made the necessary revisions to improve the \npaper. We sincerely appreciate your insightful suggestions, which have significantly \ncontributed to strengthening the manuscript  \nCompeting Interests: Non\n  Page 27 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    },
+    {
+        "chunk_id": 208,
+        "page_number": 28,
+        "char_count": 493,
+        "text": "The benefits of publishing with F1000Research:\nYour article is published within days, with no editorial bias•\nYou can publish traditional articles, null/negative results, case reports, data notes and more•\nThe peer review process is transparent and collaborative•\nYour article is indexed in PubMed after passing peer review•\nDedicated customer support at every stage•\nFor pre-submission enquiries, contact research@f1000.com\n  Page 28 of 28\nF1000Research 2024, 12:604 Last updated: 26 NOV 2024"
+    }
+]

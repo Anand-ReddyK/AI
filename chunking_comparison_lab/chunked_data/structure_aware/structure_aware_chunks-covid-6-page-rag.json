@@ -1,0 +1,114 @@
+[
+    {
+        "chunk_id": 0,
+        "page_number": 1,
+        "header_path": "**Executive Summary**",
+        "chunk_type": "text",
+        "char_count": 621,
+        "text": "## **Executive Summary**  \nXEC is currently the only SARS-CoV-2 variant under monitoring (VUM) with increasing prevalence globally. Considering the available evidence, the additional public health risk posed by XEC is evaluated as low at the global level. The recommended COVID-19 vaccines are expected to remain cross-reactive to this variant against symptomatic and severe disease, as there is limited immune escape from JN.1 or KP.2 mRNA booster vaccines. Therefore, the continued spread of this variant alone is unlikely to increase the burden on national public health systems compared to other Omicron sub-lineages."
+    },
+    {
+        "chunk_id": 1,
+        "page_number": 1,
+        "header_path": "**Initial Risk Evaluation of XEC, 09 December 2024**",
+        "chunk_type": "table",
+        "char_count": 3096,
+        "text": "## **Initial Risk Evaluation of XEC, 09 December 2024**  \nXEC is a recombinant SARS-CoV-2 variant derived from the JN.1 descendent lineages KS.1.1 and KP.3.3, with the earliest sample collected on 26 June 2024. XEC is one of six VUMs tracked by the WHO, and was designated as a VUM on 24 September 2024 [1,2].  \n~~<mark>As of 09 December 2024, there were 13 331 XEC sequences submitted to GISAID [3] from 50 countries,</mark> representing 36.8% of the globally availab~~ ~~<mark>le sequences in epidemiological week 47, (18 to 24 November</mark>~~ <u><mark>2024). This is a significant rise in prevalence from 26.9% four weeks prior in epidemiological week 44 (28</mark></u> ~~October to 3 November 2024), Table 1. T~~ ~~<mark>he XEC variant is the only SARS-CoV-2 variant with increasing</mark> prevalence in all the three WHO regions~~ ~~<mark>with consistent sharing of SARS</mark> -~~ ~~<mark>CoV</mark> -~~ ~~<mark>2 sequences between</mark> epidemiological weeks 44 and 47, i.e. an inc~~ ~~<mark>rease from 14.3% to 35.6% for the Western Pacific region (WPR),</mark>~~ <u>from 37.0% to 48.0% for the European regi</u> <u><mark>on (EUR), and from 22.7% to 32.8% for the region of the Americas</mark></u> ~~(AMR). There are only four XEC sequences~~ ~~<mark>each from the African Region (AFR) and the East Mediterranean</mark> Region (EMR), and seventeen sequences from the South East Asia region.~~  \nTable 1: Global proportions of SARS-CoV-2 Variants, epidemiological week 44 to 47 of 2024  \n|**Lineage***|**Countries§**<br>**Sequ**|**ences§**|**2024-44**|**2024-45**|**2024-46**|**2024-47**|\n|---|---|---|---|---|---|---|\n|**VOIs**|||||||\n|JN.1|146|294307|11.7|12.5|12.0|12.1|\n|**VUMs**|||||||\n|KP.2|87|33287|1.3|1.3|1.2|0.9|\n|KP.3|77|56177|8.4|7.7|8.2|6.1|\n|KP.3.1.1|65|65234|48.8|47.2|43.7|41.8|\n|JN.1.18|100|7962|1.1|1.0|1.2|0.9|\n|LB.1|83|16166|0.9|0.9|0.6|0.6|\n|XEC|50|13331|26.9|27.8|31.7|36.8|\n|Recombinant|146|494028|0.8|1.3|0.9|0.7|\n|Unassigned|68|4095|0.0|0.0|0.0|-|\n|Others|119|37149|0.1|0.2|0.4|0.2|  \nFigures by WHO, data from GISAID, extracted on 07 December 2024. §Number of countries and sequences are since the emergence of the variants.  \n*The variants listed include descendant lineages, except those individually specified elsewhere in the table.  \n<u>The VOI and the VUMs that have shown increasing trends are highlighted in orange, those that have remained stable are highlighted in blue, while</u> those with decreasing trends are highlighted in green.  \n~~WHO and its Technical Advisory Group on~~ ~~<mark>Virus Evolution (TAG</mark> -~~ ~~<mark>VE) continue to recommen</mark>~~ d that Member ~~States prioritize specific actions to better a~~ ~~<mark>ddress uncertainties relating to antibody escape</mark>~~ and severity of ~~XEC:~~  \n- <u>Conduct neutralization assays usin</u> <u><mark>g human sera, representative of the affected com</mark></u> munity(ies), and ~~sera from naive animal models infe~~ ~~<mark>cted with XEC live virus isolates.</mark>~~  \n- ~~Perform a comparative evaluation to detect changes in rolling or ad hoc indicators of~~ severity.  \n1"
+    },
+    {
+        "chunk_id": 2,
+        "page_number": 2,
+        "header_path": "Root Document",
+        "chunk_type": "text",
+        "char_count": 744,
+        "text": "WHO and its Technical Advisory Group on COVID-19 Vaccine Composition (TAG-CO-VAC) continue to regularly assess the impact of variants on the performance of COVID-19 vaccines to inform decisions on updates to vaccine composition [4].  \nThe risk evaluation below follows the WHO framework [5] and is based on currently available evidence. It will be revised regularly as more evidence and data from additional countries become available. With declining prevalence of VOIs, and VUMs increasingly unable to meet the VOI definition, WHO decided on 29<sup>th</sup> November 2024 to begin attaching risk evaluations to VUM designations in addition to VOI designations, starting with the current document that refers to the latest designated VUM (XEC)."
+    },
+    {
+        "chunk_id": 3,
+        "page_number": 2,
+        "header_path": "Root Document",
+        "chunk_type": "text",
+        "char_count": 359,
+        "text": "To support member states in addressing the risk posed by COVID-19 during the transition from the response to a public health emergency of international concern to its management within broader disease prevention and control programmes, the WHO Director General’s latest standing recommendations remain in effect from 9 August 2023 until 30 April 2025 [6].  \n2"
+    },
+    {
+        "chunk_id": 4,
+        "page_number": 3,
+        "header_path": "Root Document",
+        "chunk_type": "table",
+        "char_count": 1463,
+        "text": "|Overall risk<br>evaluation:<br>**Low**|XEC is growing rapidly but possesses mini<br>previous immunity. There is a significant in<br>infections, but there are no reports to su<br>severity is higher as compared to other circ<br>The available evidence on XEC does not s<br>relative to the other currentlycirculatingOm|mal antigenic adva<br>crease in cases at<br>ggest that the as<br>ulating variants.<br>uggest additional p<br>icron descendent l|ntage in evading<br>tributable to XEC<br>sociated disease<br>ublic health risks<br>ineages.|\n|---|---|---|---|\n|Indicator|Evidence|Level of risk|Level of<br>confidence|\n|Growth advantage|There<br>are<br>currently<br>13<br>331<br>XEC<br>sequences available from 50 countries,<br>representing<br>36.8%<br>of<br>the<br>globally<br>available sequences in epidemiological<br>week 47, (11 to 17 November 2024).(18 to<br>24 November 2024). This is a significant rise<br>in prevalence from 26.9%four weeks prior<br>in epidemiological week 44 (28 October to<br>3 November 2024).<br>While XEC is increasing in prevalence, the<br>most<br>prevalent<br>SARS-CoV-2<br>variant<br>KP.3.1.1 is gradually declining globally<br>and across the WHO regions.|High|<br>Moderate|\n||In August 2024, therelative effective<br>reproduction number (Re) of XEC was<br>estimated to be 1.13-fold higher than that of<br>KP.3.1.1 [7], the most prevalent SARS-CoV-<br>2 variant globally then and at present.<br>* see footnote for more explanations|||  \n3"
+    },
+    {
+        "chunk_id": 5,
+        "page_number": 4,
+        "header_path": "Root Document",
+        "chunk_type": "table",
+        "char_count": 1331,
+        "text": "|Immune escape|Using pseudoviruses, XEC was shown to<br>have enhanced humoral immune evasion<br>and<br>receptor-binding<br>domain-targeting<br>antibody escape capabilities, which is<br>thought to arise from the receptor-binding<br>domain conformational dynamics induced<br>by<br>additional<br>N-terminal<br>domain<br>glycosylation (T22N) [8,9]. Similarly using<br>live viruses, there was a significant<br>reduction in antibody titre from B.1 and<br>XBB.1.5 to KP.3.1.1 and XEC in individuals<br>aged 68 - 82 years from Norway [10].<br>Studies with either monovalent JN.1 or<br>monovalent KP.2 mRNA vaccines suggest<br>that these vaccines enhance neutralising<br>antibody<br>responses<br>against<br>XEC<br>as<br>compared to the pre-vaccination titres.<br>However, neutralisation titres against XEC<br>are typically lower than those against the<br>homologous JN.1 or KP.2 immunising<br>antigen [11–13].<br>** see footnote for more explanations|Low<br>|Moderate|\n|---|---|---|---|\n|Severity and<br>clinical/diagnostic<br>considerations|Recent data suggests continued activity for<br>the monoclonal antibody pemivibart and<br>pemivibart-like antibodies against KP.3.1.1<br>and XEC [14].<br>There are noreported or published studies<br>on the impact of XEC on clinical<br>outcomes.<br>*** see footnote for more explanations|Low|Low|  \n4"
+    },
+    {
+        "chunk_id": 6,
+        "page_number": 5,
+        "header_path": "Annex: > *** Growth advantage**",
+        "chunk_type": "text",
+        "char_count": 380,
+        "text": "# Annex:  \n## *** Growth advantage**  \n_Level of risk_ : High, as the variant is growing substantially across all WHO regions with consistent SARSCoV-2 sequence data sharing, and the most prevalent SARS-CoV-2 variant KP.3.1.1 starting to decline.  \n_Confidence_ : Moderate, as even though we are seeing growth in three WHO regions, data is inconsistent in the other three regions."
+    },
+    {
+        "chunk_id": 7,
+        "page_number": 5,
+        "header_path": "Annex: > **** Antibody escape**",
+        "chunk_type": "text",
+        "char_count": 418,
+        "text": "## **** Antibody escape**  \n_Level of risk_ : Low, as it is estimated that XEC has limited immune evasion relative to co-circulating variants.  \n_Confidence_ : Moderate, as there are increasing data on cross neutralization of XEC. Additional laboratory studies from different regions of the world would be needed to further assess the risk of antibody escape in settings with different population immunity backgrounds."
+    },
+    {
+        "chunk_id": 8,
+        "page_number": 5,
+        "header_path": "Annex: > ***** Severity and clinical considerations**",
+        "chunk_type": "text",
+        "char_count": 590,
+        "text": "## ***** Severity and clinical considerations**  \n_Level of risk_ : Low, as currently there are no reports of elevated disease severity associated with this variant.  \n_Confidence_ : Low. Currently there are no studies assessing the impact of this variant on clinical outcomes. Although, there is regular co-ordination and data sharing between all WHO Regional colleagues, countries, and partners, reporting of new hospitalizations and ICU data with the WHO has decreased substantially, therefore caution should be taken when interpreting severe cases due to this decrease in reporting.  \n5"
+    },
+    {
+        "chunk_id": 9,
+        "page_number": 6,
+        "header_path": "**References**",
+        "chunk_type": "text",
+        "char_count": 674,
+        "text": "## **References**  \n1. World Health Organization Tracking SARS-CoV-2 Variants Available online: https://www.who.int/activities/tracking-SARS-CoV-2-variants/ (accessed on 5 December 2024).  \n2. Coronavirus Disease (COVID-2019) Situation Reports:Coronavirus Disease (COVID-19) Weekly Epidemiological Updates and Monthly Operational Updates Available online: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports.  \n3. Khare, S.; Gurry, C.; Freitas, L.; Schultz, M.B.; Bach, G.; Diallo, A.; Akite, N.; Ho, J.; Lee, R.T.C.; Yeo, W.; et al. GISAID’s Role in Pandemic Response. _China CDC Wkly._ **2021** , _3_ , 1049– 1051, doi:10.46234/ccdcw2021.255."
+    },
+    {
+        "chunk_id": 10,
+        "page_number": 6,
+        "header_path": "**References**",
+        "chunk_type": "text",
+        "char_count": 748,
+        "text": "4. WHO World Health Organization Technical Advisory Group on COVID-19 Vaccine Composition Available online: https://www.who.int/news/item/13-12-2023-statement-on-the-antigencomposition-of-covid-19-vaccines.  \n5. World Health Organization _SARS-CoV-2 Variant Risk Evaluation, 30 August 202_ ; World Health Organization: Geneva, 2023;  \n6. Standing Recommendations for COVID-19 Issued by the Director-General of the World Health Organization (WHO) in Accordance with the International Health Regulations (2005) (IHR) Available online: https://www.who.int/publications/m/item/standing-recommendations-for-covid19-issued-by-the-director-general-of-the-world-health-organization-(who)-in-accordance-withthe-international-health-regulations-(2005)-(ihr)."
+    },
+    {
+        "chunk_id": 11,
+        "page_number": 6,
+        "header_path": "**References**",
+        "chunk_type": "text",
+        "char_count": 653,
+        "text": "7. Kaku, Y.; Uriu, K.; Okumura, K.; Ito, J.; Sato, K. Virological Characteristics of the SARS-CoV-2 KP.3.1.1 Variant. _Lancet Infect. Dis._ **2024** , _24_ , e736, doi:10.1016/S1473-3099(24)00505-X.  \n8. Liu, J.; Yu, Y.; Jian, F.; Yang, S.; Song, W.; Wang, P.; Yu, L.; Shao, F.; Cao, Y. Enhanced Immune Evasion of SARS-CoV-2 Variants KP.3.1.1 and XEC through N-Terminal Domain Mutations. _Lancet Infect. Dis._ **2024** , doi:10.1016/S1473-3099(24)00738-2.  \n9. Wang, Q.; Guo, Y.; Mellis, I.A.; Wu, M.; Mohri, H.; Gherasim, C.; Valdez, R.; Purpura, L.J.; Yin, M.T.; Gordon, A.; et al. Antibody Evasiveness of SARS-CoV-2 Subvariants KP.3.1.1 and XEC 2024."
+    },
+    {
+        "chunk_id": 12,
+        "page_number": 6,
+        "header_path": "**References**",
+        "chunk_type": "text",
+        "char_count": 782,
+        "text": "10.  Fossum, E.; Vikse, E.L.; Robertson, A.H.; Wolf, A.-S.; Rohringer, A.; Trogstad, L.; Mjaaland, S.; Hungnes, O.; Bragstad, K. Low Levels of Neutralizing Antibodies against SARS-CoV-2 KP.3.1.1 and XEC in Serum from Seniors in May 2024 2024.  \n11.  Arora, P.; Happle, C.; Kempf, A.; Nehlmeier, I.; Stankov, M. V.; Dopfer-Jablonka, A.; Behrens, G.M.N.; Pöhlmann, S.; Hoffmann, M. Impact of JN.1 Booster Vaccination on Neutralisation of SARS-CoV-2 Variants KP.3.1.1 and XEC. _Lancet Infect. Dis._ **2024** , _24_ , e732–e733, doi:10.1016/S1473-3099(24)00688-1.  \n12.  Wang, Q.; Mellis, I.A.; Wu, M.; Bowen, A.; Gherasim, C.; Valdez, R.; Shah, J.G.; Purpura, L.J.; Yin, M.T.; Gordon, A.; et al. KP.2-Based Monovalent MRNA Vaccines Robustly Boost Antibody Responses to SARS-CoV-2 2024."
+    },
+    {
+        "chunk_id": 13,
+        "page_number": 6,
+        "header_path": "**References**",
+        "chunk_type": "text",
+        "char_count": 458,
+        "text": "13.  Chen, W.; Tompkins, K.R.; Windsor, I.W.; Martinez, L.T.; Ramos, M.; Li, W.; Shrivastava, S.; Rajput, S.; Chang, J.S.; Sahasrabudhe, P.; et al. Immunologic and Biophysical Features of the BNT162b2 JN.1- and KP.2-Adapted COVID-19 Vaccines 2024.  \n14.  Powers, C.; Williams, B.; Kreher, A.; Gao, F.; West, B.; Chupp, D.; Allen, R. Neutralization of Recent SARS-CoV-2 Variants by Genetically and Structurally Related MAbs of the Pemivibart Lineage 2024.  \n6"
+    }
+]

@@ -1,0 +1,100 @@
+[
+    {
+        "id": "Q1_single_chunk_easy",
+        "difficulty": "Easy",
+        "question_type": "single_chunk_text",
+        "question": "Until what date do the WHO Director General's latest standing recommendations on COVID-19 remain in effect?",
+        "target_pages": [
+            2
+        ],
+        "ground_truth_answer": "The WHO Director General's latest standing recommendations remain in effect from 9 August 2023 until 30 April 2025.",
+        "mandatory_facts": [
+            "30 April 2025",
+            "9 August 2023"
+        ],
+        "retrieval_challenge": "Sanity check. Tests whether basic paragraph retrieval can pinpoint an exact date cleanly without hallucinating."
+    },
+    {
+        "id": "Q2_single_table_medium",
+        "difficulty": "Medium",
+        "question_type": "table_lookup",
+        "question": "According to Table 1, what was the global prevalence proportion of the XEC variant in epidemiological week 44 compared to week 47 of 2024?",
+        "target_pages": [
+            1
+        ],
+        "ground_truth_answer": "In epidemiological week 44 (2024-44), the global proportion of XEC was 26.9%, which rose to 36.8% in week 47 (2024-47).",
+        "mandatory_facts": [
+            "26.9%",
+            "36.8%",
+            "Table 1"
+        ],
+        "retrieval_challenge": "Tests table row/column parsing. If a chunker splits Table 1 mid-row or strips the '2024-44' column header, the model cannot distinguish week 44 from week 47."
+    },
+    {
+        "id": "Q3_multichunk_same_page_medium",
+        "difficulty": "Medium",
+        "question_type": "multichunk_same_page",
+        "question": "What is the origin and lineage parentage of the XEC variant, and how many sequences were submitted to GISAID as of 9 December 2024?",
+        "target_pages": [
+            1
+        ],
+        "ground_truth_answer": "XEC is a recombinant variant derived from JN.1 descendent lineages KS.1.1 and KP.3.3, with earliest sample collected 26 June 2024. As of 9 December 2024, there were 13,331 XEC sequences submitted to GISAID from 50 countries.",
+        "mandatory_facts": [
+            "KS.1.1",
+            "KP.3.3",
+            "JN.1",
+            "13,331",
+            "26 June 2024"
+        ],
+        "retrieval_challenge": "Requires capturing both the lineage sentence and the sequence statistics located in separate sections/paragraphs of Page 1."
+    },
+    {
+        "id": "Q4_crosspage_table_hard",
+        "difficulty": "Hard",
+        "question_type": "table_spanning_pages",
+        "question": "What are the evaluated levels of risk and levels of confidence for both 'Growth advantage' and 'Immune escape' for the XEC variant?",
+        "target_pages": [
+            3,
+            4
+        ],
+        "ground_truth_answer": "For Growth advantage: Level of risk is High, Level of confidence is Moderate. For Immune escape: Level of risk is Low, Level of confidence is Moderate.",
+        "mandatory_facts": [
+            "Growth advantage: High risk, Moderate confidence",
+            "Immune escape: Low risk, Moderate confidence"
+        ],
+        "retrieval_challenge": "The Risk Matrix table starts on Page 3 (Growth advantage) and continues onto Page 4 (Immune escape). Tests if page-by-page chunking breaks multi-page table correlation."
+    },
+    {
+        "id": "Q5_crosspage_reasoning_hard",
+        "difficulty": "Hard",
+        "question_type": "multichunk_cross_page",
+        "question": "Why is the confidence level for the severity and clinical considerations of XEC rated as 'Low' by the WHO?",
+        "target_pages": [
+            4,
+            5
+        ],
+        "ground_truth_answer": "Confidence is rated as Low because there are currently no reported or published studies assessing the impact of XEC on clinical outcomes, and reporting of new hospitalizations and ICU data to the WHO has decreased substantially, requiring caution when interpreting severity.",
+        "mandatory_facts": [
+            "No studies on clinical outcomes",
+            "Decrease in hospitalization / ICU reporting"
+        ],
+        "retrieval_challenge": "The rating is stated in the table on Page 4, but the detailed rationale and explanation is located in the Annex on Page 5. Requires cross-page retrieval."
+    },
+    {
+        "id": "Q6_hybrid_table_text_expert",
+        "difficulty": "Expert",
+        "question_type": "table_and_text_hybrid",
+        "question": "Compare the growth advantage of XEC against KP.3.1.1: What was XEC's relative effective reproduction number in August 2024, and how did KP.3.1.1's global sequence proportion change from week 44 to week 47 in Table 1?",
+        "target_pages": [
+            1,
+            3
+        ],
+        "ground_truth_answer": "In August 2024, the relative effective reproduction number (Re) of XEC was estimated to be 1.13-fold higher than KP.3.1.1. In Table 1, KP.3.1.1 declined from 48.8% in week 44 to 41.8% in week 47.",
+        "mandatory_facts": [
+            "1.13-fold higher",
+            "48.8%",
+            "41.8%"
+        ],
+        "retrieval_challenge": "Extreme hybrid test. Combines a specific statistical figure from the text on Page 3 with a multi-week column lookup from Table 1 on Page 1."
+    }
+]
