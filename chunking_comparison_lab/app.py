@@ -36,8 +36,8 @@ def sanitize_collection_name(name: str) -> str:
     return f"doc_{clean.lower()}"[:50]
 
 # Session State Initialization
-if "message" not in st.session_state:
-    st.session_state.message = []
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 if "current_collection" not in st.session_state:
     st.session_state.current_collection = None
 if "doc_stats" not in st.session_state:
