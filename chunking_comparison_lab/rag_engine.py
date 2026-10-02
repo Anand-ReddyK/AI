@@ -1,5 +1,6 @@
+from hybrid_rag.hybrid_retriever import HybridRetriever
 import os
-from typing import List, Dict, Generator
+from typing import List, Dict, Generator, Literal
 from dotenv import load_dotenv
 from groq import Groq
 from index_to_qdrant import search_chunks, DEFAULT_LOCAL_DB_PATH
@@ -62,6 +63,7 @@ def query_rag_stream(
         collection_name: str,
         query:str,
         top_k: int = 4,
+        search_mode: Literal["dense", "hybrid"] = "hybrid", 
         storage_path: str = DEFAULT_LOCAL_DB_PATH,
         model: str = DEFAULT_GROQ_MODEL
     ) -> tuple[Generator[str, None, None], List[Dict]]:
@@ -79,11 +81,15 @@ def query_rag_stream(
         {stream_generator, retrieved_chunks}
     """
     # 1. Retrieve relevant chunks from local Qdrant
-    retrieved_chunks = search_chunks(
-        collection_name=collection_name,
-        query=query,
-        limit=top_k,
-        storage_path=storage_path
+    if search_mode == "hybrid":
+        retriever = HybridRetriever(collection_name=collection_name, storage_path=storage_path)
+        retrieved_chunks = retriever.search_hybrid(query=query, limit=top_k)
+    else:
+        retrieved_chunks = search_chunks(
+            collection_name=collection_name,
+            query=query,
+            limit=top_k,
+            storage_path=storage_path
     )
 
     if not retrieved_chunks:
