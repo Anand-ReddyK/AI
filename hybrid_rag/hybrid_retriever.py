@@ -138,6 +138,63 @@ class HybridRetriever:
         return results
     
 
+    def rrf_combine(
+        self,
+        dense_results: List[Dict[str, Any]],
+        bm25_results: List[Dict[str, Any]],
+        limit: int
+    ) -> List[Dict[str, Any]]:
+        """Combines dense and BM25 results using RRF."""
+        rrf_map: Dict[Any, Dict[str, Any]] = {}
+
+        # Add dense rank to RRF Score
+        for item in dense_results:
+            pid = item["point_id"]
+            rank = item["dense_rank"]
+            score = 1.0 / (self.rrf_k + rank)
+
+            if pid not in rrf_map:
+                rrf_map[pid] = {
+                    "point_id" : pid,
+                    "payload": item["payload"],
+                    "rrf_score": 0.0,
+                    "dense_rank": rank,
+                    "bm25_rank": None
+                }
+            else:
+                rrf_map[pid]["dense_rank"] = rank
+            
+            rrf_map[pid]["rrf_score"] += score
+        
+        # Add BM25 rank to RRF Score
+        for item in bm25_results:
+            pid = item["point_id"]
+            rank = item["bm25_rank"]
+            score = 1.0 / (self.rrf_k + rank)
+
+            if pid not in rrf_map:
+                rrf_map[pid] = {
+                    "point_id" : pid,
+                    "payload": item["payload"],
+                    "rrf_score": 0.0,
+                    "dense_rank": None,
+                    "bm25_rank": rank
+                }
+            else:
+                rrf_map[pid]["bm25_rank"] = rank
+            
+            rrf_map[pid]["rrf_score"] += score
+        
+        # Sort by higher RRF score
+        sorted_results = sorted(
+            rrf_map.values(),
+            key=lambda x: x["rrf_score"],
+            reverse=True
+        )
+
+        return sorted_results[:limit]
+    
+
     def search_hybrid(
             self,
             query: str,
@@ -162,53 +219,4 @@ class HybridRetriever:
         dense_results = self.search_dense(query, limit=candidate_pool_size)
         bm25_results = self.search_bm25(query, limit=candidate_pool_size)
 
-        rrf_map: Dict[Any, Dict[str, Any]] = {}
-
-        # 1. Add dense rank to RRF Score
-        for item in dense_results:
-            pid = item["point_id"]
-            rank = item["dense_rank"]
-            score = 1.0 / (self.rrf_k + rank)
-
-            if pid not in rrf_map:
-                rrf_map[pid] = {
-                    "point_id" : pid,
-                    "payload": item["payload"],
-                    "rrf_score": 0.0,
-                    "dense_rank": rank,
-                    "bm25_rank": None
-                }
-            else:
-                rrf_map[pid]["dense_rank"] = rank
-            
-            rrf_map[pid]["rrf_score"] += score
-        
-        # 2. Add BM25 rank to RRF Score
-        for item in bm25_results:
-            pid = item["point_id"]
-            rank = item["bm25_rank"]
-            score = 1.0 / (self.rrf_k + rank)
-
-            if pid not in rrf_map:
-                rrf_map[pid] = {
-                    "point_id" : pid,
-                    "payload": item["payload"],
-                    "rrf_score": 0.0,
-                    "dense_rank": None,
-                    "bm25_rank": rank
-                }
-            else:
-                rrf_map[pid]["bm25_rank"] = rank
-            
-            rrf_map[pid]["rrf_score"] += score
-        
-        # 3. Sort by higher RRF score
-        sorted_results = sorted(
-            rrf_map.values(),
-            key=lambda x: x["rrf_score"],
-            reverse=True
-        )
-
-        return sorted_results[:limit]
-        
-        
+        return self.rrf_combine(dense_results, bm25_results, limit)
