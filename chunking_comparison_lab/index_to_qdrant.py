@@ -7,12 +7,17 @@ from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, VectorParams, PointStruct
 from sentence_transformers import SentenceTransformer
 
+from pathlib import Path
+
+# Anchor DB path to project root regardless of where python is executed from
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
 load_dotenv()
 
 QDRANT_URL = os.getenv("QDRANT_URL")
 QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
 
-DEFAULT_LOCAL_DB_PATH = "./local_qdrant_db"
+DEFAULT_LOCAL_DB_PATH = str(PROJECT_ROOT / "local_qdrant_db")
 
 EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
 EMBEDDING_SIZE = 384
