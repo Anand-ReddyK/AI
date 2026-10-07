@@ -5,6 +5,7 @@ from pathlib import Path
 
 # Base directory for chunking_comparison_lab
 LAB_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = LAB_DIR.parent
 
 # ---------------------------------------------------------------------------
 # Qdrant Collection Names (Single Source of Truth)
@@ -36,3 +37,7 @@ STRATEGIES_TO_COLLECTIONS_COVID_6PAGE = {
 # Golden Dataset Path
 # ---------------------------------------------------------------------------
 GOLDEN_DATASET_COVID_6PAGE = str(LAB_DIR / "golden_dataset/covid_6page.json")
+
+
+LOCAL_VECTOR_STORE_PATH = str(PROJECT_ROOT / "local_qdrant_db")
+LOCAL_COLL_COVID_6PAGE = "doc_covid-6-page-rag_pdf"

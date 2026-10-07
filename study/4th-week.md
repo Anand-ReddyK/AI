@@ -87,13 +87,41 @@ You can break your Week 4 work into 5 focused milestones:
 
 - **"What is the fundamental architectural difference between a bi-encoder and a cross-encoder?"**
 
-    - A bi-encoder embeds queries and documents independently into vectors, only comparing them via cosine similarity at the end. A cross-encoder feeds both query and document into the transformer simultaneously, allowing every query token to attend to every document token. Cross-encoders are far more accurate but have an $O(N)$ inference cost per query."
+    - A bi-encoder embeds queries and documents independently into vectors, only comparing them via cosine similarity at the end. A cross-encoder feeds both query and document into the transformer simultaneously, allowing every query token to attend to every document token. Cross-encoders are far more accurate but have an $O(N)$ inference cost per query.
 
 - **"Why can't we use a cross-encoder directly across all our documents?"**
 
-    - If you have 100,000 chunks, passing all 100,000 pairs through a BERT-scale model would take several minutes of GPU time per query. Instead, we use a two-stage retrieval pipeline: bi-encoder/hybrid retrieves the top 20–30 candidates in milliseconds, and the cross-encoder reranks only those 20."
+    - If you have 100,000 chunks, passing all 100,000 pairs through a BERT-scale model would take several minutes of GPU time per query. Instead, we use a two-stage retrieval pipeline: bi-encoder/hybrid retrieves the top 20–30 candidates in milliseconds, and the cross-encoder reranks only those 20.
 
 - **"When is reranking worth the extra latency?"**
 
-    - Whenever answer precision and faithfulness matter more than sub-50ms latency—such as enterprise Q&A, legal, or medical search. Adding a 25ms local reranking step can cut hallucinations significantly by ensuring the LLM's top-1 context chunk actually answers the question."
+    - Whenever answer precision and faithfulness matter more than sub-50ms latency—such as enterprise Q&A, legal, or medical search. Adding a 25ms local reranking step can cut hallucinations significantly by ensuring the LLM's top-1 context chunk actually answers the question.
 
+## Milestone 4.3: Implement Contextual Prepending / Query Rewriting & Solve the Table Issue
+
+- **"What is Anthropic's Contextual Retrieval and why does it outperform standard chunking?"**
+
+    - Standard chunking strips context away from passages (the 'orphan chunk' problem). Contextual Retrieval uses an LLM at index time to generate 50–100 tokens of situational context (document title, subject, chapter) and prepends it to each chunk before embedding and BM25 indexing. Anthropic showed this cuts retrieval failure rates by up to 49%.
+
+- **"What is HyDE and when would you use it?"**
+
+    - Hypothetical Document Embeddings (HyDE) prompts an LLM to hallucinate a plausible answer passage to a query, and we embed that passage instead of the question. It helps because answers reside closer to other answers in dense embedding vector space than questions do. It is especially useful for high-level, conceptual, or sparse-keyword queries.
+
+- **"How do you handle multi-part user questions in a RAG pipeline?"**
+
+    - We use Query Decomposition: an LLM breaks a complex comparison question into 2 or 3 independent sub-queries. We retrieve candidates for each sub-query independently, deduplicate the pool, and then use a Cross-Encoder reranker against the original user question to find the best overall context.
+
+
+## Milestone 4.4: Install & Run RAGAS Evaluation
+
+- **"What is the difference between Context Precision and Context Recall?"**
+
+    - Context Recall measures completeness: did our retrieval capture all facts present in the ground truth? Context Precision measures signal-to-noise: are the chunks containing those facts ranked near the very top of the retrieved list rather than diluted by irrelevant text.
+
+- **"How does RAGAS compute Faithfulness without human labels?"**
+
+    - RAGAS uses an LLM judge to extract all factual claims from the generated answer, then performs automated premise-entailment checks to verify if each claim is directly supported by the retrieved context. Faithfulness is the ratio of supported claims over total claims.
+
+- **"Why is measuring Faithfulness better than just calculating BLEU or ROUGE?"**
+
+    - BLEU and ROUGE only compare n-gram word overlaps against reference text. They cannot detect factual contradictions or subtle hallucinations (e.g. changing '10mg' to '100mg' has high ROUGE overlap but is completely unfaithful).

@@ -28,7 +28,7 @@
             "36.8%",
             "Table 1"
         ],
-        "retrieval_challenge": "Tests table row/column parsing. If a chunker splits Table 1 mid-row or strips the '2024-44' column header, the model cannot distinguish week 44 from week 47."
+        "retrieval_challenge": "Tests table row/column parsing. If a chunker splits Table 1 mid-row or strips headers, the model cannot distinguish week 44 from week 47."
     },
     {
         "id": "Q3_multichunk_same_page_medium",
@@ -96,5 +96,148 @@
             "41.8%"
         ],
         "retrieval_challenge": "Extreme hybrid test. Combines a specific statistical figure from the text on Page 3 with a multi-week column lookup from Table 1 on Page 1."
+    },
+    {
+        "id": "Q7_regional_breakdown_medium",
+        "difficulty": "Medium",
+        "question_type": "multichunk_same_page",
+        "question": "Across which three WHO regions did XEC show an increasing prevalence from week 44 to 47, and what were the starting and ending percentages in each?",
+        "target_pages": [
+            1
+        ],
+        "ground_truth_answer": "XEC increased across the Western Pacific region (WPR) from 14.3% to 35.6%, the European region (EUR) from 37.0% to 48.0%, and the Region of the Americas (AMR) from 22.7% to 32.8%.",
+        "mandatory_facts": [
+            "WPR: 14.3% to 35.6%",
+            "EUR: 37.0% to 48.0%",
+            "AMR: 22.7% to 32.8%"
+        ],
+        "retrieval_challenge": "Requires extracting dense geographical stats from paragraph text without conflating regional acronyms and percentages."
+    },
+    {
+        "id": "Q8_sparse_sequence_counts_easy",
+        "difficulty": "Easy",
+        "question_type": "single_chunk_text",
+        "question": "How many XEC sequences were reported from the African Region, Eastern Mediterranean Region, and South East Asia Region as of December 2024?",
+        "target_pages": [
+            1
+        ],
+        "ground_truth_answer": "There were four XEC sequences each from the African Region (AFR) and the Eastern Mediterranean Region (EMR), and seventeen sequences from the South East Asia region (SEAR).",
+        "mandatory_facts": [
+            "four from AFR",
+            "four from EMR",
+            "seventeen from South East Asia"
+        ],
+        "retrieval_challenge": "Tests retrieval of low-frequency tail numbers in dense narrative text."
+    },
+    {
+        "id": "Q9_policy_designation_timeline_medium",
+        "difficulty": "Medium",
+        "question_type": "multichunk_cross_page",
+        "question": "When was XEC designated as a Variant Under Monitoring (VUM), and on what date did WHO decide to begin attaching risk evaluations to VUM designations?",
+        "target_pages": [
+            1,
+            2
+        ],
+        "ground_truth_answer": "XEC was designated as a VUM on 24 September 2024. WHO decided on 29 November 2024 to begin attaching risk evaluations to VUM designations in addition to VOIs, starting with XEC.",
+        "mandatory_facts": [
+            "24 September 2024",
+            "29 November 2024"
+        ],
+        "retrieval_challenge": "Requires linking the variant designation date on Page 1 with the WHO policy update paragraph on Page 2."
+    },
+    {
+        "id": "Q10_biochemical_mutation_hard",
+        "difficulty": "Hard",
+        "question_type": "table_lookup",
+        "question": "What specific structural mutation and mechanism is thought to cause XEC's enhanced humoral immune evasion and antibody escape capabilities?",
+        "target_pages": [
+            4
+        ],
+        "ground_truth_answer": "Enhanced humoral immune evasion is thought to arise from receptor-binding domain (RBD) conformational dynamics induced by an additional N-terminal domain glycosylation mutation (T22N).",
+        "mandatory_facts": [
+            "T22N",
+            "N-terminal domain glycosylation",
+            "receptor-binding domain conformational dynamics"
+        ],
+        "retrieval_challenge": "Tests technical bio-medical entity extraction from within a table cell on Page 4."
+    },
+    {
+        "id": "Q11_clinical_cohort_study_hard",
+        "difficulty": "Hard",
+        "question_type": "table_lookup",
+        "question": "What did live virus neutralization studies among individuals aged 68-82 years in Norway demonstrate regarding antibody titres against XEC and KP.3.1.1?",
+        "target_pages": [
+            4
+        ],
+        "ground_truth_answer": "Studies using live viruses showed a significant reduction in antibody titre from B.1 and XBB.1.5 to KP.3.1.1 and XEC in individuals aged 68 to 82 years from Norway.",
+        "mandatory_facts": [
+            "Norway",
+            "68 - 82 years",
+            "reduction in antibody titre",
+            "B.1 and XBB.1.5"
+        ],
+        "retrieval_challenge": "Requires isolating a specific country/age demographic cohort study embedded inside the Immune Escape section."
+    },
+    {
+        "id": "Q12_monoclonal_antibody_easy",
+        "difficulty": "Easy",
+        "question_type": "table_lookup",
+        "question": "What monoclonal antibody has demonstrated continued neutralization activity against KP.3.1.1 and XEC?",
+        "target_pages": [
+            4
+        ],
+        "ground_truth_answer": "Recent data suggests continued activity for the monoclonal antibody pemivibart and pemivibart-like antibodies against KP.3.1.1 and XEC.",
+        "mandatory_facts": [
+            "pemivibart"
+        ],
+        "retrieval_challenge": "Precise drug name retrieval from the Severity and Clinical considerations section."
+    },
+    {
+        "id": "Q13_annex_growth_rationale_hard",
+        "difficulty": "Hard",
+        "question_type": "multichunk_cross_page",
+        "question": "According to the Annex, why is the confidence level for XEC's growth advantage rated only as Moderate despite the risk being High?",
+        "target_pages": [
+            3,
+            5
+        ],
+        "ground_truth_answer": "Confidence is rated as Moderate because even though substantial growth is observed across three WHO regions, data is inconsistent in the other three regions.",
+        "mandatory_facts": [
+            "growth in three WHO regions",
+            "data is inconsistent in the other three regions"
+        ],
+        "retrieval_challenge": "Tests connecting the summary rating on Page 3 to the exact qualitative justification in Annex 1 on Page 5."
+    },
+    {
+        "id": "Q14_vaccine_cross_reactivity_medium",
+        "difficulty": "Medium",
+        "question_type": "multichunk_cross_page",
+        "question": "How do monovalent JN.1 or KP.2 mRNA booster vaccines perform against XEC compared to pre-vaccination titres and homologous antigens?",
+        "target_pages": [
+            1,
+            4
+        ],
+        "ground_truth_answer": "Monovalent JN.1 and KP.2 mRNA vaccines enhance neutralising antibody responses against XEC compared to pre-vaccination titres, though neutralisation titres against XEC remain typically lower than those against homologous JN.1 or KP.2 antigens.",
+        "mandatory_facts": [
+            "enhance neutralising antibody responses compared to pre-vaccination",
+            "lower than homologous JN.1 or KP.2 immunising antigen"
+        ],
+        "retrieval_challenge": "Requires synthesizing the Executive Summary claim on Page 1 with detailed booster findings on Page 4."
+    },
+    {
+        "id": "Q15_table_multi_variant_comparison_expert",
+        "difficulty": "Expert",
+        "question_type": "table_lookup",
+        "question": "According to Table 1, how did the global prevalence of JN.1, KP.2, and KP.3 change between week 44 and week 47 of 2024?",
+        "target_pages": [
+            1
+        ],
+        "ground_truth_answer": "From week 44 to 47: JN.1 went from 11.7% to 12.1%, KP.2 decreased from 1.3% to 0.9%, and KP.3 decreased from 8.4% to 6.1%.",
+        "mandatory_facts": [
+            "JN.1: 11.7% to 12.1%",
+            "KP.2: 1.3% to 0.9%",
+            "KP.3: 8.4% to 6.1%"
+        ],
+        "retrieval_challenge": "Multi-entity comparative table extraction across multiple rows simultaneously."
     }
 ]
