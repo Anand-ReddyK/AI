@@ -212,8 +212,9 @@ if __name__ == "__main__":
     print("🚀 MULTI-STRATEGY UPLOADER")
     print("=" * 60)
 
-    from config import STRATEGY_COLLECTION_TO_CHUNKED_FILE_COVID_6PAGE
+    from chunking_comparison_lab.config import STRATEGY_COLLECTION_TO_CHUNKED_FILE_COVID_6PAGE
 
     for strategy, json_file in STRATEGY_COLLECTION_TO_CHUNKED_FILE_COVID_6PAGE.items():
-        upload_strategy_to_qdrant(strategy, json_file)
+        upload_json_to_qdrant(strategy, json_file)
+        # upload_strategy_to_qdrant(strategy, json_file)
     
