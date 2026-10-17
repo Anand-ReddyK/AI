@@ -128,3 +128,23 @@ An agent that takes an open-ended research question (e.g., "Compare the clinical
 
 - **"How does Defensive Tool Execution enable agent self-correction?"**
     - Instead of letting Python raise unhandled exceptions (e.g., invalid mathematical syntax or missing database keys) that crash the script, the registry catches exceptions and returns the error string as the tool observation. The LLM reads the error in the subsequent turn and autonomously corrects its arguments, tries a fallback approach, or notifies the user.
+
+
+## Milestone 5.2: The ReAct Pattern & Why Raw while-Loops Break
+
+- **"What is the core difference between Chain-of-Thought (CoT) and ReAct?"**
+    - **Concept**: Chain-of-Thought is purely internal reasoning in a static context with no external feedback. ReAct alternates internal reasoning with external interactions (actions) and external updates (observations). The reasoning traces guide and interpret the actions, while the environment observations ground the reasoning, preventing hallucination.
+- **"Why not just use an unconstrained while True loop for an agent?"**
+    - **Concept**: Raw loops lack deterministic state preservation, recursion checkpoints, cycle detection, streaming hooks, and human approval gates. If any step fails or hangs, the entire state is unrecoverable, and without cycle detection, models easily get trapped in infinite action loops.
+- **"How do you detect and mitigate action loops (thrashing) in an agent?"**
+    - **Concept**: You maintain an action history cache and compare incoming tool calls against previous attempts. If the agent calls the same tool with identical arguments twice in a row without making progress, the loop controller intervenes by injecting a steering prompt (e.g., instructing the agent to choose an alternative approach or summarize its blockage) or terminates the execution.
+- **"How does ReAct mitigate the 'Lost in the Middle' context problem?"**
+    - **Concept**: Instead of appending raw, multi-megabyte tool payloads directly into the global conversation history, a ReAct architecture encourages the agent to synthesize observations into concise thoughts or summaries before moving to the next action, keeping the working memory dense with high-signal facts.
+
+### Control Flow Guarantees & Termination Conditions
+
+Understand the defensive mechanisms required to keep an autonomous agent bounded:
+
+- **Cycle Detection**: Tracking whether identical tool arguments or identical observations have repeated across consecutive turns.
+- **Budget Thresholds**: Enforcing both recursion limits (step counts) and cumulative token/cost ceilings.
+- **Confidence & Stop Conditions**: Establishing unambiguous termination criteria so the agent knows exactly when its mission is completed versus when it must yield back to the user with a polite failure explanation.

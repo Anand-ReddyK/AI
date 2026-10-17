@@ -33,7 +33,10 @@ def get_stock_price(ticker: str) -> dict:
     }
     ticker_clean = ticker.upper().strip()
     if ticker_clean not in prices:
-        raise ValueError(f"Ticker '{ticker_clean}' not found in database. Supported tickers: {', '.join(prices.keys())}")
+        # raise ValueError(f"Ticker '{ticker_clean}' not found in database. Supported tickers: {', '.join(prices.keys())}")
+        
+        # Removed the supported list to check the The "Trivial Tweak" Trap (Near-Identical Cycling)
+        raise ValueError(f"Ticker '{ticker_clean}' not found in database.")
     return {
         "ticker": ticker_clean,
         "price_usd": prices[ticker_clean]

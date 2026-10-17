@@ -8,7 +8,6 @@ Native Tool Registry:
 self-correct.
 """
 
-from matplotlib.style import available
 from typing import Callable, Dict, Any, Type, List
 import json
 from pydantic import BaseModel, ValidationError
