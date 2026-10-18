@@ -148,3 +148,35 @@ Understand the defensive mechanisms required to keep an autonomous agent bounded
 - **Cycle Detection**: Tracking whether identical tool arguments or identical observations have repeated across consecutive turns.
 - **Budget Thresholds**: Enforcing both recursion limits (step counts) and cumulative token/cost ceilings.
 - **Confidence & Stop Conditions**: Establishing unambiguous termination criteria so the agent knows exactly when its mission is completed versus when it must yield back to the user with a polite failure explanation.
+
+## Milestone 5.3: Transition to LangGraph (State Machines as Code)
+
+- **"What is the fundamental architectural difference between LangChain Chains (DAGs) and LangGraph?"**
+    - Legacy LangChain Chains are Directed Acyclic Graphs (DAGs) designed for single-pass pipelines ( Input → Prompt → LLM → Output ). They cannot naturally handle cyclic recursion, backtracking, or dynamic branching.
+
+    - LangGraph models agentic architectures as cyclic State Machines. It treats loops as first-class citizens (Node A → Node B → Node A), tracks state deterministically across transitions, and allows conditional branching, parallel fan-outs, and persistence.
+
+- **"What is a State Reducer in LangGraph, and why is `Annotated[Sequence[BaseMessage], add_messages]` essential?"**
+    - In LangGraph, when a node returns `{messages: [new_message]}`, default dictionary behavior would completely overwrite the previous list with only the new message, wiping out all history!
+    - A Reducer defines the merge strategy. The `add_messages` reducer tells LangGraph: "Do not overwrite. Instead, append new messages to the existing list, and if a message has an existing ID, update that message in-place."
+- **"How does LangGraph solve the infinite loop / thrashing problem that plagues raw `while`-loops?"**
+    - LangGraph enforces a hard, configurable `recursion_limit` (default: 25 steps) at the graph executor level. If nodes cycle beyond this limit, LangGraph raises a `GraphRecursionError` rather than allowing unconstrained API spend.
+    - Furthermore, conditional edges allow engineers to inspect state attributes (e.g., error counts or visit frequencies) and deterministically route to a fallback or human-review node if an agent repeats an action.
+- **"What is the difference between a deterministic edge and a conditional edge?"**
+
+    - Deterministic Edge (add_edge("tools", "agent")): A fixed transition. Once the tools node finishes executing, execution is guaranteed to move to agent.
+    - Conditional Edge (add_conditional_edges("agent", router_func, path_map)): A dynamic transition. It executes a Python callable (router_func) that inspects the current state (e.g., checking if the model returned tool_calls vs text content) and selects the next destination node from a mapping dictionary.
+
+- **"How does Human-in-the-Loop (HITL) work in LangGraph, and why can't we just use Python's `input()`?"**
+    - In production, agents run on asynchronous web servers or background workers. Blocking the thread with `input()` is impossible when a user might take minutes or hours to respond.
+    - LangGraph solves this using **Checkpointers (`MemorySaver` / `SqliteSaver`)** and **`interrupt()`**:
+        - `interrupt(payload)` raises a control-flow signal that pauses execution, serializes the full state to the checkpointer under a `thread_id`, and yields control back to the caller.
+        - The server can then shut down or serve other requests.
+        - When the user responds via UI/API, the client resumes the workflow using `app.stream(Command(resume=user_response), config={"configurable": {"thread_id": ...}})`, picking up execution exactly where it paused.
+
+- **"What does LangChain's `@tool` decorator actually pass to the LLM?"**
+    - The LLM never sees the Python function code. `@tool` uses Pydantic reflection to inspect three elements:
+        1. **Function name** $\to$ Tool identifier (`"name": "get_stock_price"`).
+        2. **Docstring** $\to$ Tool description (`"description": "..."`), which the LLM reads to decide *when* and *why* to invoke the tool.
+        3. **Type hints** $\to$ JSON Schema parameter definitions (`"parameters": {"type": "object", ...}`).
+    - When passed to `llm.bind_tools()`, these are formatted into the provider's native wire schema (OpenAI/Groq tool specification).

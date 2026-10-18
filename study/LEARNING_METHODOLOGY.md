@@ -163,7 +163,9 @@ AI/
 ├── pre_retrieval/                # Week 4: Query transformation (HyDE, decomposition), Contextual retrieval
 ├── evaluation/                   # Week 4: RAGAS evaluation pipeline & CSV scorecards
 ├── agents/                       # Week 5+: Autonomous agents & workflows
-│   └── native_tool_calling/      # 5.1: Wire-protocol, Pydantic schemas, parallel tool runner
+│   ├── native_tool_calling/      # 5.1: Wire-protocol, Pydantic schemas, parallel tool runner
+│   ├── ReAct_pattern/            # 5.2: ReAct loop, cycle detection & thrashing mitigation
+│   └── langgraph_agent/          # 5.3: State machines, TypedDict state, nodes & conditional edges
 └── utils/                        # Shared multi-provider LLM abstraction layer & configurations
 ```
 
