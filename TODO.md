@@ -5,3 +5,5 @@ In pre_retrieval/query_transformer.py:
 In agents\langgraph_agent\react_interactive_graph.py:
 - The LLM uses a tool called ask_human to talk to the user, but it sometimes forgets and just provides a response to ask a question. This reults in the program stopping.
 - We need to find a solution, maybe find a different way to know if we have the final answer.
+
+In 5.4 Let's add Jav for choice making for query transformation, chooising between RAG retrival or normal chat, relevent chunks or not, etc. This will reduce the number of LLM calls and make the RAG pipeline efficient, cheaper and faster.

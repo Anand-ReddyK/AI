@@ -61,6 +61,8 @@ class QueryTransformer:
         - Keep domain terminology, acronyms and specific numbers intact.
         - DO NOT answer the query, your job is to rewite the query for better results in a later stage by retrieval system (RAG).
         - return ONLY the rewitten search query string, No explanation about the query or any other text is needed.
+        - Incase there is insufficient context and it is unclear how to resolve the ambiguity, then leave it as it is, do not hallucinate.
+        - If the query is clear then just return the original query, do not modify it unnecessarily.
 
         Conversation History:
         {history_context if history_context else 'None'}

@@ -180,3 +180,51 @@ Understand the defensive mechanisms required to keep an autonomous agent bounded
         2. **Docstring** $\to$ Tool description (`"description": "..."`), which the LLM reads to decide *when* and *why* to invoke the tool.
         3. **Type hints** $\to$ JSON Schema parameter definitions (`"parameters": {"type": "object", ...}`).
     - When passed to `llm.bind_tools()`, these are formatted into the provider's native wire schema (OpenAI/Groq tool specification).
+
+
+## Milestone 5.4: Bridge Week 4 to Week 5 — Building an "Agentic RAG" System
+
+- **"What is the difference between Self-RAG and Adaptive/Corrective RAG (CRAG), and why shouldn't an LLM simply decide everything inside a single prompt?"**
+
+    - **Self-RAG**: introduces self-reflection tokens/nodes (retrieval necessity, document relevance grading, and hallucination verification).
+    - **Corrective RAG (CRAG)**: specifically focuses on automated recovery: if retrieved documents fall below a confidence threshold, it intercepts the workflow and triggers query reformulation (e.g., HyDE or web search fallback) before calling the generator.
+    - **Why separate into graph nodes?** Monolithic prompts try to retrieve, grade, reformulate, and synthesize in one context, leading to attention dilution ("lost in the middle"), inability to inspect intermediate failures, and zero deterministic routing boundaries.
+
+
+- **"Why is static (naive) RAG considered an anti-pattern in production, and how does Adaptive RAG solve the 'Retrieval Tax'?"**
+    - **The Problem (Retrieval Tax)**: In a naive RAG chain (`Query → Embed → Vector DB → LLM`), *every single query* triggers embedding generation and a vector database lookup. For greetings ("Hi"), chitchat, or out-of-domain questions, this incurs unnecessary latency (~200–500ms), API token spend, and injects irrelevant chunks into the prompt context, increasing hallucination rates.
+    - **The Solution (Adaptive Routing)**: An upstream Router inspects the user's intent *before* any vector DB connection is established:
+        1. *Chitchat / Small talk* $\to$ Direct generation node (0 vector DB calls, sub-second latency).
+        2. *Domain Knowledge (e.g. COVID-19/Biomedical)* $\to$ Local Hybrid Retriever (Qdrant Dense + BM25 + Cross-Encoder).
+        3. *Real-time / External facts* $\to$ Web Search tool (DuckDuckGo / Tavily).
+
+- **"Why does Semantic Similarity not equal Retrieval Relevance? How does Self-RAG's Document Grader fix this?"**
+    - **First-Principles**: Bi-encoders project sentences into high-dimensional geometric space. Cosine similarity measures *topical proximity*, not *logical entailment* or *factual sufficiency*. A chunk can have a 0.85 cosine similarity to "What is the clinical dosage of Drug X?" simply because it discusses Drug X's chemical formula, while having zero dosage information.
+    - **The Grader Gate**: Self-RAG inserts a binary evaluator node between retrieval and synthesis. It grades whether the retrieved text actually contains factual grounding for the question. If irrelevant, it rejects the context *before* the generator sees it, eliminating context pollution and groundedness degradation.
+
+- **"How does Corrective RAG (CRAG) autonomously recover when retrieval fails, and why is a Circuit Breaker mandatory?"**
+    - **Automated Recovery Loop**: When the Document Grader rejects retrieved chunks as irrelevant, naive RAG simply outputs "I don't know" or hallucinates. CRAG intercepts the control flow and routes to a **Query Transformation Node**:
+        - It reformulates the query using **HyDE (Hypothetical Document Embeddings)**: the LLM hallucinates a synthetic 2-3 sentence answer excerpt. Embedding this hypothetical answer matches true passage vectors far better than embedding raw, short user queries.
+        - The graph cycles back to the retrieval node with the enhanced query.
+    - **The Circuit Breaker (`rewrite_count`)**: Cyclic graphs without hard termination conditions risk infinite recursion loops (churning API spend if the knowledge base genuinely lacks the answer). Production CRAG enforces a strict counter (e.g., `max_retries = 1`). If the reformulated query fails grading a second time, the circuit breaker trips and falls back to live Web Search or gracefully reports missing data.
+
+- **"Why must Agent tools implement Defensive Execution, and how does this impact LangGraph runtimes?"**
+    - **The Failure Mode**: External tools (web search scrapers, live APIs, database connectors) routinely encounter transient DNS timeouts, rate limits, or network resets (e.g., `ddgs.exceptions.DDGSException`). If a tool raises an unhandled Python exception, the entire LangGraph execution thread crashes immediately.
+    - **Defensive Pattern**: Tools must wrap external network boundaries in `try...except` blocks and return synthetic observation payloads:
+      `{"payload": {"text": "Web search unavailable due to network timeout...", "source": "error"}}`.
+      This preserves graph state continuity and allows the downstream Generator Node to explain the constraint to the user politely rather than terminating with an unhandled traceback.
+
+- **"How do you resolve Pronoun Ambiguity in multi-turn Agentic RAG conversations?"**
+    - **The Dilemma**: In Turn 1, the user asks: *"What is the ACE2 receptor binding affinity in SARS-CoV-2?"* In Turn 2, they ask: *"How does it enter human cells?"*
+      If you pass Turn 2's raw text to the vector database, dense and BM25 retrievers fail because *"it"* carries no lexical or semantic signal for SARS-CoV-2.
+    - **De-contextualization (Conversational Rewriting)**: Before routing or retrieval, the query transformer inspects the last $N$ turns from the LangGraph `messages` state history and rewrites the follow-up into a standalone, keyword-rich query:
+      *"How does SARS-CoV-2 enter human cells using the ACE2 receptor?"*
+
+- **"Why is using a 70B/120B Generative LLM for routing and grading computationally suboptimal, and how do System-1 decision engines (e.g., Jev / Small Classifiers) compare?"**
+    - **System 1 (Discriminative) vs. System 2 (Generative)**:
+        - *Generative LLMs (System 2)* decode tokens autoregressively one by one. Using a 120B model to emit `{"destination": "domain_rag"}` burns hundreds of milliseconds of compute, incurs Time-to-First-Token (TTFT) latency, and requires Pydantic schema validation that can fail if the model omits a field.
+        - *Decision Engines (System 1, e.g., Jev, SetFit, or Cross-Encoder Classifiers)* evaluate candidate choices in a single forward pass over logit distributions without generating text tokens.
+    - **Architectural Trade-offs**:
+        - *Latency*: System 1 models execute in ~50ms vs. ~500–1,200ms for generative LLMs.
+        - *Confidence Calibration*: Specialized decision primitives (like Jev's `Noul`) return mathematical probabilities ($p \in [0.0, 1.0]$), allowing precise thresholding (e.g., `if prob < 0.70: rewrite_query()`), whereas generative LLMs output uncalibrated binary text ("yes"/"no").
+        - *Production Hybrid Standard*: Modern 2026 agent architectures use System 1 classifiers for edge routing and document grading, while reserving generative frontier LLMs solely for System 2 creative synthesis (HyDE generation and final answer drafting with citations).
