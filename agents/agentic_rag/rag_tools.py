@@ -28,18 +28,49 @@ DEFAULT_COLLECTION = COLL_COVID_6PAGE_STRUCTURE
 
 class RAGToolKit:
     def __init__(self, collection_name: str = DEFAULT_COLLECTION):
-        print("[RAGToolKit] Initializing Hybrid Retriever and Reranker...")
-        self.retriever = HybridRetriever(collection_name=collection_name)
-        self.reranker = Reranker()
-        self.query_transformer = QueryTransformer()
-        self.web_search = DuckDuckGoSearchRun()
+        self.collection_name = collection_name
+        self._retriever: Optional[HybridRetriever] = None
+        self._reranker: Optional[Reranker] = None
+        self._query_transformer: Optional[QueryTransformer] = None
+        self._web_search: Optional[DuckDuckGoSearchRun] = None
 
-        # Cleanly cloase local Qdrant before Python tears down sys.meta_path
+        # Cleanly close local Qdrant before Python tears down sys.meta_path
         atexit.register(self.close)
+
+    @property
+    def retriever(self) -> HybridRetriever:
+        """Lazy-loads and caches HybridRetriever only on first access."""
+        if self._retriever is None:
+            print("[RAGToolKit] Lazy-loading Hybrid Retriever (Dense Qdrant + BM25)...")
+            self._retriever = HybridRetriever(collection_name=self.collection_name)
+        return self._retriever
+
+    @property
+    def reranker(self) -> Reranker:
+        """Lazy-loads and caches Cross-Encoder Reranker only on first access."""
+        if self._reranker is None:
+            print("[RAGToolKit] Lazy-loading Cross-Encoder Reranker...")
+            self._reranker = Reranker()
+        return self._reranker
+
+    @property
+    def query_transformer(self) -> QueryTransformer:
+        """Lazy-loads and caches QueryTransformer only on first access."""
+        if self._query_transformer is None:
+            self._query_transformer = QueryTransformer()
+        return self._query_transformer
+
+    @property
+    def web_search(self) -> DuckDuckGoSearchRun:
+        """Lazy-loads and caches DuckDuckGoSearchRun only on first access."""
+        if self._web_search is None:
+            self._web_search = DuckDuckGoSearchRun()
+        return self._web_search
 
     def close(self):
         try:
-            self.retriever.client.close()
+            if self._retriever is not None:
+                self._retriever.client.close()
         except Exception:
             pass
 

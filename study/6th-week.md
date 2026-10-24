@@ -382,3 +382,45 @@ flowchart TD
     - **The Reality:** High-dimensional vector databases and Cross-Encoder rerankers almost never return an empty list `[]`. They return the closest mathematical candidates in the collection (even if similarity is near zero or negative).
     - Because `results` is never empty, the web search fallback is never triggered. The internal ReAct worker reads the irrelevant chunks, recognizes that they do not answer the question, and enters a retry loop—rephrasing queries up to 5 times before exhausting its retry budget.
     - **Production Solution:** Implement **Score-Gated Routing**: check whether the top rerank score exceeds a relevance cutoff ($s > \tau$, e.g., $\tau = 0.2$). If the score is below the threshold, discard the local chunks and immediately trigger the web search fallback.
+
+## Milestone 6.2: Decentralized Coordination & Dynamic Agent Handoffs (Swarm Architecture)
+
+
+- **"What is the core difference between the Supervisor (Hub-and-Spoke) and Swarm (Peer-to-Peer) architectures?"**
+
+    - **Supervisor Pattern:** A centralized manager sits at the center. Workers are isolated sub-agents that cannot talk to each other; they report exclusively back to the supervisor.
+    - **Swarm Pattern:** Decentralized peer-to-peer network popularized by OpenAI Swarm. Agents hold domain tools plus handoff tools (`transfer_to_<agent>`). When an agent completes its sub-task, it transfers execution control directly to the peer agent without returning to a central manager.
+
+- **"How does LangGraph's `Command(goto=..., update=...)` enable dynamic mesh routing?"**
+
+    - Traditional state machines require static, pre-defined edges (`graph.add_edge("node_a", "node_b")` or rigid conditional edge dictionaries).
+    - The `Command` primitive allows a node or tool to branch dynamically at runtime. By returning `Command(goto="target_agent", update={...})`, execution jumps directly to `"target_agent"`. The graph's topology becomes an adaptive mesh where edges are determined dynamically by model tool calls.
+
+- **"What is Context Pruning in a Swarm, and why is unpruned state passing an anti-pattern?"**
+
+    - **The Context Accumulation Problem**: In a naive Swarm, `state["messages"]` accumulates every raw tool observation (e.g., 4 DuckDuckGo search dumps) as execution hops across agents. In downstream nodes, the next agent inherits the entire conversation history, compounding prompt tokens quadratically ($O(N^2)$) and diluting model attention.
+    - **Context Pruning**: When issuing a handoff, the emitting node strips out raw intermediate tool observations and passes only:
+        1. The root user objective (`state["messages"][0]`).
+        2. A clean handoff summary payload (HumanMessage(content="[Handoff]: ...")).
+    - **Empirical Impact**: Context pruning reduced prompt token bloat from 12,925 tokens down to 1,369 tokens on identical tasks.
+
+- **"Why does nested create_react_agent fail silently when a tool returns `Command(goto='external_node')`?"**
+
+    - **The Subgraph Channel Scope**: `create_react_agent` compiles an isolated sub-graph containing only two private nodes: agent and tools.
+        - If a tool inside this sub-graph emits `Command(goto="analyst")`, the inner runtime looks for "analyst" inside its own private namespace. Because "analyst" only exists in the parent graph, LangGraph warns: `Task tools wrote to unknown channel branch:to:analyst, ignoring it.`
+        - **The Architectural Pattern**: Handoff tools must either return confirmation text strings inside subgraphs (with the parent node issuing the outer Command), or the swarm agents must be defined as peer nodes directly in the top-level graph.
+
+- **"What is the Redundant ReAct Synthesis Turn during handoffs?"**
+
+    - Standard ReAct agents follow a rigid turn structure: $\text{LLM Action} \to \text{Tool Observation} \to \textbf{LLM Synthesis}$.
+    - When an agent calls a handoff tool, its intended action is to yield control immediately. However, if wrapped in a naive ReAct loop, the agent will execute an extra, useless LLM call attempting to "summarize" or respond to the handoff confirmation before transferring.
+    - In production swarms, detecting a handoff tool call must act as an immediate short-circuit, intercepting execution and transferring control without generating unnecessary synthesis tokens.
+
+
+- **"How do you prevent Infinite Ping-Pong Loops in decentralized swarms without a supervisor?"**
+
+    - In a supervisor architecture, the manager enforces loop termination. In a swarm, Agent A can hand off to Agent B, which hands back to Agent A indefinitely.
+    - **Mitigation (Decentralized Circuit Breakers)**:
+        1. Maintain an integer `handoff_count` in the typed state schema with an accumulator reducer (`current + increment`).
+        2. Enforce a hard ceiling (`MAX_HANDOFFS = 3` or `6`).
+        3. If `handoff_count >= MAX_HANDOFFS`, the node disables handoff tools and forces the current agent to synthesize the best possible answer from available context.

@@ -35,11 +35,11 @@ from agents.agentic_rag.rag_tools import RAGToolKit
 rag_toolkit = RAGToolKit()
 
 @tool
-def search_knowledge_base(query: str) -> str:
-    """Web search"""
-    print(f"\n   ⚙️  [Tool Invoked: search_knowledge_base] Query: '{query}'")
+def search_web(query: str) -> str:
+    """Search the live web for recent facts, statistics, or general knowledge."""
+    print(f"\n   ⚙️  [Tool Invoked: search_web] Query: '{query}'")
     results = rag_toolkit.search_web(query=query)
-    print(f"   📥 [Tool Finished: search_knowledge_base] Retrieved {len(results)} result(s).")
+    print(f"   📥 [Tool Finished: search_web] Retrieved {len(results)} result(s).")
     
     formatted = []
     for r in results:
@@ -79,7 +79,7 @@ supervisor_llm = get_chat_model(temperature=0.0)
 
 researcher_agent = create_react_agent(
     model=worker_llm,
-    tools=[search_knowledge_base],
+    tools=[search_web],
     prompt=(
         "You are a Research Worker. Your job is to search internal documents"
         "and external sources for factual data. Be precise and synthesize findings into a "
@@ -165,12 +165,12 @@ def supervisor_node(state: MultiAgentState) -> Dict[str, Any]:
     )
     
     # Enforce structured routing output
-    structured_llm = supervisor_llm.with_structured_output(SupervisorRouter)
-    decision: SupervisorRouter = structured_llm.invoke([system_prompt] + list(messages))
+    structured_llm = supervisor_llm.with_structured_output(SupervisorRouter, include_raw=True)
+    response = structured_llm.invoke([system_prompt] + list(messages))
 
-    # We estimate 1 call and count tokens for the supervisor step
-    # Note: When using with_structured_output, LangChain encapsulates response
-    metrics.llm_calls += 1
+    decision: SupervisorRouter = response["parsed"]
+    raw_message: AIMessage = response["raw"]
+    metrics.record_call(raw_message)
 
     print(f"\n[Supervisor] Decision: {decision.next_worker} | Instructions: {decision.instructions}")
 
