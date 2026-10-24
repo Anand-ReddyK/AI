@@ -424,3 +424,57 @@ flowchart TD
         1. Maintain an integer `handoff_count` in the typed state schema with an accumulator reducer (`current + increment`).
         2. Enforce a hard ceiling (`MAX_HANDOFFS = 3` or `6`).
         3. If `handoff_count >= MAX_HANDOFFS`, the node disables handoff tools and forces the current agent to synthesize the best possible answer from available context.
+
+- **"How do you eliminate the Redundant ReAct Synthesis Turn and capture metrics during tool handoffs?"**
+
+    - **The Problem:** Inside `create_react_agent`, after a handoff tool executes, the sub-agent default behavior routes back to the LLM node to generate a post-tool synthesis text before exiting. Additionally, `Command(goto="analyst")` fails because `"analyst"` is not a known channel inside the private sub-agent.
+    - **The Parent Command Primitive:** Returning `Command(graph=Command.PARENT, goto="analyst", update={...})` from the tool instructs LangGraph to escalate directly to the parent swarm graph. Under the hood, this raises a `ParentCommand` exception that immediately halts the sub-agent, skipping the synthesis call entirely.
+    - **Metric Preservation via Streaming:** Because `ParentCommand` aborts `agent.invoke()`, subsequent lines in the node are bypassed. To prevent losing token metrics and trajectory traces from prior tool turns, the node must stream via `agent.stream(..., stream_mode="updates")` to record calls in real-time and handle `except ParentCommand as pc: return pc.args[0]`.
+
+---
+
+## Milestone 6.3: Model Context Protocol (MCP) & Native Wire Protocol
+
+- **"What is the $M \times N$ Tool Integration Crisis, and how does MCP solve it?"**
+
+    - **The Historical Anti-Pattern:** Prior to late 2024, every agent framework (LangChain, LlamaIndex, CrewAI, AutoGen) and AI host (Claude Desktop, Cursor, IDEs) defined its own proprietary tool-wrapping abstractions. Giving $M$ clients access to $N$ enterprise tools (PostgreSQL, GitHub, Qdrant, Slack) required writing $M \times N$ custom, brittle integration wrappers.
+    - **The MCP Decoupling:** Model Context Protocol (MCP) standardizes tool and context delivery on **JSON-RPC 2.0**. Tools run in independent, language-agnostic server processes (Python, TypeScript, Go). Once a tool is implemented as an MCP server, any MCP-compliant client can discover and execute it over standardized transports (`stdio`, `SSE`, HTTP) without modifying server code ($M + N$ interoperability).
+
+- **"What are the 3 Core MCP Primitives, and what are their respective control models?"**
+
+    - **1. Tools (Model-Controlled):** Executable functions with defined JSON schemas that perform actions or retrieve dynamic data (e.g., `calculate`, `search_web`). Invoked by the LLM during reasoning loops; output is formatted as structured content blocks.
+    - **2. Resources (Application-Controlled):** Passive, URI-addressable data sources (e.g., `file:///app.log`, `postgres://schema/users`, `docs://collection/stats`). Read by the host application to inject context directly into prompt windows without triggering model tool-call decisions.
+    - **3. Prompts (User-Controlled):** Pre-packaged prompt templates and slash workflows exposed by the server (e.g., `/git-commit-review`, `/analyze-sql`). Selected by users or high-level agents to enforce structured multi-step tasks.
+
+- **"How does the JSON-RPC 2.0 Wire Protocol over `stdio` work under the hood?"**
+
+    - **Process Spawning:** The MCP client spawns the MCP server as a child process using `subprocess.Popen` with standard pipes (`stdin=PIPE, stdout=PIPE, stderr=stderr`).
+    - **Newline-Delimited Framing:** Messages are single-line JSON strings terminated by a newline (`\n`). Each line on `stdin`/`stdout` is one independent, complete JSON-RPC packet.
+    - **The `stderr` Isolation Rule:** All diagnostic prints, initialization logs, and debugging output in an MCP server MUST be directed to `sys.stderr` (e.g., `sys.stderr.write(...)`). Writing non-JSON data to `sys.stdout` corrupts the communication stream and triggers immediate `JSONDecodeError` on the client.
+
+- **"What is the difference between a JSON-RPC 'Request' and a 'Notification'?"**
+
+    - **Request:** Contains an integer or string `"id"` field (`{"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {...}}`). The recipient is **strictly required** to return a response matching that exact `"id"`.
+    - **Notification:** Omits the `"id"` field (`{"jsonrpc": "2.0", "method": "notifications/initialized"}`). Represents a fire-and-forget signal. The recipient processes the notification but **must NOT** reply with a response packet. (Sending a response to a notification desynchronizes the client's FIFO message queue).
+
+- **"What are the 4 stages of the MCP Lifecycle Handshake?"**
+
+    1. **`initialize` (Request: Client $\to$ Server):** The client sends its supported protocol version (`"2024-11-05"`), client capabilities, and metadata (`clientInfo`). The server responds with its supported protocol version, server capabilities (`{"tools": {}, "resources": {}}`), and `serverInfo`.
+    2. **`notifications/initialized` (Notification: Client $\to$ Server):** The client notifies the server that the handshake is complete and it is ready to begin operations.
+    3. **`tools/list` (Request: Client $\to$ Server):** The client queries available tools. The server returns an array of tool objects, each defining `name`, `description`, and a valid OpenAPI/JSON Schema `inputSchema` for parameters.
+    4. **`tools/call` (Request: Client $\to$ Server):** The client requests tool execution with `{"name": "<tool_name>", "arguments": {...}}`. The server executes the function and returns content blocks (`{"result": {"content": [{"type": "text", "text": "..."}]}}`).
+
+- **"Why does MCP standardize tool outputs on `content` blocks `[{"type": "text", "text": "..."}]` rather than raw return values?"**
+
+    - **Multimodal Uniformity:** Real-world tools produce diverse outputs (plain text, JSON tables, base64 images, audio spectrograms, binary blobs).
+    - By wrapping outputs in a typed array of content blocks (`[{"type": "text", ...}, {"type": "image", ...}]`), the protocol provides a single, uniform serialization contract that maps directly into modern multimodal LLM tool message payloads without client-side type-casting hackery.
+
+- **"What are the trade-offs between `stdio` and `SSE` (Server-Sent Events) / HTTP transports?"**
+
+    | Dimension | `stdio` Transport | `SSE` / HTTP Transport |
+    | :--- | :--- | :--- |
+    | **Process Model** | Local child subprocess (`subprocess.Popen`) | Remote standalone network service / microservice |
+    | **Network Overhead** | Zero (in-memory OS pipes, sub-millisecond latency) | Network latency, TLS handshake, HTTP header overhead |
+    | **Security Surface** | Inherits local user process sandbox and file permissions | Requires authentication (Bearer tokens, OAuth), firewalls, CORS |
+    | **Deployment Target** | Desktop & CLI hosts (Claude Desktop, Cursor, local agent scripts) | Shared enterprise servers, cloud clusters, team-wide RAG servers |
+    | **Multi-Tenancy** | Single-tenant (1 process per client instance) | Multi-tenant (single server handling concurrent client sessions) |
