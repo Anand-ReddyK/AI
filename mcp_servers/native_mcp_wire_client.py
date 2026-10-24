@@ -64,7 +64,46 @@ class NativeMCPClient:
         print(f"📢 [Client Notification] {raw_msg}")
         self.proc.stdin.write(raw_msg + "\n")
         self.proc.stdin.flush()
+
     
+    # ------------------------------------------------------------------------------
+    # TOOLS
+    # ------------------------------------------------------------------------------
+    def list_tools(self) -> list:
+        res = self.send_request("tools/list")
+        return res.get("result", {}).get("tools", [])
+    
+    def call_tool(self, name: str, arguments: dict) -> str:
+        res = self.send_request("tools/call", {"name": name, "arguments": arguments})
+        return res.get("result", {}).get("content", [{}])[0].get("text", "")
+    
+    # ------------------------------------------------------------------------------
+    # RESOURCES (Passive Content Read)
+    # ------------------------------------------------------------------------------
+    def list_resources(self) -> list:
+        res = self.send_request("resources/list")
+        return res.get("result", {}).get("resources", [])
+    
+    def read_resources(self, uri: str) -> str:
+        res = self.send_request("resources/read", {"uri": uri})
+        contents = res.get("result", {}).get("contents", [{}])
+        return contents[0].get("text", "")
+    
+    # ------------------------------------------------------------------------------
+    # PROMPTS (Reusable Workflows)
+    # ------------------------------------------------------------------------------
+    def list_prompts(self) -> list:
+        res = self.send_request("prompts/list")
+        return res.get("result", {}).get("prompts", [])
+    
+    def get_prompts(self, name: str, arguments: dict) -> str:
+        res = self.send_request("prompts/get", {"name": name, "arguments": arguments})
+        messages = res.get("result", {}).get("messages", [])
+
+        if messages:
+            return messages[0].get("content", {}).get("text", "")
+        
+        return ""    
 
     def close(self):
         """Cleanly terminate the server subprocess."""
@@ -76,7 +115,7 @@ class NativeMCPClient:
 
 if __name__ == "__main__":
     current_dir = Path(__file__).parent
-    server_path = str(current_dir / "raw_math_server.py")
+    server_path = str(current_dir / "production_server.py")
 
     client = NativeMCPClient(server_path)
     client.start()
@@ -92,22 +131,59 @@ if __name__ == "__main__":
         # Step 2: Confirm handshake
         client.send_notification("notification/initialized")
 
-        # Step 3: Discover available tools
-        tools_res = client.send_request("tools/list")
+        # =========================================================
+        # 1. TEST TOOLS (Model-Controlled)
+        # =========================================================
+        print("\n" + "=" * 60)
+        print("🛠️ 1. TESTING TOOLS")
+        print("=" * 60)
 
-        tools = tools_res.get("result", {}).get("tools", [])
+        tools = client.list_tools()
+        
         print(f"\nDiscovered {len(tools)} tools:")
         for t in tools:
-            print(f"  - {t['name']}: {t['description']} (Schema: {t['inputSchema']['properties']})")
+            print(f"  - Tool: {t['name']} | Schema: {list(t['inputSchema']['properties'].keys())}")
         
 
-        # Step 4: Execute a tool call
-        call_res = client.send_request("tools/call", {
-            "name": "multiply",
-            "arguments": {"a": 12, "b": 15}
-        })
-        output = call_res["result"]["content"][0]["text"]
-        print(f"\n Tool Execution Output: 12 * 15 = {output}")
+        tool_result = client.call_tool("query_knowledge_base", {"topic": "tokyo", "top_k": 2})
+        print(f"\nTool Execution Result: {tool_result}")
+
+
+        # =========================================================
+        # 2. TEST RESOURCES (Application-Controlled passive read)
+        # =========================================================
+        print("\n" + "=" * 60)
+        print("📂 2. TESTING RESOURCES")
+        print("=" * 60)
+        
+        resources = client.list_resources()
+        print(f"\nDiscovered {len(resources)} resources")
+        for r in resources:
+            print(f"  - Resource: {r['name']} | URI: {r['uri']}")
+
+        if resources:
+            target_uri = resources[0]["uri"]
+            content = client.read_resources(target_uri)
+            print(f"\n   Content of '{target_uri}':\n{content}")
+        
+
+        # =========================================================
+        # 3. TEST PROMPTS (User-Controlled workflows)
+        # =========================================================
+        print("\n" + "=" * 60)
+        print("💬 3. TESTING PROMPTS")
+        print("=" * 60)
+
+        prompts = client.list_prompts()
+        print(f"\nDiscovered {len(prompts)} prompt templates:")
+        for p in prompts:
+            arg_names = [a["name"] for a in p.get("arguments", [])]
+            print(f"  - Prompt Template: {p['name']} | Arguments: {arg_names}")
+        
+        prompt_text = client.get_prompts("compare_cities", {"city_a": "Tokyo", "city_b": "Hyderabad"})
+        print(f"\n   Rendered Prompt:\n{prompt_text}")
+
+
 
     finally:
 

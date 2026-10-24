@@ -478,3 +478,44 @@ flowchart TD
     | **Security Surface** | Inherits local user process sandbox and file permissions | Requires authentication (Bearer tokens, OAuth), firewalls, CORS |
     | **Deployment Target** | Desktop & CLI hosts (Claude Desktop, Cursor, local agent scripts) | Shared enterprise servers, cloud clusters, team-wide RAG servers |
     | **Multi-Tenancy** | Single-tenant (1 process per client instance) | Multi-tenant (single server handling concurrent client sessions) |
+
+---
+
+## Milestone 6.4: Building Production MCP Servers (MCPServer / FastMCP SDK)
+
+- **"Why use an official MCP SDK (`MCPServer` / `FastMCP`) instead of writing raw JSON-RPC handlers?"**
+
+    - **Automated OpenAPI Schema Generation:** Manually crafting JSON Schema definitions for every function parameter is error-prone. The SDK introspects standard Python type hints (`topic: str, top_k: int = 3`) and docstrings to automatically generate strict, compliant `inputSchema` dictionaries.
+    - **Automated Content Boxing:** Handlers automatically serialize return values (strings, numbers, dicts, Pydantic models) into standardized MCP `content` blocks (`[{"type": "text", "text": "..."}]`) and structured contents.
+    - **Transport Agnosticism:** The same server code can be launched over `stdio` (`server.run(transport="stdio")`), Server-Sent Events (`transport="sse"`), or streamable HTTP without rewriting tool business logic.
+    - **Spec Compliance & Error Handling:** Built-in validation handles JSON-RPC error codes (e.g., `-32601 Method Not Found`, `-32602 Invalid Params`), protocol pings, and schema validation failures cleanly.
+
+- **"What changed with FastMCP in `mcp` version 2.x?"**
+
+    - In `mcp 2.x` (Anthropic's official SDK refactor), `FastMCP` was migrated and renamed to **`MCPServer`** (`from mcp.server.mcpserver import MCPServer`).
+    - It retains the exact decorator syntax (`@server.tool()`, `@server.resource()`, `@server.prompt()`) while introducing unified support for async runtime options (`run_stdio_async()`, `run_sse_async()`) and enhanced resource security.
+
+- **"How do MCP Resources (`resources/list`, `resources/read`) differ fundamentally from Tools (`tools/list`, `tools/call`) in an AI application?"**
+
+    | Dimension | Tools (`tools/call`) | Resources (`resources/read`) |
+    | :--- | :--- | :--- |
+    | **Control Model** | **Model-Controlled:** The LLM decides when, whether, and with what parameters to call the tool during its reasoning loop. | **Application/User-Controlled:** The host application or user reads the resource directly to inject context into the prompt window. |
+    | **Token Cost** | Incurs LLM reasoning tokens (tool-call generation + observation + synthesis turns). | **0 model generation tokens.** Data is read directly from memory or disk without triggering an LLM inference turn. |
+    | **Determinism** | Probabilistic (the LLM might hallucinate arguments, fail to call the tool, or enter a loop). | 100% deterministic (standard read query by URI). |
+    | **Primary Use Cases** | Actions, computations, web queries, database writes (`calculate`, `query_knowledge_base`). | System metadata, documentation, application logs, database schemas, active configs (`docs://system/stats`). |
+
+- **"How do MCP Prompts (`prompts/list`, `prompts/get`) operate in production workflows?"**
+
+    - MCP Prompts are server-managed, parameterized prompt templates (e.g., `@server.prompt("compare_cities")`).
+    - When a client sends `prompts/get` with arguments (`{"name": "compare_cities", "arguments": {"city_a": "Tokyo", "city_b": "Hyderabad"}}`), the server renders a structured list of role-based messages:
+      ```json
+      {
+        "messages": [
+          {
+            "role": "user",
+            "content": {"type": "text", "text": "Please analyze and compare Tokyo and Hyderabad..."}
+          }
+        ]
+      }
+      ```
+    - **Enterprise Benefit:** Prompts allow engineering teams to centralize and version-control task guidelines, compliance rules, and slash-command workflows on the server, ensuring consistent behavior across diverse clients (Claude Desktop, Cursor, and custom CLI agents).
