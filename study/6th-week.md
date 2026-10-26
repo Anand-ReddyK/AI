@@ -541,3 +541,73 @@ flowchart TD
     - **1. Pre-Flight Context Loading (Resources):** Before the agent executes its first LLM reasoning turn, the client fetches passive resources (e.g., `client.read_resource("docs://system/stats")` or DB schemas) and appends them to the agent's `SystemMessage` at **0 model generation token cost**.
     - **2. Standardized Task Seeding (Prompts):** The client or supervisor fetches a centralized prompt template (e.g., `client.get_prompt("compare_cities", {...})`) to seed the initial user turn.
     - **3. Dynamic Execution (Tools):** The LLM runs its ReAct loop, calling executable MCP tools (`calculate`, `query_knowledge_base`) to satisfy the goal.
+
+---
+
+## Milestone 6.6: Week 6 Capstone — Multi-Agent Consensus Swarm with Full MCP Integration
+
+- **"What is the Tripartite MCP Architecture, and how does it separate concerns in autonomous enterprise swarms?"**
+
+    - Instead of treating every capability as a "Tool", enterprise systems divide capabilities across the three distinct MCP primitives:
+        1. **Prompts (`prompts/get` — User/Workflow Control):** Encapsulates standardized operational runbooks, compliance protocols, and triage SOPs (`incident_triage_runbook`). Ensures all agents, regardless of runtime or model version, receive the exact same corporate guidelines from a single source of truth.
+        2. **Resources (`resources/read` — Application / Context Control):** Ingests passive, structured operational data (`cloud://fleet/telemetry`). In deterministic workflows, this can be injected directly into graph state prior to agent invocation at **0 model generation token cost**, or discovered dynamically at runtime.
+        3. **Tools (`tools/call` — Model Control):** Exposes discrete, deterministic functions (`calculate_waste`, `check_port_exposure`) executed over JSON-RPC only when the agent's reasoning loop requires active computation or verification.
+
+- **"Why did we load the telemetry Resource in Python code *before* running the agent, instead of letting the agent fetch it with a tool?"**
+
+    - In our capstone (`run_devops_capstone`), Python fetched `cloud://fleet/telemetry` and pasted it into the graph state upfront. This was a deliberate architectural choice with clear trade-offs:
+        - **Choice 1: Python loads it upfront (Pre-Flight Resource — 6.6 approach):**
+            - *How it works:* Our code reads the resource from the MCP server and attaches it directly to the prompt before the LLM takes its first turn.
+            - *When to use it:* When you **already know** what data the agent needs (e.g., this specific alert always needs this specific fleet telemetry).
+            - *Benefits:* **0 LLM generation tokens** spent, **0 extra reasoning turns**, sub-10ms loading over OS pipes, and 100% reliability (the model cannot hallucinate arguments or forget to fetch the data).
+        - **Choice 2: The agent searches and fetches it itself (Dynamic Tool / Meta-Tool):**
+            - *How it works:* The agent receives a tool like `read_resource(uri)`. It inspects the user request, decides which resource it needs, and calls the tool during its ReAct loop.
+            - *When to use it:* When you have **hundreds of possible data sources** (e.g., 500 database tables or thousands of log streams). You cannot dump all 500 into the prompt upfront without blowing up the context window. The agent must selectively fetch only what it needs.
+        - **The Rule of Thumb:** If the required data is fixed and known beforehand, load it upfront as a Resource (fast & free). If the agent must investigate and choose among many possibilities, let the agent retrieve it dynamically with Tools.
+
+- **"Can agents dynamically discover and retrieve MCP Resources and Prompts at runtime? (Meta-Tools & Agent Factory Pattern)"**
+
+    - **Yes.** While the MCP protocol standardizes wire primitives, host architectures determine how models interact with them:
+        1. **Dynamic Resource Discovery (The Meta-Tool Pattern):**
+           - The host wraps MCP resource methods into standard agent tools: `list_mcp_resources()` and `read_mcp_resource(uri: str)`.
+           - When the user asks: *"Check the security state of our fleet"*, the model calls `list_mcp_resources()`, spots `cloud://fleet/telemetry`, and invokes `read_mcp_resource("cloud://fleet/telemetry")` on demand.
+           - *Trade-off:* Trades 1 LLM tool-calling turn for context selectivity across large catalogs.
+        2. **Semantic Resource Routing (RAG over Resources):**
+           - A lightweight triage node performs vector/BM25 search over resource descriptions (`resources/list`) based on user intent and automatically binds only the matching 2–3 resource contents into worker state.
+        3. **Dynamic Prompt-as-a-Worker (The Agent Factory Pattern):**
+           - The MCP server acts as an enterprise **Runbook / SOP Registry** exposing diverse prompts (`ddos_triage`, `data_leak_triage`, `cost_audit`).
+           - An orchestrator agent determines the incident category and calls `get_prompt(name=...)`.
+           - It dynamically instantiates a specialized child agent/subgraph, injecting the fetched MCP prompt string as that worker's `SystemMessage`.
+           - *Enterprise Benefit:* Security and SRE teams update operational playbooks on the MCP server with **zero codebase changes, recompilation, or redeployment** of the LangGraph multi-agent application.
+
+- **"How does the Critic-Auditor Multi-Agent Consensus topology eliminate confirmation bias and hallucinated math?"**
+
+    - **The Confirmation Bias Vulnerability:** In a single-agent architecture, the agent that performs calculations also writes the final report. Models exhibit strong confirmation bias, accepting their own arithmetic hallucinations and glossing over edge-case security violations.
+    - **The 3-Agent Consensus Topology:**
+        1. **Auditor Agent:** Discovers violations and performs calculations using remote MCP tools.
+        2. **Security Critic Agent:** A skeptical peer agent with zero tool access that audits the Auditor's findings against policy using a strictly typed Pydantic schema (`SecurityAuditVerdict`: status `PASSED` / `REVISE`, confidence 0–100%, critique notes). It verifies that calculations match documented formulas and that no exposed ports were missed.
+        3. **SRE Lead Agent:** Only unlocks once the Critic issues `PASSED`. It synthesizes the validated findings into actionable, copy-pasteable AWS CLI commands (`aws ec2 terminate-instances`, `aws ec2 revoke-security-group-ingress`).
+
+- **"What is a Circuit Breaker in agentic review loops, and why is `MAX_REVISIONS` mandatory?"**
+
+    - **The Critique Ping-Pong Trap:** If a Critic is overly pedantic or a worker misinterprets feedback, the graph enters an infinite critique cycle ($\text{Auditor} \to \text{Critic} \to \text{Auditor} \to \text{Critic}\dots$), rapidly exhausting token budgets and hitting recursion limits.
+    - **The Circuit Breaker Pattern:**
+        - Maintain an integer `revision_count` in the graph state.
+        - The routing condition checks:
+          ```python
+          if verdict.status == "PASSED" or state.get("revision_count", 0) >= MAX_REVISIONS:
+              return "sre_lead"
+          return "auditor"
+          ```
+        - If `MAX_REVISIONS = 2` is reached, the loop is hard-terminated, forcing the workflow forward to the SRE Lead with explicit warnings regarding unverified items.
+
+- **"Analyze the Milestone 6.6 Capstone Performance Scorecard: Why is 4 LLM invocations and 5.2k tokens an optimal architecture?"**
+
+    - **Scorecard Breakdown (Production Run):**
+        - **Total Wall-Clock Latency:** 16.176s
+        - **Total LLM Invocations:** 4 calls (Auditor: 2 ReAct turns; Critic: 1 structured audit turn; SRE Lead: 1 synthesis turn)
+        - **Input Tokens:** 3,651 tokens | **Output Tokens:** 1,586 tokens | **Total Tokens:** 5,237 tokens
+    - **Efficiency Drivers:**
+        1. **Pre-flight Telemetry Injection:** Ingesting 497 characters of raw fleet JSON via `get_resources` incurred **0 prompt/completion tokens**.
+        2. **Parallel Tool Calling:** The Auditor dispatched multiple tool calls (`calculate_waste` and `check_port_exposure` across 3 ports) in a single ReAct step, condensing what could have been 5 sequential turns into 1 parallel tool execution turn.
+        3. **Structured Critic Evaluation:** The Critic evaluated the entire report in a single call with zero tool overhead using Pydantic validation, providing a 100% confidence score with exact formula verification.
