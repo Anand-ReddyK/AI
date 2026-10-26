@@ -1,9 +1,13 @@
 """
-Production MCP Server using the Official Python SDK (MCPServer)
+Production MCP Server using the Official Python SDK (FastMCP)
 Expose Tools, Resources, and Prompts over standard stdio transport.
 """
 
-from mcp.server.mcpserver import MCPServer
+try:
+    from mcp.server.fastmcp import FastMCP as MCPServer
+except ImportError:
+    # pyrefly: ignore[missing-import]
+    from mcp.server.mcpserver import MCPServer
 
 # Initialize the server
 server = MCPServer("production-rag-tools")

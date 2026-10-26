@@ -519,3 +519,25 @@ flowchart TD
       }
       ```
     - **Enterprise Benefit:** Prompts allow engineering teams to centralize and version-control task guidelines, compliance rules, and slash-command workflows on the server, ensuring consistent behavior across diverse clients (Claude Desktop, Cursor, and custom CLI agents).
+
+---
+
+## Milestone 6.5: Integrating MCP Clients into LangGraph Workflows
+
+- **"How does `MultiServerMCPClient` bridge external MCP servers into LangGraph?"**
+
+    - **Process Lifecycle Management:** Spawns external MCP server scripts (e.g., `python mcp_servers/production_server.py`) as background child processes communicating over `stdio` pipes (or establishes SSE/HTTP connections for remote servers).
+    - **Dynamic Schema Adaptation:** Sends `tools/list` over JSON-RPC, introspects the OpenAPI `inputSchema` returned by each server, and dynamically instantiates LangChain `BaseTool` objects in memory with typed Pydantic `args_schema`.
+    - **Zero Codebase Coupling:** The LangGraph agent runtime has zero hardcoded imports of the tool logic. It binds remote tools via `model.bind_tools(tools)` or `create_react_agent(model, tools)`, allowing tools to be modified, scaled, or rewritten in Go/TypeScript without altering agent code.
+
+- **"How do you ensure Fault Tolerance when agents depend on external MCP processes?"**
+
+    - **The Threat Model:** Unlike in-memory Python functions, external MCP servers can crash, hang, encounter socket timeouts, or return network exceptions. If an agent naively waits on an unresponsive pipe, the entire LangGraph workflow freezes.
+    - **Defensive Error Boxing (`handle_tool_errors=True`):** In `langchain-mcp-adapters`, configuring `handle_tool_errors=True` catches MCP execution errors (`CallToolResult(isError=True)`) or timeout exceptions and wraps them into a `ToolMessage(status="error", content="...")`.
+    - **Self-Correction:** The LLM observes the failure in its message history and can retry with alternative parameters, invoke a fallback tool (e.g., web search instead of vector DB), or report a graceful partial answer to the user.
+
+- **"How are Resources and Prompts orchestrated alongside Tools in an autonomous agent?"**
+
+    - **1. Pre-Flight Context Loading (Resources):** Before the agent executes its first LLM reasoning turn, the client fetches passive resources (e.g., `client.read_resource("docs://system/stats")` or DB schemas) and appends them to the agent's `SystemMessage` at **0 model generation token cost**.
+    - **2. Standardized Task Seeding (Prompts):** The client or supervisor fetches a centralized prompt template (e.g., `client.get_prompt("compare_cities", {...})`) to seed the initial user turn.
+    - **3. Dynamic Execution (Tools):** The LLM runs its ReAct loop, calling executable MCP tools (`calculate`, `query_knowledge_base`) to satisfy the goal.
