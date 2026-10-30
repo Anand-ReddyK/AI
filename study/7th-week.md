@@ -359,6 +359,33 @@ customer_support_account_operations_agent/
 
 ## Milestone 7.1: Observability & Distributed Tracing (Black Box to Glass Box)
 
+### What We Built:
+1. **Native OpenTelemetry-Style Tracer (`observability/native_tracer.py`)**: Built a zero-dependency tracer from scratch using standard Python. Learned how `trace_id` represents the entire user request, `span_id` tracks individual tasks, and `parent_span_id` creates tree nesting.
+2. **LangGraph Callback Bridge**: Built `NativeTracerCallback` hooking into LangChain's `on_llm_start`, `on_llm_end`, `on_tool_start`, and `on_tool_end` to capture execution duration and token usage automatically.
+3. **Production Langfuse Integration (`observability/langfuse_tracer.py`)**: Integrated Langfuse v5 with automatic credentials from `.env` and wired both native ASCII tree logging and cloud tracing into `run_demo.py`.
+4. **Scenario Tagging & Metadata**: Added tags (`rag`, `account-ops`, `security`) and metadata in LangGraph's config dictionary so runs can be filtered in the dashboard.
+
+### Real Insights We Discovered:
+* **Cold Starts Revealed**: In Scenario 1, the first policy search took 14,240 ms while the second took only 39 ms. Tracing proved the delay was model loading (cross-encoder reranker cold start), not the LLM or Qdrant.
+* **Token Metadata Location**: Modern LangChain providers (like Gemini) place token usage in `generation.message.usage_metadata` rather than the older `llm_output["token_usage"]`.
+* **Cost Estimation Mechanics**: Langfuse calculates costs at ingestion time using built-in model price tables per token, which helps forecast production bills even on free-tier API keys. Custom model pricing definitions apply to new incoming traces, not retroactively.
+
+---
+
+### Interview Drill Questions: Milestone 7.1
+
+#### Q1: "What is the difference between a Trace and a Span in distributed tracing?"
+* **Trace**: The full journey of a user request from start to finish (e.g. one chat conversation or support ticket inquiry). It has a single unique `trace_id`.
+* **Span**: A specific unit of work within that journey (e.g. calling an LLM, searching Qdrant, or updating a database). Spans have a `span_id` and reference a `parent_span_id` to form a parent-child waterfall tree.
+
+#### Q2: "How does context propagation work when an agent calls multiple tools asynchronously?"
+* In async agent graphs, multiple tools or nodes run concurrently. Context propagation ensures the root `trace_id` and active `parent_span_id` are passed down to child executions (via Python `contextvars` or callback handlers). This prevents spans from different concurrent requests from getting tangled together.
+
+#### Q3: "How do observability platforms like Langfuse calculate cost without access to your billing account?"
+* The tracer callback sends the exact model name (`gemini-3.5-flash-lite`, `gpt-oss-20b`) and token counts (`input_tokens`, `output_tokens`). The platform looks up the model's official public list price per token and computes:
+  $$\text{Total Cost} = (\text{input\_tokens} \times \text{input\_price}) + (\text{output\_tokens} \times \text{output\_price})$$
+* This provides a standardized benchmark cost for monitoring, comparing models, and spotting token bloat before deploying to production.
+
 ## Milestone 7.2: Continuous Evaluation & LLM-as-a-Judge (The Quality & Regression Layer)
 
 ## Milestone 7.3: OWASP LLM Top 10 & Multi-Layer Defensive Guardrails (The Armor Layer)
