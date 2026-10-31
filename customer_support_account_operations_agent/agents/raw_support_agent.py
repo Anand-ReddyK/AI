@@ -4,9 +4,10 @@ Functional ReAct agent in LangGraph with policy RAG and account tools.
 DELIBRATELY MISSING: Tracing, Gaurdrails, PII Masking, Action Boundaries, Caching
 """
 
-from langgraph.pregel._draw import add_edge
 import sys
 from pathlib import Path
+from typing import Optional, Literal
+
 from langchain_core.messages import SystemMessage
 from langgraph.graph import StateGraph, START, END
 from langgraph.prebuilt import ToolNode, tools_condition
@@ -16,7 +17,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from utils.llm_provider import get_chat_model
+from utils.llm_provider import get_chat_model, DEFAULT_PROVIDER
 from customer_support_account_operations_agent.agents.state import SupportAgantState
 from customer_support_account_operations_agent.tools.policy_tools import search_billing_policy
 from customer_support_account_operations_agent.tools.account_tools import (
@@ -31,7 +32,7 @@ You assist customers with their account inquiries, policy questions, refunds, an
 
 You have access to the following operational tools:
 1. `search_billing_policy`: Look up company policies, refund terms, and subscription rules.
-2. `get_customer_policy`: Inspect customer tier, current balance, and credentials.
+2. `get_customer_account`: Inspect customer tier, current balance, and credentials.
 3. `issue_refund`: Issue balance refunds.
 4. `rotate_api_key`: Rotate a customer's API key.
 
@@ -43,10 +44,13 @@ Guidelines:
 ALL_TOOLS = [search_billing_policy, get_customer_account, issue_refund, rotate_api_key]
 
 
-def create_raw_support_agent():
+def create_raw_support_agent(
+        model_name: Optional[str] = None,
+        provider: Literal["google", "groq"] = DEFAULT_PROVIDER
+    ):
     """Builds and compiles the baseline LangGraph state machine."""
     # 1. Initialize LLM with tools bound
-    llm = get_chat_model(temperature=0.0)
+    llm = get_chat_model(model_name=model_name, provider=provider, temperature=0.0)
     llm_with_tools = llm.bind_tools(ALL_TOOLS)
 
     # 2. Define Node Functions
